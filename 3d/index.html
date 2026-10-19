@@ -1227,7 +1227,10 @@
   var down = null;
   renderer.domElement.addEventListener("pointerdown", function (ev) { down = [ev.clientX, ev.clientY]; });
   renderer.domElement.addEventListener("pointerup", function (ev) {
-    if (down && Math.abs(ev.clientX - down[0]) + Math.abs(ev.clientY - down[1]) < 6) show(hit(ev));
+    if (down && Math.abs(ev.clientX - down[0]) + Math.abs(ev.clientY - down[1]) < 6) {
+      show(hit(ev));
+      if (picked && spin.checked) centreOnPicked();
+    }
     down = null;
   });
   renderer.domElement.addEventListener("pointermove", function (ev) {
@@ -1402,7 +1405,7 @@
     if (k < 1 && dp * k < 4) k = Math.min(1, 4 / Math.max(dp, 1e-6));
     if (k > 1 && d * k > controls.maxDistance) k = Math.max(1, controls.maxDistance / Math.max(d, 1e-6));
     if (Math.abs(k - 1) < 1e-4) return;
-    flight = null;
+    flight = null; glide = null;
     camera.position.sub(pt).multiplyScalar(k).add(pt);
     controls.target.sub(pt).multiplyScalar(k).add(pt);
     if (camera.position.y < 1.2) camera.position.y = 1.2;
@@ -1444,7 +1447,19 @@
     camera.position.lerpVectors(flight.p0, flight.p1, e); controls.target.lerpVectors(flight.q0, flight.q1, e);
     if (u >= 1) flight = null;
   }
-  controls.addEventListener("start", function () { flight = null; });
+  var glide = null;
+  function glideTo(c) {
+    glide = {t0: performance.now(), d: c.clone().sub(controls.target), done: new THREE.Vector3()};
+    redraw();
+  }
+  function glideStep() {
+    if (!glide) return;
+    var u = Math.min(1, (performance.now() - glide.t0) / 900), e = u * u * (3 - 2 * u);
+    var step = glide.d.clone().multiplyScalar(e).sub(glide.done);
+    camera.position.add(step); controls.target.add(step); glide.done.add(step);
+    if (u >= 1) glide = null;
+  }
+  controls.addEventListener("start", function () { flight = null; glide = null; });
   function bearing() {
     var v = camera.position.clone().sub(controls.target);
     return Math.atan2(v.x, -v.z) * 180 / Math.PI;
@@ -1459,7 +1474,12 @@
   setMode(MODE);
   var spin = document.getElementById("spin");
   controls.autoRotateSpeed = 0.8;
-  spin.onchange = function () { controls.autoRotate = spin.checked; redraw(); };
+  function centreOnPicked() {
+    if (!picked) return;
+    var o = selObject(picked), b = pickedBox || (o && new THREE.Box3().setFromObject(o));
+    if (b && !b.isEmpty()) glideTo(b.getCenter(new THREE.Vector3()));
+  }
+  spin.onchange = function () { controls.autoRotate = spin.checked; if (spin.checked) centreOnPicked(); redraw(); };
   var fullBox = document.getElementById("fulldetail"), ALL_DETAIL = false;
   fullBox.onchange = function () {
     ALL_DETAIL = fullBox.checked;
@@ -1616,11 +1636,11 @@
   function redraw() { if (!pending) { pending = true; requestAnimationFrame(frame0); } }
   function frame0() {
     pending = false;
-    flightStep();
-    var moving = controls.update() || !!flight;
+    flightStep(); glideStep();
+    var moving = controls.update() || !!flight || !!glide;
     if (camera.position.y < 1.2) { camera.position.y = 1.2; }
     render(moving && slow ? MOVE_FAR_D : FAR_D);
-    if (moving || flight) redraw();
+    if (moving || flight || glide) redraw();
   }
   controls.addEventListener("change", redraw);
   all.addEventListener("change", redraw);

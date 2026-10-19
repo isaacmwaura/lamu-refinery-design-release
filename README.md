@@ -7,9 +7,14 @@ units, how oil moves between them and how much, and an illustrative place on the
 independent study built from public information and standard engineering rules of thumb. No site has been selected
 or surveyed by this study, and the figures are early estimates, each with a "how sure" label.
 
+## See it online
+
+The site is live at https://isaacmwaura.github.io/lamu-refinery-design-release/ (published from this repository with
+GitHub Pages).
+
 ## How to open it
 
-Open `index.html` in a web browser. Everything works from the files in this folder, offline, except the map page's
+To use it on your own computer, open `index.html` in a web browser. Everything works from the files in this folder, offline, except the map page's
 optional background map, which loads OpenStreetMap tiles when online.
 
 ## Credits
