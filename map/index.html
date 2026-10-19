@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lamu refinery site map</title>
+<link rel="stylesheet" href="vendor/leaflet-1.9.4/leaflet.css">
+<style>
+  :root { --ink: #1d2733; --muted: #4a5561; --panel: #fbfbf8; --line: #c9cdd2; --land: #d8cfbd; --warn: #fff4d6;
+          --warnline: #e0c46c; --basis: #2e7d32; --est: #b8860b; --rough: #9c4a1a; }
+  html, body { margin: 0; height: 100%; font: 14px/1.45 system-ui, "Segoe UI", Arial, sans-serif; color: var(--ink);
+               background: var(--land); }
+  #map { position: absolute; top: 0; bottom: 0; left: 0; right: 360px; background: var(--land); }
+  #side { position: absolute; top: 0; bottom: 0; right: 0; width: 360px; overflow-y: auto; box-sizing: border-box;
+          padding: 12px 16px 16px; background: var(--panel); border-left: 1px solid var(--line); }
+  #side h1 { font-size: 18px; margin: 6px 0 4px; }
+  #side h2 { font-size: 14px; margin: 14px 0 4px; }
+  #side p, #side li { margin: 4px 0; }
+  #side ul { padding-left: 18px; margin: 4px 0; }
+  .home { display: inline-block; padding: 5px 12px; border: 1px solid #889; border-radius: 4px; background: #fff;
+          color: var(--ink); text-decoration: none; font-weight: 600; }
+  .home:hover { background: #eef; }
+  .disc { background: var(--warn); border: 1px solid var(--warnline); padding: 6px 8px; font-size: 12.5px; margin: 8px 0; }
+  .stamp { font-size: 11.5px; color: var(--muted); }
+  .stamp code { font-size: 11px; }
+  #banner { position: absolute; z-index: 1000; top: 10px; left: 50%; transform: translateX(-50%); max-width: calc(100% - 140px);
+            background: rgba(255,244,214,0.96); border: 1px solid var(--warnline); border-radius: 4px; padding: 4px 10px;
+            font-weight: 700; font-size: 13px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,.25); pointer-events: none; }
+  .key { font-size: 12.5px; line-height: 1.7; }
+  .key .sw { display: inline-block; width: 22px; height: 12px; vertical-align: middle; margin-right: 6px;
+             border: 1px solid rgba(0,0,0,0.35); box-sizing: border-box; }
+  .key .ln { display: inline-block; width: 22px; height: 0; vertical-align: middle; margin-right: 6px; border-top: 4px solid; }
+  .key .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin: 0 12px 0 6px; vertical-align: middle;
+              border: 2px solid #7a1f1f; background: #fff; }
+  .pop h3 { margin: 0 0 4px; font-size: 14px; }
+  .pop .unit { color: var(--muted); font-size: 12.5px; margin-bottom: 6px; }
+  .pop p { margin: 4px 0; font-size: 13px; }
+  .pop .meta { font-size: 11.5px; color: var(--muted); margin-top: 6px; }
+  .chip { display: inline-block; font-size: 11px; font-weight: 700; padding: 0 6px; border-radius: 3px; color: #fff; }
+  .chip.basis { background: var(--basis); } .chip.est { background: var(--est); } .chip.rough { background: var(--rough); }
+  .lbl { background: rgba(255,255,255,0.88); border: 1px solid #889; border-radius: 3px; box-shadow: none; font-weight: 700;
+         color: #1d2733; font-size: 12px; padding: 1px 5px; }
+  .lbl::before { display: none; }
+  #aboutbtn { display: none; }
+  #homem { display: none; position: absolute; z-index: 1001; top: 8px; left: 8px; padding: 4px 8px; font-size: 13px; }
+  .leaflet-container { font: inherit; }
+  @media (max-width: 760px), (max-height: 500px) {
+    #map { right: 0; bottom: 0; }
+    #side { top: auto; left: 0; right: 0; width: auto; max-height: 62%; border-left: none; border-top: 1px solid var(--line);
+            border-radius: 10px 10px 0 0; box-shadow: 0 -2px 10px rgba(0,0,0,.2); display: none; z-index: 1100; }
+    body.about #side { display: block; }
+    #aboutbtn { display: block; position: absolute; z-index: 1001; left: 10px; bottom: 26px; padding: 7px 12px; font: inherit;
+                font-weight: 600; background: #fff; border: 1px solid #889; border-radius: 4px; }
+    body.about #aboutbtn { display: none; }
+    #homem { display: block; }
+    #banner { top: 8px; left: 58px; right: 8px; transform: none; max-width: none; font-size: 12px; }
+    .leaflet-control-layers { font-size: 12px; }
+  }
+  @media (max-height: 500px) and (min-width: 561px) {
+    #side { top: 0; bottom: 0; left: auto; right: 0; width: min(380px, 48%); max-height: none; border-radius: 0;
+            border-top: none; border-left: 1px solid var(--line); box-shadow: -2px 0 10px rgba(0,0,0,.2); }
+    #banner { right: auto; max-width: calc(100% - 140px); }
+  }
+  #closeside { float: right; border: 1px solid #889; background: #fff; border-radius: 4px; font: inherit; padding: 2px 8px; }
+  @media (min-width: 761px) and (min-height: 501px) { #closeside { display: none; } }
+</style>
+<meta name="color-scheme" content="only light">
+<style>
+  /* Site round 3: a phone in dark mode must not darken the page's buttons, menus and boxes (the 3D page's
+     "Technical" button went white on white). The page is light only, and every control has its own colours;
+     :where() keeps these weaker than any rule of the page's own. */
+  :root { color-scheme: only light; --pubbar: 26px; }
+  :where(button, select, input, textarea) { color: #111; background-color: #fff; }
+  @media (max-width: 760px) { :root { --pubbar: 42px; } }
+  #pubbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 3000; box-sizing: border-box; height: var(--pubbar);
+            margin: 0; padding: 4px 10px; font: 12px/1.35 system-ui, "Segoe UI", Arial, sans-serif; color: #1d1d1d;
+            background: #fff7e0; border-top: 1px solid #d9b860; }
+  #pubbar a { color: #0b4f8a; font-weight: 600; white-space: nowrap; }
+  #fsbtn { margin-left: 8px; font: inherit; font-weight: 600; padding: 0 8px; border: 1px solid #b08a2c;
+           border-radius: 4px; background: #fff; color: #1d1d1d; }
+  #fsbtn[hidden] { display: none; }
+  body.pubfixed { position: relative; height: calc(100% - var(--pubbar)); }
+  body.pubflow #pubbar { position: sticky; flex: none; height: auto; }
+</style>
+</head>
+<body class="pubfixed">
+<div id="map" role="region" aria-label="Map of the indicative site"></div>
+<div id="banner">Illustrative location: no site has been selected or surveyed by this study</div>
+<a id="homem" class="home" href="../index.html">Home</a>
+<button id="aboutbtn" type="button">About this map</button>
+<div id="side">
+  <button id="closeside" type="button" aria-label="Close">Close</button>
+  <a class="home" href="../index.html" title="Back to the Lamu site home page">Home</a>
+  <h1>Lamu refinery: site map</h1>
+  <div class="disc"><b>Independent; not affiliated with Dangote Group; illustrative, not a design for construction.</b>
+    <b>Illustrative location: no site has been selected or surveyed by this study.</b> The plant outline is our own block plan, placed north of Hindi to show its size and a possible link to the port. Land conditions, ownership and the route have not been established. It is not the plot boundary of any land
+    title, and it is not where the plant will be built.</div>
+  <h2>What you see</h2>
+  <ul>
+    <li><b>The plant</b>: each coloured block is one part of the refinery, coloured by plant area. Select a block to see what it is.</li>
+    <li><b>The fence</b> round the plant: about 2.5 km by 3.2 km.</li>
+    <li><b>The corridor</b>: a pipe track and a road, about <span id="km">14</span> km, from the plant to the
+      existing Port of Lamu.</li>
+    <li><b>The jetty heads</b>: hypothetical loading platforms beside the port's mapped berths, where smaller ships could load LPG, lubricant oil and coke.</li>
+    <li><b>The SPMs</b> (single-point moorings): buoys out at sea where large tankers would tie up, joined to the port by seabed lines. Two bring crude oil in and three send petrol, diesel and jet fuel out. Their places are illustrative: the water depth there has not been established.</li>
+  </ul>
+  <h2>Key</h2>
+  <div class="key" id="key"></div>
+  <h2>Key to terms</h2>
+  <ul>
+    <li><b>Plant area</b>: a group of units that work together, such as crude, conversion or power.</li>
+    <li><b>Pipe track</b>: pipes laid side by side on low supports at ground level.</li>
+    <li><b>Jetty head</b>: the platform at a berth with the loading arms that connect to a ship.</li>
+    <li><b>SPM</b>: single-point mooring, an anchored buoy far offshore for tankers too deep for the port.</li>
+    <li><b>Indicative</b>: placed to show size and links, not surveyed or agreed.</li>
+  </ul>
+  <h2>Map</h2>
+  <p id="bgnote">Background: OpenStreetMap.</p>
+  <p class="stamp">Version as of 18 Oct 2026. Independent; not affiliated with Dangote Group; illustrative, not a design for construction.</p>
+</div>
+<script src="vendor/leaflet-1.9.4/leaflet.js"></script>
+<script src="map-data.js"></script>
+<script>
+(function () {
+  "use strict";
+  var D = window.SITEMAP;
+  if (!window.L || !D) { document.getElementById("map").textContent = "The map files did not load. Try reloading the page."; return; }
+  var opt = {};
+  decodeURIComponent(location.hash.slice(1)).split("&").forEach(function (p) {
+    if (!p) return; var i = p.indexOf("="); opt[i < 0 ? p : p.slice(0, i)] = i < 0 ? true : p.slice(i + 1); });
+  function esc(t) { return String(t == null ? "" : t).replace(/[&<>"]/g, function (c) {
+    return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
+  document.getElementById("km").textContent = D.corridor.km;
+  var PHONE = window.matchMedia("(max-width: 760px), (max-height: 500px)").matches, PUBLIC = !!(D.meta && D.meta.public);
+  var map = L.map("map", {preferCanvas: true, zoomSnap: 0.25, attributionControl: true, tap: true, zoomControl: !PHONE});
+  if (PHONE) L.control.zoom({position: "bottomright"}).addTo(map);
+  map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
+  var OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
+  map.attributionControl.addAttribution(OSM_ATTR);
+  map.createPane("bg"); map.getPane("bg").style.zIndex = 250;
+  var BG = {water: "#7fb0d8", inland: "#7fb0d8", tidal: "#b3c8cf", mangrove: "#3e5b3b", paved: "#bdb7aa"};
+  var plain = L.layerGroup();
+  ["water", "inland", "tidal", "mangrove", "paved"].forEach(function (k) {
+    (D.background[k] || []).forEach(function (rings) {
+      L.polygon(rings, {pane: "bg", stroke: false, fillColor: BG[k], fillOpacity: 1, interactive: false}).addTo(plain);
+    });
+  });
+  var tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: ""});
+  function useTiles(on) {
+    if (on) { map.removeLayer(plain); tiles.addTo(map); document.body.classList.add("online"); }
+    else { map.removeLayer(tiles); plain.addTo(map); document.body.classList.remove("online"); }
+    document.getElementById("bgnote").innerHTML = (on ? "Background: OpenStreetMap standard map tiles (online). "
+      : "Background: drawn from an OpenStreetMap extract of 16 Oct 2026, because the online map could not load. ") +
+      OSM_ATTR + " (ODbL). Plant, corridor and marine items: this study's " + (PUBLIC ? "own layout." : "record.");
+    INFO.online = on;
+  }
+  var INFO = window.MAP_INFO = {online: false, features: D.features.length};
+  plain.addTo(map); useTiles(false);
+  function chipClass(s) { return s === "Basis" ? "basis" : s === "Estimated" ? "est" : "rough"; }
+  function card(f) {
+    var u = D.explain[f.unit], lab = f.label.charAt(0).toUpperCase() + f.label.slice(1);
+    var plot = /\bplot\b/i.test(f.label) && u;
+    var h = '<div class="pop"><h3>' + esc(plot ? u.name : lab) + "</h3>";
+    h += '<div class="unit">' + esc(plot ? "Unit plot" : u ? u.name : f.unit === "plant" ? "Site-wide item" : f.unit_name) +
+         (f.area_name ? " &middot; area " + esc(f.area) + " " + esc(f.area_name) : "") + "</div>";
+    if (u && f.unit !== "plant") { h += "<p>" + esc(u.what) + "</p><p>" + esc(u.why) + "</p>"; }
+    else { h += "<p>" + esc(f.statement) + "</p>"; }
+    if (f.status !== "base") h += "<p><b>" + (f.status === "later" ? "A later phase." : "Not confirmed.") + "</b></p>";
+    h += '<div class="meta">How sure: <span class="chip ' + chipClass(f.sure) + '">' + esc(f.sure) + "</span> &middot; " +
+         (PUBLIC ? "" : esc(f.tag) + " &middot; record " + esc(f.id)) + "</div></div>";
+    return h;
+  }
+  function popW() { return Math.min(320, window.innerWidth - 90); }
+  var POP = function () { return {maxWidth: popW(), minWidth: Math.min(220, popW()),
+    autoPanPaddingTopLeft: L.point(PHONE ? 8 : 60, 50), autoPanPaddingBottomRight: L.point(8, 20)}; };
+  var byId = {}, sel = null;
+  var plant = L.featureGroup().addTo(map), links = L.featureGroup().addTo(map);
+  L.polygon(D.fence, {color: "#2b2f36", weight: 2, fill: false, dashArray: "6 4", interactive: false}).addTo(plant);
+  D.features.forEach(function (f) {
+    var later = f.status === "later", nc = f.status === "not-confirmed", col = nc ? "#d6249f" : f.colour, lay;
+    if (f.kind === "block" || f.kind === "jetty") {
+      lay = L.polygon(f.ring, {color: f.kind === "jetty" ? "#1d2733" : "#333", weight: 0.6, fillColor: f.kind === "jetty" ? "#4a4f57" : col,
+                               fillOpacity: later ? 0.25 : nc ? 0.3 : 0.85, dashArray: nc ? "3 3" : null});
+    } else if (f.kind === "bund") {
+      lay = L.polygon(f.ring, {color: "#8a6d4a", weight: 0.8, fill: true, fillColor: "#cfc5b0", fillOpacity: 0.35});
+    } else if (f.kind === "road" || f.kind === "strip") {
+      lay = L.polyline(f.line, {color: f.kind === "road" ? "#6e6e6e" : col, weight: 1.5, opacity: 0.8});
+    } else if (f.kind === "subsea") {
+      lay = L.polyline(f.line, {color: "#1f4e79", weight: 2, dashArray: "6 5", opacity: 0.9});
+      links.addLayer(lay);
+    } else if (f.kind === "spm") {
+      lay = L.circleMarker(f.at, {radius: 6, color: "#7a1f1f", weight: 2, fillColor: "#fff", fillOpacity: 1});
+      links.addLayer(lay);
+    } else if (f.kind === "point") {
+      lay = L.circleMarker(f.at, {radius: 4, color: "#333", weight: 1.5, fillColor: nc ? "#d6249f" : "#fff", fillOpacity: 1});
+    } else if (f.kind === "fence") { return; }
+    if (!lay) return;
+    if (f.kind !== "subsea" && f.kind !== "spm") plant.addLayer(lay);
+    lay.bindPopup(card(f), POP());
+    lay.bindTooltip(esc(f.label), {sticky: true, direction: "top"});
+    byId[f.id] = lay;
+  });
+  var c = D.corridor;
+  L.polyline(c.line, {color: "#5a4a2e", weight: 7, opacity: 0.9, interactive: false}).addTo(links);
+  var cl = L.polyline(c.line, {color: "#e3cf9c", weight: 4, opacity: 1}).addTo(links);
+  cl.bindPopup(card({id: c.ids[0] + " to " + c.ids[c.ids.length - 1], label: "Pipe-and-road corridor to the Port of Lamu",
+                     unit: "plant", statement: c.statement, status: "base", tag: c.tag, sure: c.sure}), POP());
+  cl.bindTooltip("Pipe-and-road corridor, about " + c.km + " km", {sticky: true});
+  function label(at, text, dir) {
+    var off = {right: [10, 0], left: [-10, 0], top: [0, -8], bottom: [0, 8]}[dir || "right"];
+    L.tooltip({permanent: true, direction: dir || "right", className: "lbl", interactive: false, offset: off})
+      .setLatLng(at).setContent(text).addTo(map);
+  }
+  label([(D.fence[2][0] + D.fence[3][0]) / 2, (D.fence[2][1] + D.fence[3][1]) / 2], "Refinery (indicative)", "top");
+  var jet = D.features.filter(function (f) { return f.kind === "jetty"; });
+  if (jet.length) label(jet[0].ring[0], "Port berths", "left");
+  var spm = D.features.filter(function (f) { return f.kind === "spm"; });
+  if (spm.length) label(spm[Math.floor(spm.length / 2)].at, "SPMs (indicative; depth not yet known)", "bottom");
+  var k = [];
+  D.areas.forEach(function (a) { k.push('<span class="sw" style="background:' + a.colour + '"></span>' + esc(a.area) + " " + esc(a.name)); });
+  k.push('<span class="sw" style="background:#4a4f57"></span>jetty heads at the port');
+  k.push('<span class="ln" style="border-top-color:#e3cf9c;outline:1px solid #5a4a2e"></span>pipe-and-road corridor');
+  k.push('<span class="ln" style="border-top:2px dashed #1f4e79"></span>subsea lines (indicative)');
+  k.push('<span class="dot"></span>SPM buoys (indicative)');
+  k.push('<span class="ln" style="border-top:2px dashed #2b2f36"></span>plant fence (our block plan, not a plot line)');
+  k.push('<span class="sw" style="background:#fff;opacity:.6"></span>faint: a later phase');
+  document.getElementById("key").innerHTML = k.join("<br>");
+  L.control.scale({metric: true, imperial: false, maxWidth: 140, position: "bottomleft"}).addTo(map);
+  var b = L.latLngBounds(D.fence).extend(L.latLngBounds(c.line));
+  jet.forEach(function (f) { b.extend(L.latLngBounds(f.ring)); });
+  function fit() { map.fitBounds(b, PHONE ? {paddingTopLeft: [18, 70], paddingBottomRight: [18, 18]} : {padding: [40, 40]}); }
+  fit();
+  window.addEventListener("resize", function () { map.invalidateSize(); });
+  document.getElementById("aboutbtn").onclick = function () { document.body.classList.add("about"); };
+  if (opt.about) document.body.classList.add("about");
+  document.getElementById("closeside").onclick = function () { document.body.classList.remove("about"); };
+  function ready() { if (!INFO.ready) { INFO.ready = true; window.MAP_READY = true; } }
+  if (opt.select && byId[opt.select]) { byId[opt.select].openPopup(); }
+  if (opt.offline) { ready(); return; }
+  var probe = new Image(), done = false;
+  var timer = setTimeout(function () { if (!done) { done = true; ready(); } }, 5000);
+  probe.onload = function () { if (done) return; done = true; clearTimeout(timer); useTiles(true);
+    tiles.once("load", ready); setTimeout(ready, 6000); };
+  probe.onerror = function () { if (done) return; done = true; clearTimeout(timer); ready(); };
+  probe.src = "https://tile.openstreetmap.org/11/1256/1036.png";
+})();
+</script>
+<p id="pubbar">Independent; not affiliated with Dangote Group; illustrative, not a design for construction. <a href="../about.html">About and credits</a><button id="fsbtn" type="button" hidden>Full screen</button></p>
+<script>
+(function () {
+  var b = document.getElementById("fsbtn"), d = document.documentElement, side = false;
+  if (!b || !document.fullscreenEnabled || !window.matchMedia("(pointer: coarse)").matches) { return; }
+  b.hidden = false;
+  b.onclick = function () {
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    d.requestFullscreen().then(function () {
+      if (side && screen.orientation && screen.orientation.lock) { screen.orientation.lock("landscape").catch(function () {}); }
+    }).catch(function () {});
+  };
+  document.addEventListener("fullscreenchange", function () {
+    b.textContent = document.fullscreenElement ? "Exit full screen" : "Full screen";
+  });
+})();
+</script>
+</body>
+</html>

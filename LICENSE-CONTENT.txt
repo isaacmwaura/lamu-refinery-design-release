@@ -1,0 +1,9 @@
+© 2026 Isaac Mwaura. This site's original content (text, figures, diagrams and the 3D model content) is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). OpenStreetMap data and third-party software keep their own licences.
+
+You may share and adapt the content for any purpose, including commercially, as long as you give appropriate credit,
+link to the licence, and say whether you made changes. The full licence: https://creativecommons.org/licenses/by/4.0/
+
+This notice does not cover OpenStreetMap data (Open Database License, https://www.openstreetmap.org/copyright), the
+third-party software in the vendor folders and licences/, or the site's own viewer code (MIT, see LICENSE).
+
+Independent; not affiliated with Dangote Group; illustrative, not a design for construction.

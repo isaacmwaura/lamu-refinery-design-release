@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lamu refinery: layered block diagram</title>
+<style>
+  :root { --ink:#111827; --muted:#4b5563; --line:#9ca3af; --panel:#ffffff; --bg:#f3f4f6; --accent:#b45309;
+          --soft:#fef3c7; --area:#e0f2fe; --unit:#ecfdf5; --term:#f5f5f4; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; font-family: "Segoe UI", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+  body { display:flex; flex-direction:column; }
+  header { padding:10px 16px 6px; background:var(--panel); border-bottom:1px solid #e5e7eb; }
+  h1 { font-size:18px; margin:0 0 4px; }
+  .bar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  #crumbs { font-size:14px; flex:1; }
+  #crumbs button { border:0; background:none; color:var(--accent); cursor:pointer; font:inherit; padding:0; text-decoration:underline; }
+  #crumbs .sep { color:var(--muted); margin:0 6px; }
+  #crumbs .here { font-weight:600; }
+  .btn { border:1px solid #d1d5db; background:#fff; border-radius:6px; padding:4px 10px; font:inherit; font-size:13px;
+         color:var(--ink); cursor:pointer; text-decoration:none; }
+  .btn:disabled { opacity:.4; cursor:default; }
+  #intro, #sure { font-size:13px; color:var(--muted); margin:4px 0 0; }
+  #wide { font-size:13px; margin:4px 0 0; color:#92400e; }
+  #wide[hidden] { display:none; }
+  #full[hidden] { display:none; }
+  .chip.Basis { background:#2e7d32; color:#fff; } .chip.Estimated { background:#b8860b; color:#fff; }
+  .chip.Rough-estimate { background:#9c4a1a; color:#fff; }
+  main { flex:1; display:flex; min-height:0; }
+  #cy { flex:1; min-width:0; background:#fff; position:relative; }
+  #side { width:360px; overflow:auto; padding:12px 14px; background:var(--panel); border-left:1px solid #e5e7eb; font-size:13px; }
+  #side h2 { font-size:15px; margin:0 0 6px; }
+  .chips { margin:0 0 8px; }
+  .chip { display:inline-block; border-radius:10px; padding:1px 8px; font-size:11px; font-weight:600; margin:0 4px 4px 0;
+          background:#e5e7eb; word-break:break-all; }
+  .chip.FACT { background:#dcfce7; color:#166534; } .chip.INFERENCE { background:#dbeafe; color:#1e40af; }
+  .chip.ASSUMPTION { background:#fef3c7; color:#92400e; } .chip.SEED, .chip.SUM { background:#f3f4f6; color:#374151; }
+  #side table { border-collapse:collapse; width:100%; margin:6px 0; }
+  #side td { border-top:1px solid #f3f4f6; padding:3px 4px; vertical-align:top; }
+  #side td:first-child { color:var(--muted); width:46%; }
+  #side ul { padding-left:18px; margin:6px 0; }
+  #side li button { vertical-align:top; border:0; background:none; color:var(--accent); cursor:pointer; text-align:left; font:inherit; padding:0; }
+  .hint { color:var(--muted); }
+  footer { font-size:11px; color:var(--muted); padding:5px 16px; background:var(--panel); border-top:1px solid #e5e7eb; }
+  #nojs { padding:20px; }
+  .title { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+  .title h1 { margin:0; }
+  .controls { margin-top:8px; gap:8px 18px; font-size:13px; }
+  fieldset { border:0; padding:0; margin:0; display:flex; gap:10px; flex-wrap:wrap; }
+  legend { float:left; margin-right:10px; font-weight:600; }
+  label { display:inline-flex; gap:4px; align-items:center; }
+  select { max-width:100%; padding:3px; font:inherit; }
+  .legend { display:flex; flex-wrap:wrap; gap:12px; font-size:12px; margin-top:7px; color:#374151; }
+  .key::before { content:""; display:inline-block; width:13px; height:10px; margin-right:4px; border:1px solid; }
+  .raw::before { background:#fef3c7; border-color:#b45309; border-radius:6px; }
+  .utility::before { background:#ccfbf1; border-color:#0f766e; border-radius:6px; }
+  .process::before { background:#e0f2fe; border-color:#0369a1; }
+  .product::before { background:#ede9fe; border-color:#7c3aed; }
+  .waste::before { background:#f3f4f6; border-color:#6b7280; }
+  #path-note { font-size:13px; margin:4px 0 0; color:#92400e; }
+  #path-note[hidden] { display:none; }
+  #line-tip { position:fixed; max-width:min(360px, calc(100vw - 24px)); max-height:45vh; overflow:auto;
+    z-index:10; border:1px solid #64748b; border-radius:8px; padding:10px; background:#fff; box-shadow:0 3px 15px #0003;
+    font-size:13px; pointer-events:none; white-space:pre-line; }
+  #line-tip[hidden] { display:none; }
+  #side { overflow-wrap:anywhere; }
+  #side td { overflow-wrap:anywhere; }
+  #units-key { display:none; }
+  #more, #turn { display:none; }
+  @media (max-width:699px) {
+    html, body { height:auto; min-height:100%; }
+    header { padding:10px 12px; }
+    .title { align-items:flex-start; }
+    h1 { font-size:16px; }
+    main { display:flex; flex-direction:column; min-height:0; }
+    #cy { flex:none; width:100%; height:430px; }
+    #side { width:100%; overflow:visible; border-left:0; border-top:1px solid #e5e7eb; }
+    .controls { align-items:flex-start; }
+    #crumbs { flex-basis:100%; }
+    footer { overflow-wrap:anywhere; }
+    #cy { height:max(360px, calc(100svh - 190px)); }
+    #turn { display:block; font-size:13px; margin:6px 0 0; color:#92400e; }
+  }
+  @media (max-width:699px), (max-height:500px) {
+    #more { display:inline-block; }
+    body:not(.opts-open) .controls, body:not(.opts-open) .legend, body:not(.opts-open) #sure,
+    body:not(.opts-open) #intro, body:not(.opts-open) #wide { display:none; }
+    body:not(.opts-open) #units-key { display:none !important; }
+  }
+  @media (max-height:500px) and (min-width:700px) {
+    header { padding:4px 12px; }
+    .title { margin-bottom:2px; }
+    h1 { font-size:15px; }
+    .btn { padding:2px 8px; }
+    #side { width:min(300px, 36%); padding:8px 10px; }
+    footer { display:none; }
+  }
+</style>
+<meta name="color-scheme" content="only light">
+<style>
+  /* Site round 3: a phone in dark mode must not darken the page's buttons, menus and boxes (the 3D page's
+     "Technical" button went white on white). The page is light only, and every control has its own colours;
+     :where() keeps these weaker than any rule of the page's own. */
+  :root { color-scheme: only light; --pubbar: 26px; }
+  :where(button, select, input, textarea) { color: #111; background-color: #fff; }
+  @media (max-width: 760px) { :root { --pubbar: 42px; } }
+  #pubbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 3000; box-sizing: border-box; height: var(--pubbar);
+            margin: 0; padding: 4px 10px; font: 12px/1.35 system-ui, "Segoe UI", Arial, sans-serif; color: #1d1d1d;
+            background: #fff7e0; border-top: 1px solid #d9b860; }
+  #pubbar a { color: #0b4f8a; font-weight: 600; white-space: nowrap; }
+  #fsbtn { margin-left: 8px; font: inherit; font-weight: 600; padding: 0 8px; border: 1px solid #b08a2c;
+           border-radius: 4px; background: #fff; color: #1d1d1d; }
+  #fsbtn[hidden] { display: none; }
+  body.pubfixed { position: relative; height: calc(100% - var(--pubbar)); }
+  body.pubflow #pubbar { position: sticky; flex: none; height: auto; }
+</style>
+</head>
+<body class="pubflow">
+<header>
+  <div class="title"><a class="btn" href="../index.html">Home</a><h1>Lamu refinery · detailed block diagram</h1></div>
+  <div class="bar">
+    <nav id="crumbs" aria-label="Where you are"></nav>
+    <button class="btn" id="back" type="button">‹ Back</button>
+    <button class="btn" id="fit" type="button">Fit diagram</button>
+    <button class="btn" id="zoom-in" type="button" aria-label="Zoom in">+</button>
+    <button class="btn" id="zoom-out" type="button" aria-label="Zoom out">−</button>
+    <a class="btn" id="full" target="_blank" rel="noopener">Full view (B-00 block diagram)</a>
+    <button class="btn" id="more" type="button" aria-expanded="false">Options and key ▾</button>
+  </div>
+  <p id="turn">Tip: turn your phone sideways for a wider view of the diagram.</p>
+  <div class="bar controls">
+    <fieldset><legend>Show on diagram</legend>
+      <label><input id="mass" type="checkbox">Mass balance</label>
+      <label><input id="energy" type="checkbox">Energy balance</label>
+      <label><input id="detail" type="checkbox">Other detail</label>
+    </fieldset>
+    <label>Line details <select id="line-mode"><option value="hover">Shown when the pointer is on a line</option><option value="tap">Shown when a line is selected</option></select></label>
+  </div>
+  <div class="legend"><span class="key raw">Raw material</span><span class="key utility">Utilities</span><span class="key process">Process</span><span class="key product">Products</span><span class="key waste">Waste</span>
+    <span>Drag to move · Pinch or use + to zoom · Select a block to open it</span></div>
+  <p class="hint" id="units-key">t/h = tonnes per hour · MW = megawatts of heat or electrical power.</p>
+  <p id="intro"></p>
+  <p id="path-note" hidden></p>
+  <p id="wide" hidden>This diagram is large, so it opens at a readable size. Drag it to see the rest, or press Fit diagram to see it all at once.</p>
+</header>
+<main>
+  <div id="cy"><p id="nojs">This page needs JavaScript.</p></div>
+  <aside id="side"></aside>
+</main>
+<div id="line-tip" role="status" hidden></div>
+<footer id="stamp">Version as of 18 Oct 2026. Independent; not affiliated with Dangote Group; illustrative, not a design for construction.</footer>
+<script src="cytoscape.min.js"></script>
+<script src="blocks.js"></script>
+<script>
+(function () {
+  "use strict";
+  var D = window.BLOCKS, cy = null, current = "overview";
+  var $ = function (id) { return document.getElementById(id); };
+  if (!D || !window.cytoscape) { return; }
+  if (D.meta.public) {
+    var hasEnergy = Object.keys(D.levels).some(function (k) { return D.levels[k].nodes.some(function (n) { return n.energy; }); });
+    if (!hasEnergy) { $("energy").parentNode.style.display = "none"; }
+    $("units-key").textContent = "t/h = tonnes per hour · b/sd = barrels per stream day" +
+      (hasEnergy ? " · MW = megawatts of heat or electrical power." : "");
+    var sure = el("p", null, "hint"); sure.id = "sure";
+    sure.appendChild(el("span", "Rough estimate", "chip Rough-estimate"));
+    sure.appendChild(document.createTextNode("Every figure here is an early estimate for one illustrative operating " +
+      "case, unless its panel shows a firmer label. Uncertainty has not been quantified."));
+    $("units-key").parentNode.insertBefore(sure, $("units-key").nextSibling);
+  }
+  if (D.meta.full_view) { $("full").href = D.meta.full_view; } else { $("full").hidden = true; }
+  function el(tag, text, cls) {
+    var e = document.createElement(tag);
+    if (text !== undefined && text !== null) { e.textContent = String(text); }
+    if (cls) { e.className = cls; }
+    return e;
+  }
+  function levelFromHash() {
+    var h;
+    try { h = decodeURIComponent(location.hash.replace(/^#/, "")); } catch (_) { return "overview"; }
+    var m = h.match(/^(area|unit)=(.+)$/);
+    var key = m ? m[1] + ":" + m[2] : (h === "plant" ? "plant" : "overview");
+    return D.levels[key] ? key : "overview";
+  }
+  function trail(key) {
+    var out = [];
+    while (key) { out.unshift(key); key = D.levels[key].parent; }
+    return out;
+  }
+  function go(key) {
+    var h = D.levels[key].hash;
+    if ((location.hash.replace(/^#/, "") || "") === h) { draw(key); } else { location.hash = h; }
+  }
+  function crumbs(key) {
+    var nav = $("crumbs"), t = trail(key);
+    nav.textContent = "";
+    t.forEach(function (k, i) {
+      if (i) { nav.appendChild(el("span", "›", "sep")); }
+      if (i < t.length - 1) {
+        var b = el("button", D.levels[k].title);
+        b.type = "button";
+        b.onclick = function () { go(k); };
+        nav.appendChild(b);
+      } else {
+        nav.appendChild(el("span", D.levels[k].title, "here"));
+      }
+    });
+    $("back").disabled = !D.levels[key].parent;
+  }
+  function show(id) {
+    var it = D.items[id], side = $("side");
+    side.textContent = "";
+    if (!it) { side.appendChild(el("p", "Nothing recorded for " + id + ".", "hint")); return; }
+    side.appendChild(el("h2", it.title));
+    var chips = el("div", null, "chips");
+    if (it.rid) { chips.appendChild(el("span", it.rid, "chip")); }
+    if (it.tag) { chips.appendChild(el("span", it.tag, "chip " + it.tag.replace(/ /g, "-"))); }
+    side.appendChild(chips);
+    if (it.statement) { side.appendChild(el("p", it.statement)); }
+    if (it.rows.length) {
+      var tb = el("table");
+      it.rows.forEach(function (r) {
+        var tr = el("tr"); tr.appendChild(el("td", r[0])); tr.appendChild(el("td", r[1])); tb.appendChild(tr);
+      });
+      side.appendChild(tb);
+    }
+    if (it.links.length) {
+      var ul = el("ul");
+      it.links.forEach(function (l) {
+        var li = el("li"), a = el("a", l[0]); a.href = l[1]; a.target = "_blank"; a.rel = "noopener";
+        li.appendChild(a); ul.appendChild(li);
+      });
+      side.appendChild(ul);
+    }
+    if (current === "overview" && id === "overview") {
+      var open = el("button", "Open Refinery: plant areas", "btn");
+      open.type = "button"; open.onclick = function () { go("plant"); };
+      side.appendChild(open);
+    }
+    if (D.levels[current].groups && id === D.levels[current].item) {
+      D.levels[current].groups.forEach(function (group) {
+        side.appendChild(el("h3", group.title));
+        var list = el("ul");
+        group.items.forEach(function (rid) {
+          var li = el("li"), b = el("button", D.items[rid].title);
+          b.type = "button"; b.onclick = function () { show(rid); };
+          li.appendChild(b); list.appendChild(li);
+        });
+        side.appendChild(list);
+      });
+    } else if (it.children.length) {
+      var cl = el("ul");
+      it.children.forEach(function (c) {
+        var li = el("li"), b = el("button", c[0]); b.type = "button";
+        b.onclick = function () {
+          var key = c[1].startsWith("A:") ? "area:" + c[1].slice(2) :
+                    c[1].startsWith("U:") ? "unit:" + c[1].slice(2) : null;
+          if (key && D.levels[key]) { go(key); } else { show(c[1]); }
+        };
+        li.appendChild(b); cl.appendChild(li);
+      });
+      side.appendChild(cl);
+    }
+    if (id !== D.levels[current].item) {
+      var back = el("button", "‹ Back to " + D.levels[current].title, "btn");
+      back.type = "button";
+      back.onclick = function () { show(D.levels[current].item); };
+      side.appendChild(back);
+    }
+  }
+  var STYLE = [
+    { selector: "node", style: { "shape": "round-rectangle", "width": "data(w)", "height": "data(h)",
+        "background-color": "#ffffff", "border-width": 1.5, "border-color": "#6b7280", "label": "data(label)",
+        "text-wrap": "wrap", "text-max-width": "data(tw)", "text-valign": "center", "text-halign": "center",
+        "font-size": 15, "color": "#111827", "line-height": 1.2 } },
+    { selector: "node[kind = 'area']", style: { "background-color": "#e0f2fe", "border-color": "#0369a1",
+        "border-width": 2, "font-size": 20 } },
+    { selector: "node[kind = 'unit']", style: { "background-color": "#ecfdf5", "border-color": "#047857", "border-width": 2 } },
+    { selector: "node[kind = 'other']", style: { "background-color": "#f0f9ff", "border-color": "#0369a1", "font-size": 13 } },
+    { selector: "node[kind = 'refinery']", style: { "background-color": "#e0f2fe", "border-color": "#0369a1", "border-width":3,
+        "font-size": 19, "font-weight": "bold" } },
+    { selector: "node[role = 'input']", style: { "background-color": "#fef3c7", "border-color": "#b45309", "shape":"round-rectangle" } },
+    { selector: "node[role = 'output']", style: { "background-color": "#ede9fe", "border-color": "#7c3aed", "shape":"rectangle" } },
+    { selector: "node[category = 'raw']", style: { "background-color": "#fef3c7", "border-color": "#b45309" } },
+    { selector: "node[category = 'utility']", style: { "background-color": "#ccfbf1", "border-color": "#0f766e" } },
+    { selector: "node[category = 'product']", style: { "background-color": "#ede9fe", "border-color": "#7c3aed" } },
+    { selector: "node[category = 'waste']", style: { "background-color": "#f3f4f6", "border-color": "#6b7280" } },
+    { selector: "node[kind = 'group']", style: { "shape": "round-rectangle", "border-width": 2.5, "z-index": 1,
+        "text-valign": "top", "text-margin-y": 54, "font-size": 16, "font-weight": "bold" } },
+    { selector: "node[kind = 'member']", style: { "background-color": "#ffffff", "z-index": 5, "font-size": 14 } },
+    { selector: "node[?small]", style: { "font-size": 12, "color": "#4b5563", "border-width": 1 } },
+    { selector: "node[kind = 'equipment']", style: { "background-color": "#fff7ed", "border-color": "#c2410c" } },
+    { selector: "node[?dashed]", style: { "border-style": "dashed", "background-color": "#fafafa", "color": "#6b7280" } },
+    { selector: "node[kind = 'heading']", style: { "background-color":"#334155", "color":"#fff", "border-width":0, "font-size":19 } },
+    { selector: "node.picked", style: { "border-color": "#b45309", "border-width": 3.5 } },
+    { selector: "edge", style: { "width": 1.4, "line-color": "#9ca3af", "target-arrow-color": "#6b7280",
+        "target-arrow-shape": "triangle", "curve-style": "segments", "edge-distances":"endpoints",
+        "source-endpoint":"data(sourcePort)", "target-endpoint":"data(targetPort)",
+        "segment-weights":"data(weights)", "segment-distances":"data(distances)",
+        "label": "data(label)", "font-size": 12, "text-wrap":"wrap", "text-max-width":180,
+        "color": "#374151", "text-background-color": "#ffffff", "text-background-opacity": 0.9,
+        "text-background-padding": 2, "text-rotation": "none" } },
+    { selector: "edge.picked", style: { "line-color": "#b45309", "target-arrow-color": "#b45309", "width": 3 } },
+    { selector: ".faded", style: { "opacity": 0.22 } },
+    { selector: "node.onpath", style: { "border-color": "#b45309", "border-width": 4 } },
+    { selector: "edge.onpath", style: { "line-color": "#b45309", "target-arrow-color": "#b45309", "width": 6 } }
+  ];
+  function showPath(lv, keepSide) {
+    var on = cy.collection();
+    lv.path.ids.forEach(function (id) { on = on.union(cy.getElementById(id)); });
+    cy.elements().removeClass("picked onpath faded");
+    cy.elements().not(on).addClass("faded");
+    on.addClass("onpath");
+    $("path-note").textContent = "Showing the crude's path: crude oil goes into the refinery and comes out as products. " +
+      "Select an empty part of the diagram to show everything again.";
+    $("path-note").hidden = false;
+    if (!keepSide) { show(lv.path.item); }
+  }
+  function clearPath() {
+    if (!cy) { return; }
+    cy.elements().removeClass("onpath faded");
+    $("path-note").hidden = true;
+  }
+  function nodeLabel(n) {
+    var lines = [n.label];
+    ["mass", "energy", "detail"].forEach(function (key) {
+      if ($(key).checked && n[key]) { lines = lines.concat(n[key]); }
+    });
+    return lines.filter(Boolean).join("\n");
+  }
+  function edgeLabel(e) {
+    var lines = [];
+    if ($("mass").checked) { lines.push(e.label); }
+    if ($("detail").checked) {
+      lines.push(e.detail.startsWith("limestone,") ? e.detail : e.detail.length > 65 ? e.detail.slice(0, 62) + "…" : e.detail);
+    }
+    return lines.join("\n");
+  }
+  function hideTip() { $("line-tip").hidden = true; }
+  function lineDetail(ev) {
+    var it = D.items[ev.target.data("item")], tip = $("line-tip");
+    tip.textContent = it.title + "\n" + it.rows.map(function (r) { return r[0] + ": " + r[1]; }).join("\n") +
+      (D.meta.public ? "\nHow sure: " + (it.tag || "Rough estimate") : "");
+    tip.hidden = false;
+    var rect = $("cy").getBoundingClientRect(), p = ev.renderedPosition || {x:20, y:20};
+    tip.style.left = Math.max(12, Math.min(rect.left + p.x + 12, innerWidth - tip.offsetWidth - 12)) + "px";
+    tip.style.top = Math.max(12, Math.min(rect.top + p.y + 12, innerHeight - tip.offsetHeight - 12)) + "px";
+    cy.elements().removeClass("picked"); ev.target.addClass("picked");
+    show(ev.target.data("item"));
+  }
+  var READABLE = 0.55;
+  function fit(readable) {
+    if (!cy) { return; }
+    hideTip(); cy.resize(); cy.fit(undefined, 24);
+    var wide = readable === true && cy.zoom() < READABLE;
+    if (wide) {
+      var bb = cy.elements().boundingBox();
+      cy.zoom(READABLE);
+      var tall = (bb.y2 - bb.y1) * READABLE > cy.height() - 48;
+      cy.pan({ x: 24 - bb.x1 * READABLE,
+               y: tall ? 24 - bb.y1 * READABLE : cy.height() / 2 - (bb.y1 + bb.y2) / 2 * READABLE });
+    }
+    $("wide").hidden = !wide;
+  }
+  function readableFit() { fit(true); }
+  function updateLabels() {
+    $("units-key").style.display = $("mass").checked || $("energy").checked ? "block" : "none";
+    draw(current);
+  }
+  function draw(key) {
+    var lv = D.levels[key];
+    current = key;
+    hideTip();
+    crumbs(key);
+    $("intro").textContent = lv.intro;
+    if (cy) { cy.destroy(); }
+    $("cy").textContent = "";
+    var els = lv.nodes.map(function (n) {
+      return { data: { id: n.id, label: nodeLabel(n), kind: n.kind, role:n.role || "process", dashed: !!n.dashed, w: n.w, h: n.h, tw: n.w - 18,
+                       category: n.category || "", small: !!n.small,
+                       open: n.open || "", item: n.item }, position: { x: n.x, y: n.y } };
+    }).concat(lv.edges.map(function (e) {
+      var p = e.points[0], q = e.points[e.points.length - 1], dx = q[0] - p[0], dy = q[1] - p[1];
+      var length2 = dx * dx + dy * dy, length = Math.sqrt(length2);
+      var bends = e.points.slice(1, -1), source = lv.nodes.find(function(n) {return n.id === e.source;}),
+          target = lv.nodes.find(function(n) {return n.id === e.target;});
+      var data = { id: e.id, source: e.source, target: e.target, label: edgeLabel(e), item: e.item,
+        sourcePort:(p[0]-source.x)+"px "+(p[1]-source.y)+"px", targetPort:(q[0]-target.x)+"px "+(q[1]-target.y)+"px",
+        weights:bends.map(function(b) {return ((b[0]-p[0])*dx+(b[1]-p[1])*dy)/length2;}),
+        distances:bends.map(function(b) {return (dx*(b[1]-p[1])-dy*(b[0]-p[0]))/length;}) };
+      return {data:data, style:bends.length ? {} : {"curve-style":"straight"}};
+    }));
+    cy = window.cytoscape({ container: $("cy"), elements: els, style: STYLE, layout: { name: "preset" },
+                            minZoom: 0.02, maxZoom: 3, wheelSensitivity: 0.3, autoungrabify: true });
+    fit(true);
+    var triggers = lv.path ? lv.path.triggers : [];
+    $("path-note").hidden = true;
+    cy.on("tap", "node", function (ev) {
+      var d = ev.target.data();
+      if (triggers.indexOf(d.id) >= 0) { showPath(lv); return; }
+      clearPath();
+      if (d.open && D.levels[d.open]) { go(d.open); return; }
+      cy.elements().removeClass("picked");
+      ev.target.addClass("picked");
+      show(d.item);
+    });
+    cy.on("tap", "edge", function (ev) {
+      if (triggers.indexOf(ev.target.id()) >= 0) { showPath(lv, true); } else { clearPath(); }
+      if ($("line-mode").value === "tap") { lineDetail(ev); } else { show(ev.target.data("item")); }
+    });
+    cy.on("mouseover", "edge", function (ev) { if ($("line-mode").value === "hover") { lineDetail(ev); } });
+    cy.on("mouseout", "edge", function () { if ($("line-mode").value === "hover") { hideTip(); } });
+    cy.on("tap", function (ev) { if (ev.target === cy) { hideTip(); clearPath(); } });
+    cy.on("pan zoom", hideTip);
+    cy.on("mouseover", "node[open != '']", function () { $("cy").style.cursor = "zoom-in"; });
+    cy.on("mouseover", "node[open = ''], edge", function () { $("cy").style.cursor = "pointer"; });
+    cy.on("mouseout", "node, edge", function () { $("cy").style.cursor = ""; });
+    show(lv.item);
+  }
+  $("back").onclick = function () { var p = D.levels[current].parent; if (p) { go(p); } };
+  $("fit").onclick = function () { fit(false); };
+  $("zoom-in").onclick = function () { cy.zoom({level:cy.zoom()*1.4, renderedPosition:{x:cy.width()/2,y:cy.height()/2}}); };
+  $("zoom-out").onclick = function () { cy.zoom({level:cy.zoom()/1.4, renderedPosition:{x:cy.width()/2,y:cy.height()/2}}); };
+  ["mass", "energy", "detail"].forEach(function (key) { $(key).onchange = updateLabels; });
+  $("line-mode").onchange = hideTip;
+  $("more").onclick = function () {
+    var open = document.body.classList.toggle("opts-open");
+    $("more").setAttribute("aria-expanded", open ? "true" : "false");
+    $("more").textContent = open ? "Hide options ▴" : "Options and key ▾";
+    readableFit();
+  };
+  window.addEventListener("keydown", function (ev) { if (ev.key === "Escape") { hideTip(); } });
+  if (window.matchMedia("(pointer:coarse)").matches) { $("line-mode").value = "tap"; }
+  window.addEventListener("hashchange", function () { draw(levelFromHash()); });
+  window.addEventListener("resize", readableFit);
+  draw(levelFromHash());
+})();
+</script>
+<p id="pubbar">Independent; not affiliated with Dangote Group; illustrative, not a design for construction. <a href="../about.html">About and credits</a><button id="fsbtn" type="button" hidden>Full screen</button></p>
+<script>
+(function () {
+  var b = document.getElementById("fsbtn"), d = document.documentElement, side = true;
+  if (!b || !document.fullscreenEnabled || !window.matchMedia("(pointer: coarse)").matches) { return; }
+  b.hidden = false;
+  b.onclick = function () {
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    d.requestFullscreen().then(function () {
+      if (side && screen.orientation && screen.orientation.lock) { screen.orientation.lock("landscape").catch(function () {}); }
+    }).catch(function () {});
+  };
+  document.addEventListener("fullscreenchange", function () {
+    b.textContent = document.fullscreenElement ? "Exit full screen" : "Full screen";
+  });
+})();
+</script>
+</body>
+</html>

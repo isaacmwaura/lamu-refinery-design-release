@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<title>Home · Lamu refinery concept</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<nav class="top" aria-label="Site"><a href="index.html" aria-current="page">Home</a> <a href="3d/index.html">3D model</a> <a href="blocks/index.html">Block diagram</a> <a href="map/index.html">On the map</a> <a href="about.html">About and credits</a></nav>
+<div class="wrap wide">
+<p class="disc">Independent; not affiliated with Dangote Group; illustrative, not a design for construction.</p>
+<div class="home">
+<div class="homeleft">
+<h1>Lamu refinery: an illustrative concept</h1>
+<p class="lead">This site shows one way a large oil refinery near Lamu, on Kenya's coast, could be laid out and run.
+It is an independent study. It uses public information and standard engineering rules of thumb.</p>
+<p>It shows the main process units, how oil moves between them and how much, and an indicative place on the map.
+This is an early concept, not a finished design, so the figures carry a "how sure" label: on the figure itself, or
+once for the page or table it sits in. Drawn sizes and distances are illustrative.</p>
+<div class="big">
+<a href="3d/index.html"><span class="thumb"><img src="img/preview-3d.jpg" alt="A still of the 3D model of the plant" width="480" height="300" loading="lazy"></span><span class="txt"><b>See it in 3D</b>Turn it, zoom in, search for a unit, and select any part to see what it does.</span></a>
+<a href="blocks/index.html"><span class="thumb"><img src="img/preview-blocks.jpg" alt="A small view of the detailed block diagram" width="480" height="300" loading="lazy"></span><span class="txt"><b>Detailed block diagram</b>Crude oil and utilities in, products and waste out, with the full mass balance.</span></a>
+<a href="map/index.html"><span class="thumb"><img src="img/preview-map.jpg" alt="A small view of the site map near Lamu" width="480" height="300" loading="lazy"></span><span class="txt"><b>On the map</b>A map of the Lamu area, with the plant&#x27;s link to the port.</span></a>
+</div>
+<p class="note">Best seen on a computer screen. On a phone, turn it sideways for the 3D model and the block diagram.</p>
+</div>
+<div class="homeright">
+<section id="flow">
+<h2 id="flow-title">Process flow (as in the video)</h2>
+<p>How the crude oil becomes products, in the order the video shows it. Select a block to read what it does; select it again to close it. Select the crude to light up its path to the products.</p>
+<div class="flowwrap">
+<svg class="flow" viewBox="0 0 450 756" role="group" aria-labelledby="flow-title">
+<defs><marker id="fl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<g class="fl-edge" id="fl-e-crude"><polyline points="224,54 224,80" marker-end="url(#fl-arrow)"/></g>
+<g class="fl-edge" id="fl-e-tanks"><polyline points="224,120 224,150" marker-end="url(#fl-arrow)"/></g>
+<g class="fl-edge" id="fl-e-heavy"><polyline points="224,194 224,222" marker-end="url(#fl-arrow)"/><text x="230" y="212" text-anchor="start"><tspan x="230" dy="0">heavy half</tspan></text></g>
+<g class="fl-edge" id="fl-e-light"><polyline points="296,172 440,172 440,482 304,482" marker-end="url(#fl-arrow)"/><text x="302" y="150" text-anchor="start"><tspan x="302" dy="0">gas, petrol,</tspan><tspan x="302" dy="14">jet fuel, diesel</tspan></text></g>
+<g class="fl-edge" id="fl-e-hvgo"><polyline points="162,242 80,242 80,300" marker-end="url(#fl-arrow)"/><text x="76" y="236" text-anchor="start"><tspan x="76" dy="0">heavy oil</tspan></text></g>
+<g class="fl-edge" id="fl-e-resid"><polyline points="286,242 368,242 368,300" marker-end="url(#fl-arrow)"/><text x="314" y="236" text-anchor="start"><tspan x="314" dy="0">residue</tspan></text></g>
+<g class="fl-edge fl-off" id="fl-e-coke"><polyline points="368,340 368,380" marker-end="url(#fl-arrow)"/><text x="374" y="364" text-anchor="start"><tspan x="374" dy="0">coke</tspan></text></g>
+<g class="fl-edge" id="fl-e-propylene"><polyline points="80,340 80,380" marker-end="url(#fl-arrow)"/><text x="74" y="364" text-anchor="end"><tspan x="74" dy="0">propylene</tspan></text></g>
+<g class="fl-edge" id="fl-e-fuels"><polyline points="142,322 152,322 152,440 194,440 194,460" marker-end="url(#fl-arrow)"/><text x="158" y="400" text-anchor="start"><tspan x="158" dy="0">fuels</tspan></text></g>
+<g class="fl-edge" id="fl-e-oils"><polyline points="306,322 296,322 296,440 254,440 254,460" marker-end="url(#fl-arrow)"/><text x="290" y="400" text-anchor="end"><tspan x="290" dy="0">oils</tspan></text></g>
+<g class="fl-edge" id="fl-e-clean"><polyline points="224,504 224,548" marker-end="url(#fl-arrow)"/><text x="218" y="530" text-anchor="end"><tspan x="218" dy="0">clean fuels</tspan></text></g>
+<g class="fl-edge" id="fl-e-h2s"><polyline points="266,504 266,522 368,522 368,548" marker-end="url(#fl-arrow)"/><text x="300" y="516" text-anchor="start"><tspan x="300" dy="0">sulphur</tspan></text></g>
+<g class="fl-edge" id="fl-e-store"><polyline points="224,588 224,630" marker-end="url(#fl-arrow)"/></g>
+<g class="fl-edge" id="fl-e-solid"><polyline points="368,588 368,630" marker-end="url(#fl-arrow)"/><text x="362" y="614" text-anchor="end"><tspan x="362" dy="0">solid sulphur</tspan></text></g>
+<g class="fl-edge" id="fl-e-pellets"><polyline points="80,424 80,630" marker-end="url(#fl-arrow)"/><text x="86" y="600" text-anchor="start"><tspan x="86" dy="0">plastic pellets</tspan></text></g>
+<g class="fl-node fl-crude" id="fl-crude" data-id="crude" tabindex="0" role="button" aria-label="Crude oil arrives by tanker"><rect x="124" y="10" width="200" height="44" rx="8"/><text text-anchor="middle"><tspan x="224" y="29">Crude oil arrives</tspan><tspan x="224" y="45">by tanker</tspan></text></g>
+<g class="fl-node" id="fl-tanks" data-id="tanks" tabindex="0" role="button" aria-label="Crude tanks"><rect x="162" y="80" width="124" height="40" rx="8"/><text text-anchor="middle"><tspan x="224" y="105">Crude tanks</tspan></text></g>
+<g class="fl-node" id="fl-cdu" data-id="cdu" tabindex="0" role="button" aria-label="Crude distillation unit"><rect x="152" y="150" width="144" height="44" rx="8"/><text text-anchor="middle"><tspan x="224" y="169">Crude distillation</tspan><tspan x="224" y="185">unit</tspan></text></g>
+<g class="fl-node" id="fl-vdu" data-id="vdu" tabindex="0" role="button" aria-label="Vacuum unit"><rect x="162" y="222" width="124" height="40" rx="8"/><text text-anchor="middle"><tspan x="224" y="247">Vacuum unit</tspan></text></g>
+<g class="fl-node" id="fl-crackers" data-id="crackers" tabindex="0" role="button" aria-label="Crackers"><rect x="18" y="300" width="124" height="40" rx="8"/><text text-anchor="middle"><tspan x="80" y="325">Crackers</tspan></text></g>
+<g class="fl-node" id="fl-coker" data-id="coker" tabindex="0" role="button" aria-label="Coker"><rect x="306" y="300" width="124" height="40" rx="8"/><text text-anchor="middle"><tspan x="368" y="325">Coker</tspan></text></g>
+<g class="fl-node" id="fl-pp" data-id="pp" tabindex="0" role="button" aria-label="Polypropylene plant"><rect x="18" y="380" width="124" height="44" rx="8"/><text text-anchor="middle"><tspan x="80" y="399">Polypropylene</tspan><tspan x="80" y="415">plant</tspan></text></g>
+<g class="fl-node fl-off" id="fl-power" data-id="power" tabindex="0" role="button" aria-label="Power station (the plant&#x27;s own)"><rect x="306" y="380" width="124" height="44" rx="8"/><text text-anchor="middle"><tspan x="368" y="399">Power station</tspan><tspan x="368" y="415">(the plant&#x27;s own)</tspan></text></g>
+<g class="fl-node" id="fl-sulphur" data-id="sulphur" tabindex="0" role="button" aria-label="Sulphur removal (with hydrogen)"><rect x="144" y="460" width="160" height="44" rx="8"/><text text-anchor="middle"><tspan x="224" y="479">Sulphur removal</tspan><tspan x="224" y="495">(with hydrogen)</tspan></text></g>
+<g class="fl-node" id="fl-tanks2" data-id="tanks2" tabindex="0" role="button" aria-label="Product tanks"><rect x="162" y="548" width="124" height="40" rx="8"/><text text-anchor="middle"><tspan x="224" y="573">Product tanks</tspan></text></g>
+<g class="fl-node" id="fl-srec" data-id="srec" tabindex="0" role="button" aria-label="Sulphur recovery"><rect x="306" y="548" width="124" height="40" rx="8"/><text text-anchor="middle"><tspan x="368" y="573">Sulphur recovery</tspan></text></g>
+<g class="fl-node fl-products" id="fl-products" data-id="products" tabindex="0" role="button" aria-label="Products"><rect x="20" y="630" width="410" height="118" rx="10"/><text x="225.0" y="656" text-anchor="middle" class="fl-title">Products</text><rect class="fl-chip" x="34" y="676" width="57.2" height="26" rx="13"/><text class="fl-chiptext" x="62.6" y="694" text-anchor="middle">Diesel</text><rect class="fl-chip" x="99.2" y="676" width="57.2" height="26" rx="13"/><text class="fl-chiptext" x="127.8" y="694" text-anchor="middle">Petrol</text><rect class="fl-chip" x="164.4" y="676" width="71.6" height="26" rx="13"/><text class="fl-chiptext" x="200.2" y="694" text-anchor="middle">Jet fuel</text><rect class="fl-chip" x="244" y="676" width="136.4" height="26" rx="13"/><text class="fl-chiptext" x="312.2" y="694" text-anchor="middle">Cooking gas (LPG)</text><rect class="fl-chip" x="34" y="710" width="107.6" height="26" rx="13"/><text class="fl-chiptext" x="87.8" y="728" text-anchor="middle">Lubricant oil</text><rect class="fl-chip" x="149.6" y="710" width="122" height="26" rx="13"/><text class="fl-chiptext" x="210.6" y="728" text-anchor="middle">Plastic pellets</text><rect class="fl-chip" x="279.6" y="710" width="64.4" height="26" rx="13"/><text class="fl-chiptext" x="311.8" y="728" text-anchor="middle">Sulphur</text></g>
+</svg>
+<div id="flow-say" class="flowsay" role="status" aria-live="polite" hidden><button type="button" id="flow-close" aria-label="Close">×</button><b id="flow-say-title"></b><p id="flow-say-text"></p></div>
+</div>
+<p class="note">A simple picture of the main steps. The detailed block diagram has every unit and the full mass balance.</p>
+<script>
+(function () {
+  var svg = document.querySelector("svg.flow"), wrap = document.querySelector(".flowwrap");
+  var say = document.getElementById("flow-say");
+  var S = {"crude": "Crude oil arrives by tanker; one tanker carries about a million barrels. Its path through the plant to the products is lit up.", "tanks": "The tankers' crude is stored in these tanks: about 15 million barrels, three weeks of crude at 700,000 barrels a day.", "cdu": "The crude distillation unit heats the crude, and the lighter parts boil off: gas, petrol, jet fuel and diesel. About half the crude leaves here.", "vdu": "The heavy half goes to the vacuum unit. Under a vacuum it boils at a lower temperature and splits into heavy oil and a thick residue.", "crackers": "The crackers break the heavy oil's large molecules into smaller, more valuable ones: petrol, diesel and gases.", "coker": "The coker cracks more oil out of the residue and leaves solid petroleum coke.", "power": "The coke fuels the plant's own power station. The refinery needs about 370 MW of power at full capacity. This is calculated from our own sizing of the plant. Dangote Group has announced 500 MW of power for the plant. Another 500 MW has been floated for the Kenyan grid, about 1,000 MW in total.", "pp": "One of the cracker gases, propylene, becomes polypropylene: plastic pellets for packaging, pipes and fibres.", "sulphur": "Hydrogen pulls the sulphur out of the fuels, so diesel and petrol can meet standards such as Euro 5 (10 parts per million of sulphur).", "srec": "The sulphur taken out is recovered as solid sulphur.", "tanks2": "The finished fuels go to the product tanks: mostly diesel and petrol, with jet fuel, cooking gas (LPG) and lubricant oil.", "products": "The products: diesel, petrol, jet fuel, cooking gas (LPG), lubricant oil, plastic pellets and sulphur."}, T = {"crude": "Crude oil", "tanks": "Crude tanks", "cdu": "Crude distillation unit", "vdu": "Vacuum unit", "crackers": "Crackers", "coker": "Coker", "pp": "Polypropylene plant", "power": "Power station (the plant's own)", "sulphur": "Sulphur removal (with hydrogen)", "tanks2": "Product tanks", "srec": "Sulphur recovery", "products": "Products"}, current = null;
+  if (!svg || !say) { return; }
+  // Selecting a block opens its explanation; selecting the same block again (or the close button) closes it, and
+  // the diagram takes the space back. The crude also lights up the crude's path to the products.
+  function pick(id) {
+    if (!id || id === current) { id = null; }
+    current = id;
+    var nodes = svg.querySelectorAll(".fl-node");
+    for (var i = 0; i < nodes.length; i++) { nodes[i].classList.toggle("picked", nodes[i].getAttribute("data-id") === id); }
+    svg.classList.toggle("onpath", id === "crude");
+    wrap.classList.toggle("has-say", !!id);
+    document.body.classList.toggle("flow-say-open", !!id);
+    say.hidden = !id;
+    if (id) {
+      document.getElementById("flow-say-title").textContent = T[id] || "";
+      document.getElementById("flow-say-text").textContent = S[id] || "";
+    }
+  }
+  svg.addEventListener("click", function (ev) {
+    var g = ev.target.closest ? ev.target.closest(".fl-node") : null;
+    pick(g ? g.getAttribute("data-id") : null);
+  });
+  svg.addEventListener("keydown", function (ev) {
+    var g = ev.target.closest ? ev.target.closest(".fl-node") : null;
+    if (g && (ev.key === "Enter" || ev.key === " ")) { ev.preventDefault(); pick(g.getAttribute("data-id")); }
+  });
+  document.getElementById("flow-close").addEventListener("click", function () { pick(null); });
+  document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && current) { pick(null); } });
+})();
+</script>
+</section>
+</div>
+</div>
+<footer>Version as of 18 Oct 2026<span class="sep">·</span>Independent; not affiliated with Dangote Group; illustrative, not a design for construction.<span class="sep">·</span>Content licence <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><span class="sep">·</span><a href="about.html">About</a><span class="sep">·</span><a href="about.html#credits">Credits</a></footer>
+</div>
+</body>
+</html>
