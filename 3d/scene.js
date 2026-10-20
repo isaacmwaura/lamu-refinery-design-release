@@ -25414,7 +25414,7 @@ window.SCENE = {
   }
  ],
  "meta": {
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "disclaimer": "Independent; not affiliated with Dangote Group; illustrative, not a design for construction.",
   "frame": "x east, y north, metres from the site origin; north = +y",
   "public": true,
