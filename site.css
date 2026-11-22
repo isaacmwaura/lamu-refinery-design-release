@@ -17,7 +17,7 @@ h3 { font-size: 17px; margin: 22px 0 6px; }
 p, li { max-width: 70ch; }
 .lead { font-size: 17.5px; }
 .big { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 22px 0 6px; }
-@media (min-width: 700px) { .big { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 700px) { .big { grid-template-columns: repeat(2, 1fr); } }
 .big a { display: block; padding: 12px 14px; border: 2px solid var(--accent); border-radius: 8px; background: #fff;
          text-decoration: none; color: var(--ink); }
 .big a b { display: block; font-size: 17px; color: var(--accent); margin-bottom: 2px; }
@@ -27,16 +27,14 @@ p, li { max-width: 70ch; }
   .big .thumb { margin: 0; }
 }
 .big a:hover { background: #eef6fb; }
-.big .thumb { display: block; position: relative; margin: 0 0 10px; aspect-ratio: 16 / 10; }
-.big .thumb img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 6px;
-                  border: 1px solid var(--line); background: #e9ecef; transition: transform .2s ease, box-shadow .2s ease; }
+.big .thumb { display: block; position: relative; margin: 0 0 10px; aspect-ratio: 16 / 10; overflow: hidden;
+              border-radius: 6px; border: 1px solid var(--line); background: #fff; }
+.big .thumb img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: center center;
+                  transition: transform .35s ease; }
 @media (hover: hover) and (min-width: 700px) {
-  .big a { position: relative; }
-  .big a:hover .thumb img, .big a:focus-visible .thumb img { transform: scale(1.7); box-shadow: 0 8px 28px #0005;
-      position: relative; z-index: 5; }
-  .big a:nth-child(1) .thumb img { transform-origin: left top; }
-  .big a:nth-child(2) .thumb img { transform-origin: center top; }
-  .big a:nth-child(3) .thumb img { transform-origin: right top; }
+  .big a:hover .thumb img, .big a:focus-visible .thumb img { transform: scale(1.06); }
+  .big a.zoomout .thumb img { transform: scale(1.6); transform-origin: 42% 50%; }
+  .big a.zoomout:hover .thumb img, .big a.zoomout:focus-visible .thumb img { transform: scale(1); }
 }
 .flowwrap { display: flex; gap: 20px; align-items: flex-start; margin: 8px 0 12px; }
 svg.flow { width: 100%; max-width: 700px; height: auto; flex: 1 1 auto; font: 13.5px/1.2 system-ui, "Segoe UI", Arial, sans-serif; }
@@ -86,7 +84,6 @@ footer .sep { margin: 0 6px; color: var(--line); }
   .home .big .thumb { margin: 0; }
   .home .big a b { font-size: 21px; margin-bottom: 4px; }
   .home .big .txt { font-size: 16.5px; }
-  .home .big a .thumb img { transform-origin: left center !important; }
   .home #flow h2 { margin-top: 18px; font-size: 24px; }
   .home .flowwrap { grid-template-columns: minmax(0, 1fr) 340px; }
 }

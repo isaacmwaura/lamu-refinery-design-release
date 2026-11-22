@@ -1,0 +1,5054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Independent; not affiliated with Dangote Group; illustrative, not a design for construction.
+  Written from a neutral sheet model of the Lamu design record; each object's
+  PersistentIdentifier is the model's id, and its XML id is that id with other characters written _HH.
+  Format: DEXPI 2.0.1 (DEXPI XML), class models Core and Plant 2.0.1; the file's own extension is declared below.
+  A PFD sheet is written in the Plant model at PFD depth: it is not the DEXPI Process model.
+-->
+<Model name="LAMU__340_2D3" uri="urn:lamu:sheet:40-3">
+ <Import prefix="Core" source="https://data.dexpi.org/models/2.0.1/Core.xml" />
+ <Import prefix="Plant" source="https://data.dexpi.org/models/2.0.1/Plant.xml" />
+ <AggregatedDataType name="SheetModelAttribute">
+  <DataProperty name="Name" isOrdered="false" lower="1" upper="1" isUnique="false">
+   <DataTypeReference type="Builtin/String" />
+  </DataProperty>
+  <DataProperty name="Value" isOrdered="false" lower="1" upper="1" isUnique="false">
+   <UnionDataType>
+    <DataTypeReference type="Builtin/String" />
+    <DataTypeReference type="Builtin/Integer" />
+    <DataTypeReference type="Core/PhysicalQuantities.PhysicalQuantity" />
+   </UnionDataType>
+  </DataProperty>
+ </AggregatedDataType>
+ <ClassExtension name="SheetModelData" baseType="Core/ConceptualObject">
+  <DataProperty name="Attributes" isOrdered="true" lower="0" isUnique="false">
+   <DataTypeReference type="/SheetModelAttribute" />
+  </DataProperty>
+ </ClassExtension>
+ <ClassExtension name="SheetModelFlow" baseType="Plant/Piping.PipingNodeOwner">
+  <ReferenceProperty name="FlowInNode" isOrdered="false" lower="0" upper="1" isUnique="false" oppositeLower="0" oppositeUpper="1">
+   <ClassReference type="Plant/Piping.PipingNode" />
+  </ReferenceProperty>
+  <ReferenceProperty name="FlowOutNode" isOrdered="false" lower="0" upper="1" isUnique="false" oppositeLower="0" oppositeUpper="1">
+   <ClassReference type="Plant/Piping.PipingNode" />
+  </ReferenceProperty>
+ </ClassExtension>
+ <ClassExtension name="SheetModelSheet" baseType="Core/Diagram.MetaData">
+  <DataProperty name="SheetWidth" isOrdered="false" lower="0" upper="1" isUnique="false">
+   <DataTypeReference type="Core/PhysicalQuantities.PhysicalQuantity" />
+  </DataProperty>
+  <DataProperty name="SheetHeight" isOrdered="false" lower="0" upper="1" isUnique="false">
+   <DataTypeReference type="Core/PhysicalQuantities.PhysicalQuantity" />
+  </DataProperty>
+ </ClassExtension>
+ <ClassExtension name="SheetModelInstrument" baseType="Plant/Instrumentation.ProcessInstrumentationFunction">
+  <ReferenceProperty name="PartOfLoop" isOrdered="false" lower="0" upper="1" isUnique="false" oppositeLower="0">
+   <ClassReference type="Plant/Instrumentation.InstrumentationLoopFunction" />
+  </ReferenceProperty>
+ </ClassExtension>
+ <ClassExtension name="SheetModelProcess" baseType="Plant/Piping.PipingNetworkSystem">
+  <CompositionProperty name="ProcessDensity" isOrdered="false" lower="0" upper="1">
+   <ClassReference type="Core/QualifiedValue" />
+  </CompositionProperty>
+  <CompositionProperty name="ProcessMassFlow" isOrdered="false" lower="0" upper="1">
+   <ClassReference type="Core/QualifiedValue" />
+  </CompositionProperty>
+  <CompositionProperty name="ProcessPressure" isOrdered="false" lower="0" upper="1">
+   <ClassReference type="Core/QualifiedValue" />
+  </CompositionProperty>
+  <CompositionProperty name="ProcessTemperature" isOrdered="false" lower="0" upper="1">
+   <ClassReference type="Core/QualifiedValue" />
+  </CompositionProperty>
+  <CompositionProperty name="ProcessVolumeFlow" isOrdered="false" lower="0" upper="1">
+   <ClassReference type="Core/QualifiedValue" />
+  </CompositionProperty>
+ </ClassExtension>
+ <ConcreteClass name="CustomEquipment" superTypes="Plant/ProcessEquipment.ProcessEquipment">
+  <DataProperty name="TypeName" isOrdered="false" lower="0" upper="1" isUnique="false">
+   <DataTypeReference type="Builtin/String" />
+  </DataProperty>
+ </ConcreteClass>
+ <ConcreteClass name="CustomVessel" superTypes="Plant/ProcessEquipment.Vessel">
+  <DataProperty name="TypeName" isOrdered="false" lower="0" upper="1" isUnique="false">
+   <DataTypeReference type="Builtin/String" />
+  </DataProperty>
+ </ConcreteClass>
+ <Object type="Core/EngineeringModel">
+  <Components property="ConceptualModel">
+   <Object id="PlantModel" type="Plant/PlantModel">
+    <Components property="MetaData">
+     <Object id="MetaData_2D1" type="Plant/Diagram.PlantMetaData">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>MetaData-1</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="ProjectName">
+       <String>Lamu refinery: independent design study</String>
+      </Data>
+      <Data property="RevisionNumber">
+       <String>Level 1</String>
+      </Data>
+      <Data property="SheetFormat">
+       <String>A3 Landscape</String>
+      </Data>
+      <Data property="/SheetModelSheet.SheetWidth">
+       <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+        <Data property="Unit">
+         <DataReference data="Core/PhysicalQuantities.LengthUnit.Millimetre" />
+        </Data>
+        <Data property="Value">
+         <Double>420</Double>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Data property="/SheetModelSheet.SheetHeight">
+       <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+        <Data property="Unit">
+         <DataReference data="Core/PhysicalQuantities.LengthUnit.Millimetre" />
+        </Data>
+        <Data property="Value">
+         <Double>297</Double>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Data property="DrawingNumber">
+       <String>40-3</String>
+      </Data>
+      <Data property="DrawingName">
+       <String>Lamu refinery, Level 1 PFD 40-3: Alkylation</String>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Disclaimer</String>
+        </Data>
+        <Data property="Value">
+         <String>Independent; not affiliated with Dangote Group; illustrative, not a design for construction.</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Project</String>
+        </Data>
+        <Data property="Value">
+         <String>Lamu refinery: independent design study</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SheetNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40-3</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Revision</String>
+        </Data>
+        <Data property="Value">
+         <String>Level 1</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Date</String>
+        </Data>
+        <Data property="Value">
+         <String>2026-11-23</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Area</String>
+        </Data>
+        <Data property="Value">
+         <String>Area 40: Petrol block</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>DrawnBy</String>
+        </Data>
+        <Data property="Value">
+         <String>Lamu design record</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SheetKind</String>
+        </Data>
+        <Data property="Value">
+         <String>pfd</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Depth</String>
+        </Data>
+        <Data property="Value">
+         <String>PFD depth (Level 1): main equipment, often one symbol for a group of identical items (count); streams with block-balance flows and conditions; main control loops as one bubble each. No real nozzles (one generated per stream end), line sizes, valves, drains or vents.</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>DrawingType</String>
+        </Data>
+        <Data property="Value">
+         <String>PFD at P&amp;ID-model depth</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>ModelLevel</String>
+        </Data>
+        <Data property="Value">
+         <String>Plant (P&amp;ID) model at PFD depth; not DEXPI Process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>ModelVersion</String>
+        </Data>
+        <Data property="Value">
+         <String>1</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>Lamu design record, PFD sheet 40-3</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+     </Object>
+    </Components>
+    <Components property="TaggedPlantItems">
+     <Object id="EQ_2DLAMU_2DALKYLATION_2D001" type="/CustomVessel">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-001</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="TagName">
+       <String>R-4031</String>
+      </Data>
+      <Data property="TagNamePrefix">
+       <String>R</String>
+      </Data>
+      <Data property="TagNameSequenceNumber">
+       <String>4031</String>
+      </Data>
+      <Data property="TypeName">
+       <String>Reactor</String>
+      </Data>
+      <Data property="EquipmentDescription">
+       <AggregatedDataValue type="Core/DataTypes.MultiLanguageString">
+        <Data property="SingleLanguageStrings">
+         <AggregatedDataValue type="Core/DataTypes.SingleLanguageString">
+          <Data property="Language">
+           <String>en</String>
+          </Data>
+          <Data property="Value">
+           <String>Contactor reactors (for example STRATCO) (horizontal, mixer and refrigerated tube bundle)</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>NeutralClass</String>
+        </Data>
+        <Data property="Value">
+         <String>reactor</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Service</String>
+        </Data>
+        <Data property="Value">
+         <String>Contactor reactors (for example STRATCO) (horizontal, mixer and refrigerated tube bundle)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Count</String>
+        </Data>
+        <Data property="Value">
+         <Integer>14</Integer>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>GroupItem</String>
+        </Data>
+        <Data property="Value">
+         <String>true</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>GroupTotalBasis</String>
+        </Data>
+        <Data property="Value">
+         <String>attributes named '(group total)' are the figure for the whole group of 14 items, not one item's rating; no per-item value is written</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Status</String>
+        </Data>
+        <Data property="Value">
+         <String>base</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Symbol</String>
+        </Data>
+        <Data property="Value">
+         <String>reactor</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>record type</String>
+        </Data>
+        <Data property="Value">
+         <String>reactor</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>volume (group total)</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.VolumeUnit.MetreCubed" />
+          </Data>
+          <Data property="Value">
+           <Double>43.5</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>capacity (group total)</String>
+        </Data>
+        <Data property="Value">
+         <String>26258 b/sd of alkylate (14 x 2,000 b/d = 28,000 installed)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>capacity, normal case (group total)</String>
+        </Data>
+        <Data property="Value">
+         <String>23871 b/sd of alkylate (14 x 2,000 b/d = 28,000 installed)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>design margin</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.RatioUnit.Percent" />
+          </Data>
+          <Data property="Value">
+           <Double>10</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>governing case</String>
+        </Data>
+        <Data property="Value">
+         <String>normal (design crude): the RFCC's butylenes set it</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>running and spare</String>
+        </Data>
+        <Data property="Value">
+         <String>14 installed, 12 needed at normal feed: all run; the 2 extra are the margin</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-001</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Nozzles">
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D066" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-001.N-40-066</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-066</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D066_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D067" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-001.N-40-067</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-067</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D067_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D073" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-001.N-40-073</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-073</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>outlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D073_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D072" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-001.N-40-072</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-072</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D072_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D20A_2D125" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-001.N-20A-125</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-20A-125</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D20A_2D125_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2DFFIC_2D4033" type="Plant/ProcessEquipment.InstrumentNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-001.N-FFIC-4033</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-FFIC-4033</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>instrument</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D001_2EN_2DFFIC_2D4033_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+      </Components>
+     </Object>
+     <Object id="EQ_2DLAMU_2DALKYLATION_2D002" type="Plant/ProcessEquipment.PressureVessel">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-002</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="TagName">
+       <String>V-4031</String>
+      </Data>
+      <Data property="TagNamePrefix">
+       <String>V</String>
+      </Data>
+      <Data property="TagNameSequenceNumber">
+       <String>4031</String>
+      </Data>
+      <Data property="EquipmentDescription">
+       <AggregatedDataValue type="Core/DataTypes.MultiLanguageString">
+        <Data property="SingleLanguageStrings">
+         <AggregatedDataValue type="Core/DataTypes.SingleLanguageString">
+          <Data property="Language">
+           <String>en</String>
+          </Data>
+          <Data property="Value">
+           <String>Acid settlers, one per contactor</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>NeutralClass</String>
+        </Data>
+        <Data property="Value">
+         <String>vessel.drum</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Service</String>
+        </Data>
+        <Data property="Value">
+         <String>Acid settlers, one per contactor</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Count</String>
+        </Data>
+        <Data property="Value">
+         <Integer>14</Integer>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>GroupItem</String>
+        </Data>
+        <Data property="Value">
+         <String>true</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>GroupTotalBasis</String>
+        </Data>
+        <Data property="Value">
+         <String>attributes named '(group total)' are the figure for the whole group of 14 items, not one item's rating; no per-item value is written</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Status</String>
+        </Data>
+        <Data property="Value">
+         <String>base</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Symbol</String>
+        </Data>
+        <Data property="Value">
+         <String>drum</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>record type</String>
+        </Data>
+        <Data property="Value">
+         <String>drum</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>volume (group total)</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.VolumeUnit.MetreCubed" />
+          </Data>
+          <Data property="Value">
+           <Double>53</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>volume, normal case (group total)</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.VolumeUnit.MetreCubed" />
+          </Data>
+          <Data property="Value">
+           <Double>48</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>design margin</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.RatioUnit.Percent" />
+          </Data>
+          <Data property="Value">
+           <Double>10</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>governing case</String>
+        </Data>
+        <Data property="Value">
+         <String>normal (design crude)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>running and spare</String>
+        </Data>
+        <Data property="Value">
+         <String>14 installed, one per contactor</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-002</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Nozzles">
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D073" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-002.N-40-073</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-073</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D073_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D069" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-002.N-40-069</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-069</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>outlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D069_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D070" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-002.N-40-070</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-070</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>outlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D070_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D071" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-002.N-40-071</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-071</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>outlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D071_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2DAIC_2D4032" type="Plant/ProcessEquipment.InstrumentNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-002.N-AIC-4032</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-AIC-4032</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>instrument</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D002_2EN_2DAIC_2D4032_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+      </Components>
+     </Object>
+     <Object id="EQ_2DLAMU_2DALKYLATION_2D003" type="Plant/ProcessEquipment.Compressor">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-003</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="TagName">
+       <String>K-4031</String>
+      </Data>
+      <Data property="TagNamePrefix">
+       <String>K</String>
+      </Data>
+      <Data property="TagNameSequenceNumber">
+       <String>4031</String>
+      </Data>
+      <Data property="EquipmentDescription">
+       <AggregatedDataValue type="Core/DataTypes.MultiLanguageString">
+        <Data property="SingleLanguageStrings">
+         <AggregatedDataValue type="Core/DataTypes.SingleLanguageString">
+          <Data property="Language">
+           <String>en</String>
+          </Data>
+          <Data property="Value">
+           <String>Effluent refrigeration compressor (isobutane-rich refrigerant)</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>NeutralClass</String>
+        </Data>
+        <Data property="Value">
+         <String>compressor</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Service</String>
+        </Data>
+        <Data property="Value">
+         <String>Effluent refrigeration compressor (isobutane-rich refrigerant)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Count</String>
+        </Data>
+        <Data property="Value">
+         <Integer>1</Integer>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Status</String>
+        </Data>
+        <Data property="Value">
+         <String>base</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Symbol</String>
+        </Data>
+        <Data property="Value">
+         <String>compressor</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>record type</String>
+        </Data>
+        <Data property="Value">
+         <String>compressor</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>power</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PowerUnit.Kilowatt" />
+          </Data>
+          <Data property="Value">
+           <Double>11630</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>power, normal case</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PowerUnit.Kilowatt" />
+          </Data>
+          <Data property="Value">
+           <Double>10573</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>design margin</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.RatioUnit.Percent" />
+          </Data>
+          <Data property="Value">
+           <Double>10</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>governing case</String>
+        </Data>
+        <Data property="Value">
+         <String>normal (design crude)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>running and spare</String>
+        </Data>
+        <Data property="Value">
+         <String>one machine, unspared (ASSUMPTION)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-003</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Nozzles">
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D067" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-003.N-40-067</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-067</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>outlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D067_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D069" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-003.N-40-069</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-069</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D069_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D003_2EN_2DPIC_2D4031" type="Plant/ProcessEquipment.InstrumentNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-003.N-PIC-4031</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-PIC-4031</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>instrument</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D003_2EN_2DPIC_2D4031_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+      </Components>
+     </Object>
+     <Object id="EQ_2DLAMU_2DALKYLATION_2D004" type="Plant/ProcessEquipment.ProcessColumn">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-004</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="TagName">
+       <String>C-4031</String>
+      </Data>
+      <Data property="TagNamePrefix">
+       <String>C</String>
+      </Data>
+      <Data property="TagNameSequenceNumber">
+       <String>4031</String>
+      </Data>
+      <Data property="EquipmentDescription">
+       <AggregatedDataValue type="Core/DataTypes.MultiLanguageString">
+        <Data property="SingleLanguageStrings">
+         <AggregatedDataValue type="Core/DataTypes.SingleLanguageString">
+          <Data property="Language">
+           <String>en</String>
+          </Data>
+          <Data property="Value">
+           <String>Alkylation deisobutaniser: isobutane recycle overhead, n-butane side draw, alkylate bottoms</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>NeutralClass</String>
+        </Data>
+        <Data property="Value">
+         <String>column</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Service</String>
+        </Data>
+        <Data property="Value">
+         <String>Alkylation deisobutaniser: isobutane recycle overhead, n-butane side draw, alkylate bottoms</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Count</String>
+        </Data>
+        <Data property="Value">
+         <Integer>1</Integer>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Status</String>
+        </Data>
+        <Data property="Value">
+         <String>base</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Symbol</String>
+        </Data>
+        <Data property="Value">
+         <String>column</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>record type</String>
+        </Data>
+        <Data property="Value">
+         <String>column</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>diameter</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.LengthUnit.Metre" />
+          </Data>
+          <Data property="Value">
+           <Double>9.4</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>diameter, normal case</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.LengthUnit.Metre" />
+          </Data>
+          <Data property="Value">
+           <Double>8.7</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>height</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.LengthUnit.Metre" />
+          </Data>
+          <Data property="Value">
+           <Double>65</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>design margin</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.RatioUnit.Percent" />
+          </Data>
+          <Data property="Value">
+           <Double>15</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>governing case</String>
+        </Data>
+        <Data property="Value">
+         <String>normal (design crude)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>running and spare</String>
+        </Data>
+        <Data property="Value">
+         <String>one column</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-004</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Nozzles">
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D066" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-004.N-40-066</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-066</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>outlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D066_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D070" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-004.N-40-070</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-070</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D070_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D042" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-004.N-40-042</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-042</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>outlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D042_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D043" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-004.N-40-043</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-043</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>outlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D043_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D10_2D141" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-004.N-10-141</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-10-141</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D10_2D141_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D044" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-004.N-40-044</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-044</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D044_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2DAIC_2D4034" type="Plant/ProcessEquipment.InstrumentNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-004.N-AIC-4034</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-AIC-4034</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>instrument</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D004_2EN_2DAIC_2D4034_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+      </Components>
+     </Object>
+     <Object id="EQ_2DLAMU_2DALKYLATION_2D005" type="/CustomEquipment">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-005</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="TagName">
+       <String>V-4032</String>
+      </Data>
+      <Data property="TagNamePrefix">
+       <String>V</String>
+      </Data>
+      <Data property="TagNameSequenceNumber">
+       <String>4032</String>
+      </Data>
+      <Data property="TypeName">
+       <String>Package</String>
+      </Data>
+      <Data property="EquipmentDescription">
+       <AggregatedDataValue type="Core/DataTypes.MultiLanguageString">
+        <Data property="SingleLanguageStrings">
+         <AggregatedDataValue type="Core/DataTypes.SingleLanguageString">
+          <Data property="Language">
+           <String>en</String>
+          </Data>
+          <Data property="Value">
+           <String>Spent sulphuric acid regeneration package (MECS SAR: acid burning, SO2 to SO3, absorption)</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>NeutralClass</String>
+        </Data>
+        <Data property="Value">
+         <String>package</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Service</String>
+        </Data>
+        <Data property="Value">
+         <String>Spent sulphuric acid regeneration package (MECS SAR: acid burning, SO2 to SO3, absorption)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Count</String>
+        </Data>
+        <Data property="Value">
+         <Integer>1</Integer>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Status</String>
+        </Data>
+        <Data property="Value">
+         <String>base</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Symbol</String>
+        </Data>
+        <Data property="Value">
+         <String>package</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>record type</String>
+        </Data>
+        <Data property="Value">
+         <String>other</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>capacity</String>
+        </Data>
+        <Data property="Value">
+         <String>253 t/d of sulphuric acid regenerated</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>capacity, normal case</String>
+        </Data>
+        <Data property="Value">
+         <String>230 t/d of sulphuric acid regenerated</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>design margin</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.RatioUnit.Percent" />
+          </Data>
+          <Data property="Value">
+           <Double>10</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>governing case</String>
+        </Data>
+        <Data property="Value">
+         <String>normal (design crude)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>running and spare</String>
+        </Data>
+        <Data property="Value">
+         <String>one train</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-005</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Nozzles">
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D071" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-005.N-40-071</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-071</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>inlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D071_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+       <Object id="EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D072" type="Plant/ProcessEquipment.ProcessNozzle">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>EQ-LAMU-ALKYLATION-005.N-40-072</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="SubTagName">
+         <String>N-40-072</String>
+        </Data>
+        <Data property="/SheetModelData.Attributes">
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Generated</String>
+          </Data>
+          <Data property="Value">
+           <String>true</String>
+          </Data>
+         </AggregatedDataValue>
+         <AggregatedDataValue type="/SheetModelAttribute">
+          <Data property="Name">
+           <String>Role</String>
+          </Data>
+          <Data property="Value">
+           <String>outlet</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Nodes">
+         <Object id="EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D072_2En1" type="Plant/Piping.PipingNode" />
+        </Components>
+       </Object>
+      </Components>
+     </Object>
+    </Components>
+    <Components property="PipingNetworkSystems">
+     <Object id="ST_2DLAMU_2D40_2D066" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-066</String>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>418601 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>418601</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>40 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>7 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>7</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40201</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-066</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D066_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-066.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D066" />
+          <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D066_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D066" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D066_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D066" />
+        <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D066_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D066" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D066_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D40_2D067" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-067</String>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>439345 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>439345</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>40 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>6 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>6</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40202</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-067</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D067_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-067.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D067" />
+          <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D067_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D067" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D067_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D067" />
+        <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D067_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D067" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D067_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D40_2D073" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-073</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="FluidCode">
+       <String>reactor effluent; includes 9.677 t/h of acid carried to the settler and withdrawn as spent acid</String>
+      </Data>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>955996 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>955996</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>7 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>7</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>4 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>4</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40203</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Fluid</String>
+        </Data>
+        <Data property="Value">
+         <String>reactor effluent; includes 9.677 t/h of acid carried to the settler and withdrawn as spent acid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-073</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D073_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-073.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="FluidCode">
+         <String>reactor effluent; includes 9.677 t/h of acid carried to the settler and withdrawn as spent acid</String>
+        </Data>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>7</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D073" />
+          <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D073_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D073" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D073_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D073" />
+        <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D073_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D073" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D073_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D40_2D069" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-069</String>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>439345 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>439345</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>2 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>2</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>0.4 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>0.4</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40204</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>vapour</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-069</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D069_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-069.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>2</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D069" />
+          <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D069_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D069" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D069_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D069" />
+        <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D069_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D069" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D003_2EN_2D40_2D069_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D40_2D070" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-070</String>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>506974 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>506974</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>40 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>7 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>7</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40205</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-070</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D070_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-070.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D070" />
+          <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D070_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D070" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D070_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D070" />
+        <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D070_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D070" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D070_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D40_2D071" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-071</String>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>9677 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>9677</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>10 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>10</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>2 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>2</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40206</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-071</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D071_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-071.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>10</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D071" />
+          <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D071_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D071" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D071_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D071" />
+        <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2D40_2D071_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D071" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D071_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D40_2D072" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-072</String>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>9677 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>9677</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>35 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>35</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>4 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>4</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40207</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>low</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-072</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D072_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-072.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>35</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D072" />
+          <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D072_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D072" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D072_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D072" />
+        <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D005_2EN_2D40_2D072_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D072" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D40_2D072_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D40_2D042" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-042</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="FluidCode">
+       <String>alkylate (DIB bottoms)</String>
+      </Data>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>111834 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>111834</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessVolumeFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>24117 b/sd</String>
+        </Data>
+        <Data property="Value">
+         <Double>24117</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>40 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>4 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>4</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessDensity">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>700 kg/m3</String>
+        </Data>
+        <Data property="Value">
+         <Double>700</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40208</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Fluid</String>
+        </Data>
+        <Data property="Value">
+         <String>alkylate (DIB bottoms)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>sulphur</String>
+        </Data>
+        <Data property="Value">
+         <String>0 wt%</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>medium</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-042</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D042_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-042.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="FluidCode">
+         <String>alkylate (DIB bottoms)</String>
+        </Data>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Items">
+         <Object id="ST_2DLAMU_2D40_2D042_2Eto" type="Plant/Piping.FlowOutPipeOffPageConnector">
+          <Components property="PersistentIdentifiers">
+           <Object type="Core/PersistentIdentifier">
+            <Data property="Context">
+             <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+            </Data>
+            <Data property="Value">
+             <String>ST-LAMU-40-042.to</String>
+            </Data>
+           </Object>
+          </Components>
+          <Data property="PipeConnectorNumber">
+           <String>ST-LAMU-40-042.to</String>
+          </Data>
+          <Data property="/SheetModelData.Attributes">
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>ConnectsTo</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 80-1, connector ST-LAMU-40-042.from</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Label</String>
+            </Data>
+            <Data property="Value">
+             <String>T-8005</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Kind</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>OtherSheet</String>
+            </Data>
+            <Data property="Value">
+             <String>80-1</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>FarEnd</String>
+            </Data>
+            <Data property="Value">
+             <String>EQ-LAMU-TANK-FARM-009</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Note</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 80-1</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Status</String>
+            </Data>
+            <Data property="Value">
+             <String>base</String>
+            </Data>
+           </AggregatedDataValue>
+          </Data>
+          <Components property="Nodes">
+           <Object id="ST_2DLAMU_2D40_2D042_2Eto_2En1" type="Plant/Piping.PipingNode" />
+          </Components>
+          <References property="/SheetModelFlow.FlowInNode" objects="#ST_2DLAMU_2D40_2D042_2Eto_2En1" />
+          <Components property="ConnectorReference">
+           <Object id="ST_2DLAMU_2D40_2D042_2Eto_2Ereference" type="Plant/Piping.PipeOffPageConnectorReferenceByNumber">
+            <Components property="PersistentIdentifiers">
+             <Object type="Core/PersistentIdentifier">
+              <Data property="Context">
+               <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+              </Data>
+              <Data property="Value">
+               <String>ST-LAMU-40-042.to.reference</String>
+              </Data>
+             </Object>
+            </Components>
+            <Data property="ReferencedConnectorNumber">
+             <String>ST-LAMU-40-042.from</String>
+            </Data>
+            <Data property="ReferencedDrawingNumber">
+             <String>80-1</String>
+            </Data>
+           </Object>
+          </Components>
+         </Object>
+        </Components>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D042" />
+          <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D042_2En1" />
+          <References property="TargetItem" objects="#ST_2DLAMU_2D40_2D042_2Eto" />
+          <References property="TargetNode" objects="#ST_2DLAMU_2D40_2D042_2Eto_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D042" />
+        <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D042_2En1" />
+        <References property="TargetItem" objects="#ST_2DLAMU_2D40_2D042_2Eto" />
+        <References property="TargetNode" objects="#ST_2DLAMU_2D40_2D042_2Eto_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D40_2D043" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-043</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="FluidCode">
+       <String>n-butane and light ends (LPG component)</String>
+      </Data>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>8814 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>8814</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessVolumeFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>2314 b/sd</String>
+        </Data>
+        <Data property="Value">
+         <Double>2314</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>40 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>7 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>7</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessDensity">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>575 kg/m3</String>
+        </Data>
+        <Data property="Value">
+         <Double>575</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40209</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Fluid</String>
+        </Data>
+        <Data property="Value">
+         <String>n-butane and light ends (LPG component)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>sulphur</String>
+        </Data>
+        <Data property="Value">
+         <String>0.050131 wt%</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>medium</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-043</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D043_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-043.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="FluidCode">
+         <String>n-butane and light ends (LPG component)</String>
+        </Data>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Items">
+         <Object id="ST_2DLAMU_2D40_2D043_2Eto" type="Plant/Piping.FlowOutPipeOffPageConnector">
+          <Components property="PersistentIdentifiers">
+           <Object type="Core/PersistentIdentifier">
+            <Data property="Context">
+             <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+            </Data>
+            <Data property="Value">
+             <String>ST-LAMU-40-043.to</String>
+            </Data>
+           </Object>
+          </Components>
+          <Data property="PipeConnectorNumber">
+           <String>ST-LAMU-40-043.to</String>
+          </Data>
+          <Data property="/SheetModelData.Attributes">
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>ConnectsTo</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 80-1, connector ST-LAMU-40-043.from</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Label</String>
+            </Data>
+            <Data property="Value">
+             <String>T-8009</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Kind</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>OtherSheet</String>
+            </Data>
+            <Data property="Value">
+             <String>80-1</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>FarEnd</String>
+            </Data>
+            <Data property="Value">
+             <String>EQ-LAMU-TANK-FARM-021</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Note</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 80-1</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Status</String>
+            </Data>
+            <Data property="Value">
+             <String>base</String>
+            </Data>
+           </AggregatedDataValue>
+          </Data>
+          <Components property="Nodes">
+           <Object id="ST_2DLAMU_2D40_2D043_2Eto_2En1" type="Plant/Piping.PipingNode" />
+          </Components>
+          <References property="/SheetModelFlow.FlowInNode" objects="#ST_2DLAMU_2D40_2D043_2Eto_2En1" />
+          <Components property="ConnectorReference">
+           <Object id="ST_2DLAMU_2D40_2D043_2Eto_2Ereference" type="Plant/Piping.PipeOffPageConnectorReferenceByNumber">
+            <Components property="PersistentIdentifiers">
+             <Object type="Core/PersistentIdentifier">
+              <Data property="Context">
+               <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+              </Data>
+              <Data property="Value">
+               <String>ST-LAMU-40-043.to.reference</String>
+              </Data>
+             </Object>
+            </Components>
+            <Data property="ReferencedConnectorNumber">
+             <String>ST-LAMU-40-043.from</String>
+            </Data>
+            <Data property="ReferencedDrawingNumber">
+             <String>80-1</String>
+            </Data>
+           </Object>
+          </Components>
+         </Object>
+        </Components>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D043" />
+          <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D043_2En1" />
+          <References property="TargetItem" objects="#ST_2DLAMU_2D40_2D043_2Eto" />
+          <References property="TargetNode" objects="#ST_2DLAMU_2D40_2D043_2Eto_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D043" />
+        <References property="SourceNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D043_2En1" />
+        <References property="TargetItem" objects="#ST_2DLAMU_2D40_2D043_2Eto" />
+        <References property="TargetNode" objects="#ST_2DLAMU_2D40_2D043_2Eto_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D10_2D141" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-10-141</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="FluidCode">
+       <String>isobutane (splitter overhead)</String>
+      </Data>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>25686 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>25686</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessVolumeFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>6887 b/sd</String>
+        </Data>
+        <Data property="Value">
+         <Double>6887</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>45 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>45</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>10 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>10</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessDensity">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>563 kg/m3</String>
+        </Data>
+        <Data property="Value">
+         <Double>563</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>10158</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Fluid</String>
+        </Data>
+        <Data property="Value">
+         <String>isobutane (splitter overhead)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>DrawnOn</String>
+        </Data>
+        <Data property="Value">
+         <String>10-2</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>sulphur</String>
+        </Data>
+        <Data property="Value">
+         <String>0 wt%</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>medium</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-10-141</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D10_2D141_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-10-141.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="FluidCode">
+         <String>isobutane (splitter overhead)</String>
+        </Data>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>45</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Items">
+         <Object id="ST_2DLAMU_2D10_2D141_2Efrom" type="Plant/Piping.FlowInPipeOffPageConnector">
+          <Components property="PersistentIdentifiers">
+           <Object type="Core/PersistentIdentifier">
+            <Data property="Context">
+             <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+            </Data>
+            <Data property="Value">
+             <String>ST-LAMU-10-141.from</String>
+            </Data>
+           </Object>
+          </Components>
+          <Data property="PipeConnectorNumber">
+           <String>ST-LAMU-10-141.from</String>
+          </Data>
+          <Data property="/SheetModelData.Attributes">
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>ConnectsTo</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 10-2, connector ST-LAMU-10-141.to</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Label</String>
+            </Data>
+            <Data property="Value">
+             <String>C-1043</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Kind</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>OtherSheet</String>
+            </Data>
+            <Data property="Value">
+             <String>10-2</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>FarEnd</String>
+            </Data>
+            <Data property="Value">
+             <String>EQ-LAMU-SAT-GAS-PLANT-007</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Note</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 10-2</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Status</String>
+            </Data>
+            <Data property="Value">
+             <String>base</String>
+            </Data>
+           </AggregatedDataValue>
+          </Data>
+          <Components property="Nodes">
+           <Object id="ST_2DLAMU_2D10_2D141_2Efrom_2En1" type="Plant/Piping.PipingNode" />
+          </Components>
+          <References property="/SheetModelFlow.FlowOutNode" objects="#ST_2DLAMU_2D10_2D141_2Efrom_2En1" />
+          <Components property="ConnectorReference">
+           <Object id="ST_2DLAMU_2D10_2D141_2Efrom_2Ereference" type="Plant/Piping.PipeOffPageConnectorReferenceByNumber">
+            <Components property="PersistentIdentifiers">
+             <Object type="Core/PersistentIdentifier">
+              <Data property="Context">
+               <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+              </Data>
+              <Data property="Value">
+               <String>ST-LAMU-10-141.from.reference</String>
+              </Data>
+             </Object>
+            </Components>
+            <Data property="ReferencedConnectorNumber">
+             <String>ST-LAMU-10-141.to</String>
+            </Data>
+            <Data property="ReferencedDrawingNumber">
+             <String>10-2</String>
+            </Data>
+           </Object>
+          </Components>
+         </Object>
+        </Components>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#ST_2DLAMU_2D10_2D141_2Efrom" />
+          <References property="SourceNode" objects="#ST_2DLAMU_2D10_2D141_2Efrom_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D10_2D141" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D10_2D141_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#ST_2DLAMU_2D10_2D141_2Efrom" />
+        <References property="SourceNode" objects="#ST_2DLAMU_2D10_2D141_2Efrom_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D10_2D141" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D10_2D141_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D20A_2D125" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-20A-125</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="FluidCode">
+       <String>C4 cut</String>
+      </Data>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>88373 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>88373</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessVolumeFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>22610 b/sd</String>
+        </Data>
+        <Data property="Value">
+         <Double>22610</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>40 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessDensity">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>590 kg/m3</String>
+        </Data>
+        <Data property="Value">
+         <Double>590</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>20109</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Fluid</String>
+        </Data>
+        <Data property="Value">
+         <String>C4 cut</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>DrawnOn</String>
+        </Data>
+        <Data property="Value">
+         <String>20-2</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>sulphur</String>
+        </Data>
+        <Data property="Value">
+         <String>0.005 wt%</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>medium</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-20A-125</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D20A_2D125_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-20A-125.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="FluidCode">
+         <String>C4 cut</String>
+        </Data>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>40</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Items">
+         <Object id="ST_2DLAMU_2D20A_2D125_2Efrom" type="Plant/Piping.FlowInPipeOffPageConnector">
+          <Components property="PersistentIdentifiers">
+           <Object type="Core/PersistentIdentifier">
+            <Data property="Context">
+             <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+            </Data>
+            <Data property="Value">
+             <String>ST-LAMU-20A-125.from</String>
+            </Data>
+           </Object>
+          </Components>
+          <Data property="PipeConnectorNumber">
+           <String>ST-LAMU-20A-125.from</String>
+          </Data>
+          <Data property="/SheetModelData.Attributes">
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>ConnectsTo</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 20-2, connector ST-LAMU-20A-125.to</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Label</String>
+            </Data>
+            <Data property="Value">
+             <String>C-2016</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Kind</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>OtherSheet</String>
+            </Data>
+            <Data property="Value">
+             <String>20-2</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>FarEnd</String>
+            </Data>
+            <Data property="Value">
+             <String>EQ-LAMU-RFCC-033</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Note</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 20-2</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Status</String>
+            </Data>
+            <Data property="Value">
+             <String>base</String>
+            </Data>
+           </AggregatedDataValue>
+          </Data>
+          <Components property="Nodes">
+           <Object id="ST_2DLAMU_2D20A_2D125_2Efrom_2En1" type="Plant/Piping.PipingNode" />
+          </Components>
+          <References property="/SheetModelFlow.FlowOutNode" objects="#ST_2DLAMU_2D20A_2D125_2Efrom_2En1" />
+          <Components property="ConnectorReference">
+           <Object id="ST_2DLAMU_2D20A_2D125_2Efrom_2Ereference" type="Plant/Piping.PipeOffPageConnectorReferenceByNumber">
+            <Components property="PersistentIdentifiers">
+             <Object type="Core/PersistentIdentifier">
+              <Data property="Context">
+               <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+              </Data>
+              <Data property="Value">
+               <String>ST-LAMU-20A-125.from.reference</String>
+              </Data>
+             </Object>
+            </Components>
+            <Data property="ReferencedConnectorNumber">
+             <String>ST-LAMU-20A-125.to</String>
+            </Data>
+            <Data property="ReferencedDrawingNumber">
+             <String>20-2</String>
+            </Data>
+           </Object>
+          </Components>
+         </Object>
+        </Components>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#ST_2DLAMU_2D20A_2D125_2Efrom" />
+          <References property="SourceNode" objects="#ST_2DLAMU_2D20A_2D125_2Efrom_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D20A_2D125" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D20A_2D125_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#ST_2DLAMU_2D20A_2D125_2Efrom" />
+        <References property="SourceNode" objects="#ST_2DLAMU_2D20A_2D125_2Efrom_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D20A_2D125" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2D20A_2D125_2En1" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="ST_2DLAMU_2D40_2D044" type="Plant/Piping.PipingNetworkSystem">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-044</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="FluidCode">
+       <String>isobutane</String>
+      </Data>
+      <Components property="/SheetModelProcess.ProcessMassFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>6589 kg/h</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.MassFlowRateUnit.KilogramPerHour" />
+          </Data>
+          <Data property="Value">
+           <Double>6589</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessVolumeFlow">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>1767 b/sd</String>
+        </Data>
+        <Data property="Value">
+         <Double>1767</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessTemperature">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>45 degC</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>45</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessPressure">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>7 barg</String>
+        </Data>
+        <Data property="Value">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.PressureGaugeUnit.Bar" />
+          </Data>
+          <Data property="Value">
+           <Double>7</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </Object>
+      </Components>
+      <Components property="/SheetModelProcess.ProcessDensity">
+       <Object type="Core/QualifiedValue">
+        <Data property="DisplayText">
+         <String>563 kg/m3</String>
+        </Data>
+        <Data property="Value">
+         <Double>563</Double>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>StreamNumber</String>
+        </Data>
+        <Data property="Value">
+         <String>40125</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>process</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Fluid</String>
+        </Data>
+        <Data property="Value">
+         <String>isobutane</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Phase</String>
+        </Data>
+        <Data property="Value">
+         <String>liquid</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>DrawnOn</String>
+        </Data>
+        <Data property="Value">
+         <String>40-2</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>sulphur</String>
+        </Data>
+        <Data property="Value">
+         <String>0 wt%</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>medium</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>ST-LAMU-40-044</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <Components property="Segments">
+       <Object id="ST_2DLAMU_2D40_2D044_2Es1" type="Plant/Piping.PipingNetworkSegment">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>ST-LAMU-40-044.s1</String>
+          </Data>
+         </Object>
+        </Components>
+        <Data property="FluidCode">
+         <String>isobutane</String>
+        </Data>
+        <Data property="OperatingTemperature">
+         <AggregatedDataValue type="Core/PhysicalQuantities.PhysicalQuantity">
+          <Data property="Unit">
+           <DataReference data="Core/PhysicalQuantities.TemperatureUnit.DegreeCelsius" />
+          </Data>
+          <Data property="Value">
+           <Double>45</Double>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+        <Components property="Items">
+         <Object id="ST_2DLAMU_2D40_2D044_2Efrom" type="Plant/Piping.FlowInPipeOffPageConnector">
+          <Components property="PersistentIdentifiers">
+           <Object type="Core/PersistentIdentifier">
+            <Data property="Context">
+             <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+            </Data>
+            <Data property="Value">
+             <String>ST-LAMU-40-044.from</String>
+            </Data>
+           </Object>
+          </Components>
+          <Data property="PipeConnectorNumber">
+           <String>ST-LAMU-40-044.from</String>
+          </Data>
+          <Data property="/SheetModelData.Attributes">
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>ConnectsTo</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 40-2, connector ST-LAMU-40-044.to</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Label</String>
+            </Data>
+            <Data property="Value">
+             <String>C-4022</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Kind</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>OtherSheet</String>
+            </Data>
+            <Data property="Value">
+             <String>40-2</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>FarEnd</String>
+            </Data>
+            <Data property="Value">
+             <String>EQ-LAMU-BUTAMER-003</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Note</String>
+            </Data>
+            <Data property="Value">
+             <String>sheet 40-2</String>
+            </Data>
+           </AggregatedDataValue>
+           <AggregatedDataValue type="/SheetModelAttribute">
+            <Data property="Name">
+             <String>Status</String>
+            </Data>
+            <Data property="Value">
+             <String>base</String>
+            </Data>
+           </AggregatedDataValue>
+          </Data>
+          <Components property="Nodes">
+           <Object id="ST_2DLAMU_2D40_2D044_2Efrom_2En1" type="Plant/Piping.PipingNode" />
+          </Components>
+          <References property="/SheetModelFlow.FlowOutNode" objects="#ST_2DLAMU_2D40_2D044_2Efrom_2En1" />
+          <Components property="ConnectorReference">
+           <Object id="ST_2DLAMU_2D40_2D044_2Efrom_2Ereference" type="Plant/Piping.PipeOffPageConnectorReferenceByNumber">
+            <Components property="PersistentIdentifiers">
+             <Object type="Core/PersistentIdentifier">
+              <Data property="Context">
+               <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+              </Data>
+              <Data property="Value">
+               <String>ST-LAMU-40-044.from.reference</String>
+              </Data>
+             </Object>
+            </Components>
+            <Data property="ReferencedConnectorNumber">
+             <String>ST-LAMU-40-044.to</String>
+            </Data>
+            <Data property="ReferencedDrawingNumber">
+             <String>40-2</String>
+            </Data>
+           </Object>
+          </Components>
+         </Object>
+        </Components>
+        <Components property="Connections">
+         <Object type="Plant/Piping.Pipe">
+          <References property="SourceItem" objects="#ST_2DLAMU_2D40_2D044_2Efrom" />
+          <References property="SourceNode" objects="#ST_2DLAMU_2D40_2D044_2Efrom_2En1" />
+          <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D044" />
+          <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D044_2En1" />
+         </Object>
+        </Components>
+        <References property="SourceItem" objects="#ST_2DLAMU_2D40_2D044_2Efrom" />
+        <References property="SourceNode" objects="#ST_2DLAMU_2D40_2D044_2Efrom_2En1" />
+        <References property="TargetItem" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D044" />
+        <References property="TargetNode" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2D40_2D044_2En1" />
+       </Object>
+      </Components>
+     </Object>
+    </Components>
+    <Components property="ProcessInstrumentationFunctions">
+     <Object id="LP_2DLAMU_2DALKYLATION_2D001_2EPIC_2D4031" type="Plant/Instrumentation.ProcessInstrumentationFunction">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-001.PIC-4031</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="Location">
+       <DataReference data="Plant/Enumerations.LocationClassification.CentralLocation" />
+      </Data>
+      <Data property="ProcessInstrumentationFunctionCategory">
+       <String>P</String>
+      </Data>
+      <Data property="ProcessInstrumentationFunctionNumber">
+       <String>4031</String>
+      </Data>
+      <Data property="ProcessInstrumentationFunctions">
+       <String>IC</String>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>TagName</String>
+        </Data>
+        <Data property="Value">
+         <String>PIC-4031</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Function</String>
+        </Data>
+        <Data property="Value">
+         <String>PIC</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Location</String>
+        </Data>
+        <Data property="Value">
+         <String>dcs</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>OnItem</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-003</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>OnNozzle</String>
+        </Data>
+        <Data property="Value">
+         <String>N-PIC-4031</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-001.PIC-4031</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <References property="/SheetModelInstrument.PartOfLoop" objects="#LP_2DLAMU_2DALKYLATION_2D001" />
+      <Components property="ProcessSignalGeneratingFunctions">
+       <Object id="LP_2DLAMU_2DALKYLATION_2D001_2EPIC_2D4031_2Esensor" type="Plant/Instrumentation.ProcessSignalGeneratingFunction">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>LP-LAMU-ALKYLATION-001.PIC-4031.sensor</String>
+          </Data>
+         </Object>
+        </Components>
+        <References property="SensingLocation" objects="#EQ_2DLAMU_2DALKYLATION_2D003_2EN_2DPIC_2D4031" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="LP_2DLAMU_2DALKYLATION_2D002_2EAIC_2D4032" type="Plant/Instrumentation.ProcessInstrumentationFunction">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-002.AIC-4032</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="Location">
+       <DataReference data="Plant/Enumerations.LocationClassification.CentralLocation" />
+      </Data>
+      <Data property="ProcessInstrumentationFunctionCategory">
+       <String>A</String>
+      </Data>
+      <Data property="ProcessInstrumentationFunctionNumber">
+       <String>4032</String>
+      </Data>
+      <Data property="ProcessInstrumentationFunctions">
+       <String>IC</String>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>TagName</String>
+        </Data>
+        <Data property="Value">
+         <String>AIC-4032</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Function</String>
+        </Data>
+        <Data property="Value">
+         <String>AIC</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Location</String>
+        </Data>
+        <Data property="Value">
+         <String>dcs</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>OnItem</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-002</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>OnNozzle</String>
+        </Data>
+        <Data property="Value">
+         <String>N-AIC-4032</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-002.AIC-4032</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <References property="/SheetModelInstrument.PartOfLoop" objects="#LP_2DLAMU_2DALKYLATION_2D002" />
+      <Components property="ProcessSignalGeneratingFunctions">
+       <Object id="LP_2DLAMU_2DALKYLATION_2D002_2EAIC_2D4032_2Esensor" type="Plant/Instrumentation.ProcessSignalGeneratingFunction">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>LP-LAMU-ALKYLATION-002.AIC-4032.sensor</String>
+          </Data>
+         </Object>
+        </Components>
+        <References property="SensingLocation" objects="#EQ_2DLAMU_2DALKYLATION_2D002_2EN_2DAIC_2D4032" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="LP_2DLAMU_2DALKYLATION_2D003_2EFFIC_2D4033" type="Plant/Instrumentation.ProcessInstrumentationFunction">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-003.FFIC-4033</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="Location">
+       <DataReference data="Plant/Enumerations.LocationClassification.CentralLocation" />
+      </Data>
+      <Data property="ProcessInstrumentationFunctionCategory">
+       <String>F</String>
+      </Data>
+      <Data property="ProcessInstrumentationFunctionNumber">
+       <String>4033</String>
+      </Data>
+      <Data property="ProcessInstrumentationFunctions">
+       <String>FIC</String>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>TagName</String>
+        </Data>
+        <Data property="Value">
+         <String>FFIC-4033</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Function</String>
+        </Data>
+        <Data property="Value">
+         <String>FFIC</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Location</String>
+        </Data>
+        <Data property="Value">
+         <String>dcs</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>OnItem</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-001</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>OnNozzle</String>
+        </Data>
+        <Data property="Value">
+         <String>N-FFIC-4033</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-003.FFIC-4033</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <References property="/SheetModelInstrument.PartOfLoop" objects="#LP_2DLAMU_2DALKYLATION_2D003" />
+      <Components property="ProcessSignalGeneratingFunctions">
+       <Object id="LP_2DLAMU_2DALKYLATION_2D003_2EFFIC_2D4033_2Esensor" type="Plant/Instrumentation.ProcessSignalGeneratingFunction">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>LP-LAMU-ALKYLATION-003.FFIC-4033.sensor</String>
+          </Data>
+         </Object>
+        </Components>
+        <References property="SensingLocation" objects="#EQ_2DLAMU_2DALKYLATION_2D001_2EN_2DFFIC_2D4033" />
+       </Object>
+      </Components>
+     </Object>
+     <Object id="LP_2DLAMU_2DALKYLATION_2D004_2EAIC_2D4034" type="Plant/Instrumentation.ProcessInstrumentationFunction">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-004.AIC-4034</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="Location">
+       <DataReference data="Plant/Enumerations.LocationClassification.CentralLocation" />
+      </Data>
+      <Data property="ProcessInstrumentationFunctionCategory">
+       <String>A</String>
+      </Data>
+      <Data property="ProcessInstrumentationFunctionNumber">
+       <String>4034</String>
+      </Data>
+      <Data property="ProcessInstrumentationFunctions">
+       <String>IC</String>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>TagName</String>
+        </Data>
+        <Data property="Value">
+         <String>AIC-4034</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Function</String>
+        </Data>
+        <Data property="Value">
+         <String>AIC</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Location</String>
+        </Data>
+        <Data property="Value">
+         <String>dcs</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>OnItem</String>
+        </Data>
+        <Data property="Value">
+         <String>EQ-LAMU-ALKYLATION-004</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>OnNozzle</String>
+        </Data>
+        <Data property="Value">
+         <String>N-AIC-4034</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-004.AIC-4034</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <References property="/SheetModelInstrument.PartOfLoop" objects="#LP_2DLAMU_2DALKYLATION_2D004" />
+      <Components property="ProcessSignalGeneratingFunctions">
+       <Object id="LP_2DLAMU_2DALKYLATION_2D004_2EAIC_2D4034_2Esensor" type="Plant/Instrumentation.ProcessSignalGeneratingFunction">
+        <Components property="PersistentIdentifiers">
+         <Object type="Core/PersistentIdentifier">
+          <Data property="Context">
+           <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+          </Data>
+          <Data property="Value">
+           <String>LP-LAMU-ALKYLATION-004.AIC-4034.sensor</String>
+          </Data>
+         </Object>
+        </Components>
+        <References property="SensingLocation" objects="#EQ_2DLAMU_2DALKYLATION_2D004_2EN_2DAIC_2D4034" />
+       </Object>
+      </Components>
+     </Object>
+    </Components>
+    <Components property="InstrumentationLoopFunctions">
+     <Object id="LP_2DLAMU_2DALKYLATION_2D001" type="Plant/Instrumentation.InstrumentationLoopFunction">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-001</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="InstrumentationLoopFunctionNumber">
+       <String>PIC-4031</String>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>control</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Measured</String>
+        </Data>
+        <Data property="Value">
+         <String>refrigeration compressor suction pressure (sets the contactor temperature)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Manipulated</String>
+        </Data>
+        <Data property="Value">
+         <String>compressor speed</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Purpose</String>
+        </Data>
+        <Data property="Value">
+         <String>severity: reaction temperature near 7 C for alkylate octane</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>control type</String>
+        </Data>
+        <Data property="Value">
+         <String>PC</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>medium</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-001</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <References property="ProcessInstrumentationFunctions" objects="#LP_2DLAMU_2DALKYLATION_2D001_2EPIC_2D4031" />
+     </Object>
+     <Object id="LP_2DLAMU_2DALKYLATION_2D002" type="Plant/Instrumentation.InstrumentationLoopFunction">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-002</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="InstrumentationLoopFunctionNumber">
+       <String>AIC-4032</String>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>control</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Measured</String>
+        </Data>
+        <Data property="Value">
+         <String>spent acid strength (titration)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Manipulated</String>
+        </Data>
+        <Data property="Value">
+         <String>fresh (regenerated) acid make-up rate</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Purpose</String>
+        </Data>
+        <Data property="Value">
+         <String>product quality: octane is highest at 93-94 wt% H2SO4</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>control type</String>
+        </Data>
+        <Data property="Value">
+         <String>AC</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>medium</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-002</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <References property="ProcessInstrumentationFunctions" objects="#LP_2DLAMU_2DALKYLATION_2D002_2EAIC_2D4032" />
+     </Object>
+     <Object id="LP_2DLAMU_2DALKYLATION_2D003" type="Plant/Instrumentation.InstrumentationLoopFunction">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-003</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="InstrumentationLoopFunctionNumber">
+       <String>FFIC-4033</String>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>control</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Measured</String>
+        </Data>
+        <Data property="Value">
+         <String>isobutane-to-olefin ratio at the contactors</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Manipulated</String>
+        </Data>
+        <Data property="Value">
+         <String>isobutane recycle flow</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Purpose</String>
+        </Data>
+        <Data property="Value">
+         <String>yield and octane</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>control type</String>
+        </Data>
+        <Data property="Value">
+         <String>ratio</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>medium</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-003</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <References property="ProcessInstrumentationFunctions" objects="#LP_2DLAMU_2DALKYLATION_2D003_2EFFIC_2D4033" />
+     </Object>
+     <Object id="LP_2DLAMU_2DALKYLATION_2D004" type="Plant/Instrumentation.InstrumentationLoopFunction">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-004</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="InstrumentationLoopFunctionNumber">
+       <String>AIC-4034</String>
+      </Data>
+      <Data property="/SheetModelData.Attributes">
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Kind</String>
+        </Data>
+        <Data property="Value">
+         <String>control</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Measured</String>
+        </Data>
+        <Data property="Value">
+         <String>isobutane purity of the DIB overhead (analyser)</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Manipulated</String>
+        </Data>
+        <Data property="Value">
+         <String>reboiler heat</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>Purpose</String>
+        </Data>
+        <Data property="Value">
+         <String>yield: recycle purity</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>control type</String>
+        </Data>
+        <Data property="Value">
+         <String>AC</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>confidence</String>
+        </Data>
+        <Data property="Value">
+         <String>medium</String>
+        </Data>
+       </AggregatedDataValue>
+       <AggregatedDataValue type="/SheetModelAttribute">
+        <Data property="Name">
+         <String>SourceRef</String>
+        </Data>
+        <Data property="Value">
+         <String>LP-LAMU-ALKYLATION-004</String>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+      <References property="ProcessInstrumentationFunctions" objects="#LP_2DLAMU_2DALKYLATION_2D004_2EAIC_2D4034" />
+     </Object>
+    </Components>
+    <Components property="Notes">
+     <Object id="note_2Esheet_2E1" type="Core/Note">
+      <Components property="PersistentIdentifiers">
+       <Object type="Core/PersistentIdentifier">
+        <Data property="Context">
+         <String>Lamu sheet model (ids are the Lamu design record's ids, or made from them)</String>
+        </Data>
+        <Data property="Value">
+         <String>note.sheet.1</String>
+        </Data>
+       </Object>
+      </Components>
+      <Data property="LocalNoteIdentifier">
+       <String>1</String>
+      </Data>
+      <Data property="NoteClassification">
+       <String>drawing note</String>
+      </Data>
+      <Data property="NoteText">
+       <AggregatedDataValue type="Core/DataTypes.MultiLanguageString">
+        <Data property="SingleLanguageStrings">
+         <AggregatedDataValue type="Core/DataTypes.SingleLanguageString">
+          <Data property="Language">
+           <String>en</String>
+          </Data>
+          <Data property="Value">
+           <String>Not to scale.</String>
+          </Data>
+         </AggregatedDataValue>
+        </Data>
+       </AggregatedDataValue>
+      </Data>
+     </Object>
+    </Components>
+   </Object>
+  </Components>
+  <Data property="ExportDateTime">
+   <DateTime>2026-11-23T00:00:00</DateTime>
+  </Data>
+  <Data property="OriginatingSystemName">
+   <String>Lamu refinery design study (neutral sheet model to DEXPI)</String>
+  </Data>
+  <Data property="OriginatingSystemVendorName">
+   <String>Independent design study (not affiliated with Dangote Group)</String>
+  </Data>
+  <Data property="OriginatingSystemVersion">
+   <String>1</String>
+  </Data>
+ </Object>
+</Model>

@@ -30,4 +30,4 @@ optional background map, which loads OpenStreetMap tiles when online.
 - Content: © 2026 Isaac Mwaura. This site's original content (text, figures, diagrams and the 3D model content) is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). OpenStreetMap data and third-party software keep their own licences. See `LICENSE-CONTENT.txt`.
 - Viewer code: MIT licence, Copyright (c) 2026 Isaac Mwaura. See `LICENSE`.
 
-Version as of 18 Oct 2026.
+Version as of 23 Nov 2026.

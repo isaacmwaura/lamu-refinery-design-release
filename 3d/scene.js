@@ -25414,13 +25414,13 @@ window.SCENE = {
   }
  ],
  "meta": {
-  "date": "2026-10-20",
+  "date": "2026-11-23",
   "disclaimer": "Independent; not affiliated with Dangote Group; illustrative, not a design for construction.",
   "frame": "x east, y north, metres from the site origin; north = +y",
   "public": true,
   "rotation": "counter-clockwise seen from above",
   "three": "r147",
-  "version": "Version as of 18 Oct 2026"
+  "version": "Version as of 23 Nov 2026"
  },
  "pipes": [
   {

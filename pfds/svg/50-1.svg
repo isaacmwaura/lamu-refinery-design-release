@@ -1,0 +1,521 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420mm" height="297mm" viewBox="0 0 1680 1188" font-family="Arial, Helvetica, sans-serif">
+<title>50-1 Hydrogen</title>
+<desc>Independent; not affiliated with Dangote Group; illustrative, not a design for construction.</desc>
+<defs><marker id="arrow-stream_process" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker><marker id="arrow-stream_utility" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/></marker><marker id="arrow-stream_loss" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker><marker id="arrow-stream_later" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#92400e"/></marker></defs>
+<rect x="0" y="0" width="1680" height="1188" fill="#ffffff"/>
+<rect x="8" y="8" width="1664" height="1172" fill="none" stroke="#111827" stroke-width="1.5"/>
+<rect x="136" y="52" width="1408" height="576" fill="none" stroke="#e5e7eb" stroke-width="0.8"/>
+<text x="168.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">1</text>
+<text x="232.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">2</text>
+<text x="296.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">3</text>
+<text x="360.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">4</text>
+<text x="424.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">5</text>
+<text x="488.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">6</text>
+<text x="552.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">7</text>
+<text x="616.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">8</text>
+<text x="680.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">9</text>
+<text x="744.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">10</text>
+<text x="808.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">11</text>
+<text x="872.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">12</text>
+<text x="936.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">13</text>
+<text x="1000.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">14</text>
+<text x="1064.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">15</text>
+<text x="1128.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">16</text>
+<text x="1192.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">17</text>
+<text x="1256.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">18</text>
+<text x="1320.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">19</text>
+<text x="1384.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">20</text>
+<text x="1448.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">21</text>
+<text x="1512.0" y="48.0" font-size="7" text-anchor="middle" font-weight="normal" fill="#9ca3af">22</text>
+<text x="1548.0" y="87.0" font-size="7" text-anchor="start" font-weight="normal" fill="#9ca3af">1</text>
+<text x="1548.0" y="151.0" font-size="7" text-anchor="start" font-weight="normal" fill="#9ca3af">2</text>
+<text x="1548.0" y="215.0" font-size="7" text-anchor="start" font-weight="normal" fill="#9ca3af">3</text>
+<text x="1548.0" y="279.0" font-size="7" text-anchor="start" font-weight="normal" fill="#9ca3af">4</text>
+<text x="1548.0" y="343.0" font-size="7" text-anchor="start" font-weight="normal" fill="#9ca3af">5</text>
+<text x="1548.0" y="407.0" font-size="7" text-anchor="start" font-weight="normal" fill="#9ca3af">6</text>
+<text x="1548.0" y="471.0" font-size="7" text-anchor="start" font-weight="normal" fill="#9ca3af">7</text>
+<text x="1548.0" y="535.0" font-size="7" text-anchor="start" font-weight="normal" fill="#9ca3af">8</text>
+<text x="1548.0" y="599.0" font-size="7" text-anchor="start" font-weight="normal" fill="#9ca3af">9</text>
+<g class="equipment" id="EQ-LAMU-HYDROGEN-001" data-body="272.0 131.8 48.0 128.0">
+<g transform="translate(272.00,131.75) scale(1.6000)" fill="none" stroke="#1f2933" stroke-width="0.812">
+<path d="M0,12 A15,12 0 0 1 30,12 V68 A15,12 0 0 1 0,68 Z" fill="#ffffff"/>
+<path d="M0,28 H30 M0,54 H30 M0,28 L30,54 M0,54 L30,28"/>
+</g>
+<text x="296.0" y="272.8" font-size="10" text-anchor="middle" font-weight="bold" fill="#1f2933">R-5001 (x2)</text>
+<text x="296.0" y="282.2" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">Feed hydrogenator and</text>
+<text x="296.0" y="291.8" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">ZnO guard beds…</text>
+</g>
+<g class="equipment" id="EQ-LAMU-HYDROGEN-002" data-body="400.0 131.8 48.0 128.0">
+<g transform="translate(400.00,131.75) scale(1.6000)" fill="none" stroke="#1f2933" stroke-width="0.812">
+<path d="M0,12 A15,12 0 0 1 30,12 V68 A15,12 0 0 1 0,68 Z" fill="#ffffff"/>
+<path d="M0,28 H30 M0,54 H30 M0,28 L30,54 M0,54 L30,28"/>
+</g>
+<text x="424.0" y="272.8" font-size="10" text-anchor="middle" font-weight="bold" fill="#1f2933">R-5002 (x2)</text>
+<text x="424.0" y="282.2" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">Adiabatic</text>
+<text x="424.0" y="291.8" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">prereformers…</text>
+</g>
+<g class="equipment" id="EQ-LAMU-HYDROGEN-003" data-body="546.7 252.0 74.5 79.5">
+<g transform="translate(546.73,252.00) scale(1.2422)" fill="none" stroke="#1f2933" stroke-width="1.047">
+<path d="M0,22 H60 V64 H0 Z" fill="#ffffff"/>
+<path d="M10,22 L20,10 H40 L50,22 M26,10 V0 H34 V10"/>
+<path d="M10,46 V28 H18 V46 H26 V28 H34 V46 H42 V28 H50 V46"/>
+<path d="M16,62 L20,52 L24,62 M28,62 L32,52 L36,62 M40,62 L44,52 L48,62"/>
+</g>
+<text x="584.0" y="344.5" font-size="10" text-anchor="middle" font-weight="bold" fill="#1f2933">H-5001 (x2)</text>
+<text x="584.0" y="354.0" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">Steam methane reformer</text>
+<text x="584.0" y="363.5" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">furnaces (catalyst tubes),…</text>
+</g>
+<g class="equipment" id="EQ-LAMU-HYDROGEN-004" data-body="728.2 249.0 31.5 31.5">
+<g transform="translate(728.25,249.00) scale(1.0500)" fill="none" stroke="#1f2933" stroke-width="1.238">
+<circle cx="15" cy="15" r="15" fill="#ffffff"/>
+<path d="M0,15 H6 L10,7 L15,23 L20,7 L24,15 H30"/>
+</g>
+<text x="744.0" y="293.0" font-size="9.5" text-anchor="middle" font-weight="bold" fill="#1f2933">E-5001 (x2)</text>
+<text x="744.0" y="302.5" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">Process-gas waste-…</text>
+</g>
+<g class="equipment" id="EQ-LAMU-HYDROGEN-005" data-body="848.0 131.8 48.0 128.0">
+<g transform="translate(848.00,131.75) scale(1.6000)" fill="none" stroke="#1f2933" stroke-width="0.812">
+<path d="M0,12 A15,12 0 0 1 30,12 V68 A15,12 0 0 1 0,68 Z" fill="#ffffff"/>
+<path d="M0,28 H30 M0,54 H30 M0,28 L30,54 M0,54 L30,28"/>
+</g>
+<text x="872.0" y="272.8" font-size="10" text-anchor="middle" font-weight="bold" fill="#1f2933">R-5003 (x2)</text>
+<text x="872.0" y="282.2" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">High-temperature</text>
+<text x="872.0" y="291.8" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">shift reactors (CO +…</text>
+</g>
+<g class="equipment" id="EQ-LAMU-HYDROGEN-006" data-body="982.8 252.0 34.4 79.5">
+<g transform="translate(982.77,252.00) scale(1.3250)" fill="none" stroke="#1f2933" stroke-width="0.981">
+<path d="M0,10 A13,10 0 0 1 26,10 V50 A13,10 0 0 1 0,50 Z" fill="#ffffff"/>
+</g>
+<text x="1000.0" y="344.5" font-size="10" text-anchor="middle" font-weight="bold" fill="#1f2933">D-5001 (x2)</text>
+<text x="1000.0" y="354.0" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">Process condensate</text>
+<text x="1000.0" y="363.5" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">separators ahead of…</text>
+</g>
+<g class="equipment" id="EQ-LAMU-HYDROGEN-009" data-body="277.1 441.0 37.8 31.5">
+<g transform="translate(277.10,441.00) scale(1.0500)" fill="none" stroke="#1f2933" stroke-width="1.238">
+<path d="M0,0 L36,8 V22 L0,30 Z" fill="#ffffff"/>
+</g>
+<text x="296.0" y="485.0" font-size="9.5" text-anchor="middle" font-weight="bold" fill="#1f2933">K-5001 (x2)</text>
+<text x="296.0" y="494.5" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">Reformer combustion-…</text>
+</g>
+<g class="equipment" id="EQ-LAMU-HYDROGEN-010" data-body="1174.8 188.0 34.4 79.5">
+<g transform="translate(1174.78,188.00) scale(1.3250)" fill="none" stroke="#1f2933" stroke-width="0.981">
+<path d="M0,10 A13,10 0 0 1 26,10 V50 A13,10 0 0 1 0,50 Z" fill="#ffffff"/>
+<path d="M0,18 H26" stroke-dasharray="2.26 1.51"/>
+</g>
+<text x="1192.0" y="280.5" font-size="10" text-anchor="middle" font-weight="bold" fill="#1f2933">V-5001 (x2)</text>
+<text x="1192.0" y="290.0" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">Pressure swing</text>
+<text x="1192.0" y="299.5" font-size="8" text-anchor="middle" font-weight="normal" fill="#374151">adsorption units…</text>
+</g>
+<g class="off-sheet" data-sheet="70-3"><polygon points="18,183.0 116,183.0 126,196 116,209.0 18,209.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="22.0" y="194.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">from V-7033</text>
+<text x="22.0" y="205.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 70-3</text>
+</g>
+<g class="off-sheet" data-sheet="70-3"><polygon points="18,279.0 116,279.0 126,292 116,305.0 18,305.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="22.0" y="290.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">from V-7031</text>
+<text x="22.0" y="301.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 70-3</text>
+</g>
+<g class="off-sheet"><polygon points="18,447.0 116,447.0 126,460 116,473.0 18,473.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="22.0" y="458.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">from air-intake</text>
+<text x="22.0" y="469.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">fence terminal</text>
+</g>
+<g class="off-sheet" data-sheet="70-2"><polygon points="1554,471.0 1652,471.0 1662,484 1652,497.0 1554,497.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="482.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to V-7025</text>
+<text x="1558.0" y="493.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 70-2</text>
+</g>
+<g class="off-sheet"><polygon points="1554,503.0 1652,503.0 1662,516 1652,529.0 1554,529.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="514.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to atmosphere</text>
+<text x="1558.0" y="525.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">fence terminal</text>
+</g>
+<g class="off-sheet" data-sheet="30-1"><polygon points="1554,215.0 1652,215.0 1662,228 1652,241.0 1554,241.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="226.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to K-3002</text>
+<text x="1558.0" y="237.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 30-1</text>
+</g>
+<g class="off-sheet" data-sheet="30-2"><polygon points="1554,247.0 1652,247.0 1662,260 1652,273.0 1554,273.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="258.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to K-3012</text>
+<text x="1558.0" y="269.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 30-2</text>
+</g>
+<g class="off-sheet" data-sheet="30-3"><polygon points="1554,279.0 1652,279.0 1662,292 1652,305.0 1554,305.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="290.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to K-3022</text>
+<text x="1558.0" y="301.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 30-3</text>
+</g>
+<g class="off-sheet" data-sheet="30-4"><polygon points="1554,311.0 1652,311.0 1662,324 1652,337.0 1554,337.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="322.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to K-3041</text>
+<text x="1558.0" y="333.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 30-4</text>
+</g>
+<g class="off-sheet" data-sheet="40-2"><polygon points="1554,343.0 1652,343.0 1662,356 1652,369.0 1554,369.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="354.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to R-4011</text>
+<text x="1558.0" y="365.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 40-2</text>
+</g>
+<g class="off-sheet" data-sheet="30-3"><polygon points="1554,375.0 1652,375.0 1662,388 1652,401.0 1554,401.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="386.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to K-3031</text>
+<text x="1558.0" y="397.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 30-3</text>
+</g>
+<g class="off-sheet" data-sheet="60-2"><polygon points="1554,407.0 1652,407.0 1662,420 1652,433.0 1554,433.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="418.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to K-6052</text>
+<text x="1558.0" y="429.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 60-2</text>
+</g>
+<g class="off-sheet" data-sheet="40-2"><polygon points="1554,439.0 1652,439.0 1662,452 1652,465.0 1554,465.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="1558.0" y="450.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">to R-4021</text>
+<text x="1558.0" y="461.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 40-2</text>
+</g>
+<g class="off-sheet" data-sheet="30-3"><polygon points="18,215.0 116,215.0 126,228 116,241.0 18,241.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="22.0" y="226.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">from C-3022</text>
+<text x="22.0" y="237.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 30-3</text>
+</g>
+<g class="off-sheet" data-sheet="40-1"><polygon points="18,247.0 116,247.0 126,260 116,273.0 18,273.0" fill="#f3f4f6" stroke="#374151" stroke-width="1.0"/>
+<text x="22.0" y="258.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">from K-4002</text>
+<text x="22.0" y="269.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 40-1</text>
+</g>
+<path class="stream" data-id="ST-LAMU-50-112" d="M126.0,196.0 L240.0,196.0 L240.0,300.0 L384.0,300.0 L384.0,220.0 L400.0,220.0" fill="none" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-stream_utility)"></path>
+<polygon class="stream-number" points="159.0,196.0 183.0,186.0 207.0,196.0 183.0,206.0" fill="#ffffff" stroke="#1d4ed8" stroke-width="0.9"/>
+<text x="183.0" y="199.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50001</text>
+<path class="stream" data-id="ST-LAMU-50-113" d="M126.0,292.0 L232.0,292.0 L232.0,308.0 L528.0,308.0 L528.0,292.0 L546.7,292.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="356.0,308.0 380.0,298.0 404.0,308.0 380.0,318.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="380.0" y="311.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50002</text>
+<path class="stream" data-id="ST-LAMU-50-093" d="M126.0,460.0 L277.1,460.0" fill="none" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-stream_utility)"></path>
+<polygon class="stream-number" points="177.6,460.0 201.6,450.0 225.6,460.0 201.6,470.0" fill="#ffffff" stroke="#1d4ed8" stroke-width="0.9"/>
+<text x="201.6" y="463.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50003</text>
+<path class="stream" data-id="ST-LAMU-50-119" d="M314.9,460.0 L520.0,460.0 L520.0,316.0 L536.0,316.0 L536.0,308.0 L546.7,308.0" fill="none" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-stream_utility)"></path>
+<polygon class="stream-number" points="393.5,460.0 417.5,450.0 441.5,460.0 417.5,470.0" fill="#ffffff" stroke="#1d4ed8" stroke-width="0.9"/>
+<text x="417.5" y="463.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50004</text>
+<path class="stream" data-id="ST-LAMU-50-114" d="M296.0,131.8 L296.0,124.0 L352.0,124.0 L352.0,172.0 L400.0,172.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="328.0,148.0 352.0,138.0 376.0,148.0 352.0,158.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="352.0" y="151.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50005</text>
+<path class="stream" data-id="ST-LAMU-50-115" d="M424.0,131.8 L424.0,124.0 L480.0,124.0 L480.0,268.0 L546.7,268.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="489.4,268.0 513.4,258.0 537.4,268.0 513.4,278.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="513.4" y="271.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50006</text>
+<path class="stream" data-id="ST-LAMU-50-116" d="M621.3,292.0 L696.0,292.0 L696.0,268.0 L728.2,268.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="634.6,292.0 658.6,282.0 682.6,292.0 658.6,302.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="658.6" y="295.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50007</text>
+<path class="stream" data-id="ST-LAMU-50-117" d="M759.8,268.0 L816.0,268.0 L816.0,196.0 L848.0,196.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="763.9,268.0 787.9,258.0 811.9,268.0 787.9,278.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="787.9" y="271.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50008</text>
+<path class="stream" data-id="ST-LAMU-50-118" d="M896.0,196.0 L968.0,196.0 L968.0,292.0 L982.8,292.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="908.0,196.0 932.0,186.0 956.0,196.0 932.0,206.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="932.0" y="199.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50009</text>
+<path class="stream" data-id="ST-LAMU-50-106" d="M1017.2,292.0 L1144.0,292.0 L1144.0,484.0 L1554.0,484.0" fill="none" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-stream_utility)"></path>
+<polygon class="stream-number" points="1325.0,484.0 1349.0,474.0 1373.0,484.0 1349.0,494.0" fill="#ffffff" stroke="#1d4ed8" stroke-width="0.9"/>
+<text x="1349.0" y="487.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50010</text>
+<path class="stream" data-id="ST-LAMU-50-120" d="M1000.0,252.0 L1000.0,244.0 L1174.8,244.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1063.4,244.0 1087.4,234.0 1111.4,244.0 1087.4,254.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1087.4" y="247.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50011</text>
+<path class="stream" data-id="ST-LAMU-50-143" d="M1184.0,188.0 L1184.0,124.0 L632.0,124.0 L632.0,268.0 L621.3,268.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="966.8,124.0 990.8,114.0 1014.8,124.0 990.8,134.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="990.8" y="127.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50012</text>
+<path class="stream" data-id="ST-LAMU-50-099" d="M621.3,308.0 L696.0,308.0 L696.0,516.0 L1554.0,516.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1101.0,516.0 1125.0,506.0 1149.0,516.0 1125.0,526.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1125.0" y="519.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50013</text>
+<path class="stream" data-id="ST-LAMU-50-103" d="M1192.0,188.0 L1192.0,172.0 L1240.0,172.0 L1240.0,228.0 L1554.0,228.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1373.0,228.0 1397.0,218.0 1421.0,228.0 1397.0,238.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1397.0" y="231.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50014</text>
+<path class="stream" data-id="ST-LAMU-50-141" d="M1200.0,188.0 L1200.0,180.0 L1232.0,180.0 L1232.0,260.0 L1554.0,260.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1369.0,260.0 1393.0,250.0 1417.0,260.0 1393.0,270.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1393.0" y="263.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50015</text>
+<path class="stream" data-id="ST-LAMU-50-104" d="M1200.0,188.0 L1200.0,148.0 L1544.0,148.0 L1544.0,292.0 L1554.0,292.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1348.0,148.0 1372.0,138.0 1396.0,148.0 1372.0,158.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1372.0" y="151.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50016</text>
+<path class="stream" data-id="ST-LAMU-50-105" d="M1200.0,188.0 L1200.0,180.0 L1216.0,180.0 L1216.0,268.0 L1536.0,268.0 L1536.0,324.0 L1554.0,324.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1304.0,268.0 1328.0,258.0 1352.0,268.0 1328.0,278.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1328.0" y="271.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50017</text>
+<path class="stream" data-id="ST-LAMU-50-102" d="M1200.0,188.0 L1200.0,180.0 L1208.0,180.0 L1208.0,140.0 L1528.0,140.0 L1528.0,356.0 L1554.0,356.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1296.0,140.0 1320.0,130.0 1344.0,140.0 1320.0,150.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1320.0" y="143.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50018</text>
+<path class="stream" data-id="ST-LAMU-50-140" d="M1200.0,188.0 L1200.0,172.0 L1136.0,172.0 L1136.0,388.0 L1554.0,388.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1321.0,388.0 1345.0,378.0 1369.0,388.0 1345.0,398.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1345.0" y="391.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50019</text>
+<path class="stream" data-id="ST-LAMU-50-081" d="M1200.0,188.0 L1200.0,164.0 L1128.0,164.0 L1128.0,420.0 L1554.0,420.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1317.0,420.0 1341.0,410.0 1365.0,420.0 1341.0,430.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1341.0" y="423.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50020</text>
+<path class="stream" data-id="ST-LAMU-50-100" d="M1200.0,188.0 L1200.0,164.0 L1224.0,164.0 L1224.0,252.0 L1520.0,252.0 L1520.0,452.0 L1554.0,452.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1436.8,252.0 1460.8,242.0 1484.8,252.0 1460.8,262.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1460.8" y="255.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50021</text>
+<path class="stream" data-id="ST-LAMU-30-141" d="M126.0,228.0 L256.0,228.0 L256.0,196.0 L272.0,196.0" data-sheet="30-3" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="167.0,228.0 191.0,218.0 215.0,228.0 191.0,238.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="191.0" y="231.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">30212</text>
+<path class="stream" data-id="ST-LAMU-40-046" d="M126.0,260.0 L248.0,260.0 L248.0,92.0 L1160.0,92.0 L1160.0,212.0 L1174.8,212.0" data-sheet="40-1" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="680.0,92.0 704.0,82.0 728.0,92.0 704.0,102.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="704.0" y="95.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">40010</text>
+<g class="loop" id="LP-LAMU-HYDROGEN-001">
+<line x1="356.7" y1="120.0" x2="320.0" y2="131.8" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="370.0" cy="115.8" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="356.0" y1="115.8" x2="384.0" y2="115.8" stroke="#1f2933" stroke-width="0.8"/>
+<text x="370.0" y="112.2" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FIC</text>
+<text x="370.0" y="125.8" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">5001</text>
+</g>
+<g class="loop" id="LP-LAMU-HYDROGEN-002">
+<line x1="484.7" y1="120.0" x2="448.0" y2="131.8" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="498.0" cy="115.8" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="484.0" y1="115.8" x2="512.0" y2="115.8" stroke="#1f2933" stroke-width="0.8"/>
+<text x="498.0" y="112.2" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FFIC</text>
+<text x="498.0" y="125.8" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">5002</text>
+</g>
+<g class="loop" id="LP-LAMU-HYDROGEN-003">
+<line x1="657.9" y1="240.3" x2="621.3" y2="252.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="671.3" cy="236.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="657.3" y1="236.0" x2="685.3" y2="236.0" stroke="#1f2933" stroke-width="0.8"/>
+<text x="671.3" y="232.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">TIC</text>
+<text x="671.3" y="246.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">5003</text>
+</g>
+<g class="loop" id="LP-LAMU-HYDROGEN-006">
+<line x1="351.6" y1="429.3" x2="314.9" y2="441.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="364.9" cy="425.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="350.9" y1="425.0" x2="378.9" y2="425.0" stroke="#1f2933" stroke-width="0.8"/>
+<text x="364.9" y="421.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">AIC</text>
+<text x="364.9" y="435.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">5004</text>
+</g>
+<g class="loop" id="LP-LAMU-HYDROGEN-007">
+<line x1="1245.9" y1="176.3" x2="1209.2" y2="188.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="1259.2" cy="172.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="1245.2" y1="172.0" x2="1273.2" y2="172.0" stroke="#1f2933" stroke-width="0.8"/>
+<text x="1259.2" y="168.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">PIC</text>
+<text x="1259.2" y="182.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">5005</text>
+</g>
+<text x="18.0" y="646.0" font-size="9" text-anchor="start" font-weight="bold" fill="#374151">Stream table (blank cell = not given in the record; grey italic number = stream ID, no stream number yet; italic row on grey = a stream drawn on the sheet named in brackets, listed because it joins an item here)</text>
+<rect x="18" y="652" width="688" height="338" fill="none" stroke="#9ca3af" stroke-width="0.8"/>
+<rect x="18" y="652" width="688" height="16" fill="#f3f4f6" stroke="#9ca3af" stroke-width="0.8"/>
+<rect class="drawn-elsewhere" data-id="ST-LAMU-30-141" x="18.5" y="962" width="687" height="14" fill="#f3f4f6" stroke="none"/>
+<rect class="drawn-elsewhere" data-id="ST-LAMU-40-046" x="18.5" y="976" width="687" height="14" fill="#f3f4f6" stroke="none"/>
+<text x="22.0" y="663.5" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">No.</text>
+<text x="22.0" y="678.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50001</text>
+<text x="22.0" y="692.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50002</text>
+<text x="22.0" y="706.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50003</text>
+<text x="22.0" y="720.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50004</text>
+<text x="22.0" y="734.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50005</text>
+<text x="22.0" y="748.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50006</text>
+<text x="22.0" y="762.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50007</text>
+<text x="22.0" y="776.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50008</text>
+<text x="22.0" y="790.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50009</text>
+<text x="22.0" y="804.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50010</text>
+<text x="22.0" y="818.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50011</text>
+<text x="22.0" y="832.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50012</text>
+<text x="22.0" y="846.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50013</text>
+<text x="22.0" y="860.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50014</text>
+<text x="22.0" y="874.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50015</text>
+<text x="22.0" y="888.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50016</text>
+<text x="22.0" y="902.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50017</text>
+<text x="22.0" y="916.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50018</text>
+<text x="22.0" y="930.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50019</text>
+<text x="22.0" y="944.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50020</text>
+<text x="22.0" y="958.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">50021</text>
+<text font-style="italic" x="22.0" y="972.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">30212</text>
+<text font-style="italic" x="22.0" y="986.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#1f2933">40010</text>
+<text x="72.0" y="663.5" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">From</text>
+<text x="72.0" y="678.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-7033</text>
+<text x="72.0" y="692.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-7031</text>
+<text x="72.0" y="706.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">air-intake</text>
+<text x="72.0" y="720.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">K-5001</text>
+<text x="72.0" y="734.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">R-5001</text>
+<text x="72.0" y="748.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">R-5002</text>
+<text x="72.0" y="762.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">H-5001</text>
+<text x="72.0" y="776.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">E-5001</text>
+<text x="72.0" y="790.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">R-5003</text>
+<text x="72.0" y="804.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">D-5001</text>
+<text x="72.0" y="818.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">D-5001</text>
+<text x="72.0" y="832.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="72.0" y="846.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">H-5001</text>
+<text x="72.0" y="860.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="72.0" y="874.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="72.0" y="888.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="72.0" y="902.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="72.0" y="916.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="72.0" y="930.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="72.0" y="944.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="72.0" y="958.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text font-style="italic" x="72.0" y="972.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">C-3022 (sheet 30-3)</text>
+<text font-style="italic" x="72.0" y="986.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">K-4002 (sheet 40-1)</text>
+<text x="222.0" y="663.5" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">To</text>
+<text x="222.0" y="678.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">R-5002</text>
+<text x="222.0" y="692.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">H-5001</text>
+<text x="222.0" y="706.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">K-5001</text>
+<text x="222.0" y="720.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">H-5001</text>
+<text x="222.0" y="734.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">R-5002</text>
+<text x="222.0" y="748.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">H-5001</text>
+<text x="222.0" y="762.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">E-5001</text>
+<text x="222.0" y="776.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">R-5003</text>
+<text x="222.0" y="790.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">D-5001</text>
+<text x="222.0" y="804.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-7025</text>
+<text x="222.0" y="818.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="222.0" y="832.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">H-5001</text>
+<text x="222.0" y="846.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">atmosphere</text>
+<text x="222.0" y="860.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">K-3002</text>
+<text x="222.0" y="874.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">K-3012</text>
+<text x="222.0" y="888.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">K-3022</text>
+<text x="222.0" y="902.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">K-3041</text>
+<text x="222.0" y="916.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">R-4011</text>
+<text x="222.0" y="930.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">K-3031</text>
+<text x="222.0" y="944.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">K-6052</text>
+<text x="222.0" y="958.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">R-4021</text>
+<text font-style="italic" x="222.0" y="972.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">R-5001</text>
+<text font-style="italic" x="222.0" y="986.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">V-5001</text>
+<text x="372.0" y="663.5" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">Phase</text>
+<text x="372.0" y="678.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="692.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="706.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="720.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="734.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="748.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="762.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="776.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="790.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">mixed</text>
+<text x="372.0" y="804.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">liquid</text>
+<text x="372.0" y="818.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="832.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="846.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="860.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="874.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="888.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="902.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="916.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="930.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="944.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="372.0" y="958.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text font-style="italic" x="372.0" y="972.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">liquid</text>
+<text font-style="italic" x="372.0" y="986.0" font-size="8.5" text-anchor="start" font-weight="normal" fill="#111827">vapour</text>
+<text x="482.0" y="663.5" font-size="8.5" text-anchor="end" font-weight="bold" fill="#111827">t/h</text>
+<text x="482.0" y="678.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">327</text>
+<text x="482.0" y="692.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">28.8</text>
+<text x="482.0" y="706.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">847</text>
+<text x="482.0" y="720.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">847</text>
+<text x="482.0" y="734.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">85.4</text>
+<text x="482.0" y="748.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">413</text>
+<text x="482.0" y="762.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">413</text>
+<text x="482.0" y="776.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">413</text>
+<text x="482.0" y="790.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">413</text>
+<text x="482.0" y="804.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">129</text>
+<text x="482.0" y="818.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">284</text>
+<text x="482.0" y="832.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">254</text>
+<text x="482.0" y="846.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">1,130</text>
+<text x="482.0" y="860.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">27.5</text>
+<text x="482.0" y="874.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">12.6</text>
+<text x="482.0" y="888.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">3.44</text>
+<text x="482.0" y="902.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">1.28</text>
+<text x="482.0" y="916.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0.84</text>
+<text x="482.0" y="930.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0.68</text>
+<text x="482.0" y="944.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0.49</text>
+<text x="482.0" y="958.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0.0040</text>
+<text font-style="italic" x="482.0" y="972.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">85.4</text>
+<text font-style="italic" x="482.0" y="986.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">17.0</text>
+<text x="556.0" y="663.5" font-size="8.5" text-anchor="end" font-weight="bold" fill="#111827">b/sd</text>
+<text font-style="italic" x="556.0" y="972.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">19,395</text>
+<text x="602.0" y="663.5" font-size="8.5" text-anchor="end" font-weight="bold" fill="#111827">°C</text>
+<text x="602.0" y="678.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">400</text>
+<text x="602.0" y="692.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="706.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">30</text>
+<text x="602.0" y="720.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="734.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">380</text>
+<text x="602.0" y="748.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">620</text>
+<text x="602.0" y="762.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">870</text>
+<text x="602.0" y="776.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">350</text>
+<text x="602.0" y="790.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="804.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="818.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="832.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">35</text>
+<text x="602.0" y="846.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">150</text>
+<text x="602.0" y="860.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="874.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="888.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="902.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="916.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="930.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="944.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="602.0" y="958.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text font-style="italic" x="602.0" y="972.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">45</text>
+<text font-style="italic" x="602.0" y="986.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">40</text>
+<text x="648.0" y="663.5" font-size="8.5" text-anchor="end" font-weight="bold" fill="#111827">barg</text>
+<text x="648.0" y="678.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">30</text>
+<text x="648.0" y="692.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">3.50</text>
+<text x="648.0" y="706.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="648.0" y="720.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0.0800</text>
+<text x="648.0" y="734.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">30</text>
+<text x="648.0" y="748.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">28</text>
+<text x="648.0" y="762.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">25</text>
+<text x="648.0" y="776.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24.5</text>
+<text x="648.0" y="790.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="648.0" y="804.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">5</text>
+<text x="648.0" y="818.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="648.0" y="832.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0.30</text>
+<text x="648.0" y="846.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="648.0" y="860.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="648.0" y="874.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="648.0" y="888.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="648.0" y="902.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="648.0" y="916.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="648.0" y="930.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="648.0" y="944.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="648.0" y="958.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text font-style="italic" x="648.0" y="972.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">5</text>
+<text font-style="italic" x="648.0" y="986.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">24</text>
+<text x="702.0" y="663.5" font-size="8.5" text-anchor="end" font-weight="bold" fill="#111827">S wt%</text>
+<text x="702.0" y="678.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="692.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="706.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="720.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="734.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0.0001</text>
+<text x="702.0" y="804.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="818.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="832.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="846.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="860.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="874.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="888.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="902.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="916.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="930.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="944.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text x="702.0" y="958.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<text font-style="italic" x="702.0" y="972.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0.0001</text>
+<text font-style="italic" x="702.0" y="986.0" font-size="8.5" text-anchor="end" font-weight="normal" fill="#111827">0</text>
+<line x1="18" y1="682" x2="706" y2="682" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="696" x2="706" y2="696" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="710" x2="706" y2="710" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="724" x2="706" y2="724" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="738" x2="706" y2="738" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="752" x2="706" y2="752" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="766" x2="706" y2="766" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="780" x2="706" y2="780" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="794" x2="706" y2="794" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="808" x2="706" y2="808" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="822" x2="706" y2="822" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="836" x2="706" y2="836" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="850" x2="706" y2="850" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="864" x2="706" y2="864" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="878" x2="706" y2="878" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="892" x2="706" y2="892" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="906" x2="706" y2="906" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="920" x2="706" y2="920" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="934" x2="706" y2="934" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="948" x2="706" y2="948" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="962" x2="706" y2="962" stroke="#e5e7eb" stroke-width="0.6"/>
+<line x1="18" y1="976" x2="706" y2="976" stroke="#e5e7eb" stroke-width="0.6"/>
+<path d="M18,1062 H52" stroke="#1f2933" stroke-width="1.1" marker-end="url(#arrow-stream_process)"/>
+<text x="60.0" y="1066.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Process stream</text>
+<path d="M218,1062 H252" stroke="#1d4ed8" stroke-width="1.0" marker-end="url(#arrow-stream_utility)"/>
+<text x="260.0" y="1066.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Utility stream</text>
+<path d="M418,1062 H452" stroke="#6b7280" stroke-width="1.0" stroke-dasharray="4 3" marker-end="url(#arrow-stream_loss)"/>
+<text x="460.0" y="1066.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Loss stream</text>
+<path d="M618,1062 H652" stroke="#92400e" stroke-width="1.0" stroke-dasharray="7 4" marker-end="url(#arrow-stream_later)"/>
+<text x="660.0" y="1066.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">To / from a LATER item</text>
+<polygon points="18,1090 42,1080 66,1090 42,1100" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="42.0" y="1093.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#111827">10001</text>
+<text x="74.0" y="1094.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Stream number</text>
+<polygon points="218,1080 262,1080 272,1090 262,1100 218,1100" fill="#f3f4f6" stroke="#374151" stroke-width="1"/>
+<text x="280.0" y="1094.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Off-sheet connector</text>
+<circle cx="432" cy="1090" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="418" y1="1090" x2="446" y2="1090" stroke="#1f2933" stroke-width="0.8"/>
+<text x="432.0" y="1086.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FIC</text>
+<text x="432.0" y="1100.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1001</text>
+<text x="452.0" y="1094.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Control loop (ISA-5.1)</text>
+<rect x="618" y="1080" width="34" height="20" fill="#fffbeb" stroke="#92400e" stroke-width="1" stroke-dasharray="7 4"/>
+<text x="660.0" y="1094.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">LATER / NOT CONFIRMED item</text>
+<text x="18.0" y="1124.0" font-size="9.5" text-anchor="start" font-weight="normal" fill="#111827">Grid: 22 columns x 9 rows of 16 mm (numbered at the edges); Incoming off-sheet ends at the left, outgoing at the right.</text>
+<text x="18.0" y="1140.0" font-size="9.5" text-anchor="start" font-weight="normal" fill="#111827">Bubble line across = instrument in the control room; dashed line = the item the loop acts on.</text>
+<rect x="1002" y="1052" width="660" height="124" fill="#ffffff" stroke="#111827" stroke-width="1.2"/>
+<line x1="1098" y1="1052" x2="1098" y2="1176" stroke="#111827"/>
+<text x="1050.0" y="1114.0" font-size="22" text-anchor="middle" font-weight="bold" fill="#111827">50-1</text>
+<text x="1050.0" y="1134.0" font-size="9" text-anchor="middle" font-weight="normal" fill="#111827">area 50</text>
+<text x="1106.0" y="1072.0" font-size="13" text-anchor="start" font-weight="bold" fill="#111827">Lamu refinery, Level 1 PFD 50-1: Hydrogen</text>
+<text x="1106.0" y="1091.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Area 50: Hydrogen, sulphur, treating</text>
+<text x="1106.0" y="1110.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Independent; not affiliated with Dangote Group; illustrative, not a design for construction.</text>
+<text x="1106.0" y="1148.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Symbols: ISO 10628-2:2012 style (equipment, lines)</text>
+<text x="1106.0" y="1167.0" font-size="10" text-anchor="start" font-weight="normal" fill="#111827">Not to scale. Blank table cell = not given.</text>
+</svg>

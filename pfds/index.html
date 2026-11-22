@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Process flow sheets · Lamu refinery concept</title>
+<style>
+  :root { --ink:#15171C; --muted:#555C69; --line:#E3E1DA; --bg:#F6F5F1; --accent:#0F5F57; --sel:#B45309; --dock:#ECEAE4; }
+  * { box-sizing:border-box; }
+  html, body { margin:0; height:100%; font-family:Inter, "Segoe UI", system-ui, Arial, sans-serif; color:var(--ink); background:var(--bg); }
+  body { display:flex; flex-direction:column; }
+  a { color:var(--accent); }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  header.site { display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; padding:10px 24px; background:#fff; border-bottom:1px solid var(--line); }
+  .brand { display:flex; flex-direction:column; flex:1 1 220px; line-height:1.2; }
+  .brand b { font-size:17px; }
+  .brand span { font-size:12px; color:var(--muted); }
+  a.brand { text-decoration:none; color:var(--ink); border-radius:8px; }
+  a.brand:focus-visible { outline:3px solid #2563eb; outline-offset:2px; }
+  a.brand b { text-decoration:underline; text-decoration-color:transparent; }
+  a.brand:hover b { text-decoration-color:currentColor; }
+  nav.top { display:flex; flex-wrap:wrap; gap:2px; }
+  nav.top a { text-decoration:none; padding:7px 11px; border-radius:8px; font-size:14px; font-weight:500; color:var(--ink); }
+  nav.top a[aria-current] { color:var(--accent); background:#E3F1EE; font-weight:600; }
+  .head { display:flex; flex-wrap:wrap; align-items:flex-end; gap:10px 16px; padding:12px 24px 10px; }
+  .titles { flex:1 1 380px; display:flex; flex-direction:column; gap:2px; }
+  #where { font-size:13px; color:var(--muted); }
+  #where b { font-weight:600; }
+  h1 { margin:0; font-size:26px; line-height:1.2; }
+  .tools { display:flex; flex-wrap:wrap; gap:6px; }
+  .btn { font:inherit; font-size:13px; min-height:36px; min-width:36px; padding:0 12px; border:1px solid #D4D1C8; background:#fff;
+         border-radius:9px; color:var(--ink); cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+  main { flex:1; display:flex; gap:14px; min-height:0; padding:0 24px 12px; }
+  .sheetcol { flex:1; min-width:0; display:flex; flex-direction:column; gap:8px; }
+  #stage { flex:1; position:relative; overflow:hidden; background:#fff; border:1px solid var(--line); border-radius:12px; touch-action:none; cursor:grab; min-height:200px; }
+  #stage, #stage *, nav.dock, nav.dock * { -webkit-user-select:none; user-select:none; }
+  #stage.drag { cursor:grabbing; }
+  #stage:focus-visible { outline:3px solid #2563eb; outline-offset:-3px; }
+  #stage svg { position:absolute; inset:0; width:100%; height:100%; }
+  #stage .hit { stroke:transparent; fill:none; stroke-width:14px; vector-effect:non-scaling-stroke; pointer-events:stroke; cursor:pointer; }
+  #stage .hitbox { fill:transparent; pointer-events:all; cursor:pointer; }
+  #stage g.loop, #stage g.off-sheet { cursor:pointer; }
+  #stage .sel, #stage .sel *:not(text):not(.hitbox) { stroke:var(--sel) !important; }
+  #stage path.stream.sel { stroke-width:3 !important; }
+  #stage polygon.stream-number.sel { stroke-width:2 !important; fill:#fef3c7 !important; }
+  #stage g.sel > :not(text):not(.hitbox) { stroke-width:2.2 !important; }
+  #msg { position:absolute; left:12px; top:10px; background:#fffbeb; border:1px solid #fcd34d; padding:4px 8px; border-radius:6px; font-size:13px; }
+  #msg[hidden] { display:none; }
+  .legend { display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center; font-size:12px; color:var(--muted); }
+  .legend span { display:inline-flex; align-items:center; gap:6px; }
+  .legend i { display:inline-block; width:26px; border-top:2px solid #1f2933; }
+  .legend i.u { border-top-color:#1d4ed8; }
+  .legend i.l { border-top:2px dashed #6b7280; }
+  aside { width:340px; flex:none; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:auto; padding:14px 16px; font-size:14px; }
+  aside h2 { font-size:17px; margin:0 0 4px; line-height:1.3; }
+  aside .kind { color:var(--muted); margin:0 0 8px; }
+  aside table { border-collapse:collapse; width:100%; }
+  aside th, aside td { text-align:left; vertical-align:top; padding:5px 6px 5px 0; border-top:1px solid #EFEDE7; }
+  aside th { font-weight:600; width:46%; color:#374151; }
+  .chip { display:inline-block; font-size:12px; font-weight:600; border-radius:999px; padding:2px 9px; margin-left:4px; background:#e5e7eb; }
+  .chip.low { background:#FDE2E1; color:#8A1F1A; } .chip.medium { background:#FEF3C7; color:#7A4A06; } .chip.high { background:#DCFCE7; color:#14532D; }
+  aside .note { color:var(--muted); font-size:12px; margin-top:12px; }
+  aside .btn { margin-top:10px; }
+  #list { margin:6px 0 0; padding:0; list-style:none; }
+  #list button { display:block; width:100%; text-align:left; font:inherit; font-size:13px; border:0; border-top:1px solid #f0f0f0;
+                 background:none; padding:6px 2px; color:var(--accent); cursor:pointer; }
+  #list button:focus-visible { background:#eff6ff; }
+  details.items summary { cursor:pointer; color:#374151; font-weight:600; margin-top:10px; }
+  nav.dock { background:var(--dock); border-top:1px solid #D4D1C8; padding:8px 24px 0; }
+  .areas { display:flex; gap:6px; align-items:center; overflow-x:auto; padding-bottom:8px; scrollbar-width:thin; }
+  .areas .label { flex:none; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin-right:4px; }
+  .areas button { flex:none; min-height:34px; padding:0 13px; border-radius:999px; font:inherit; font-size:13px; font-weight:600;
+                  border:1px solid #D4D1C8; background:#fff; color:var(--ink); cursor:pointer; }
+  .areas button[aria-pressed="true"] { color:#fff; }
+  .tabs { display:flex; overflow-x:auto; border-top:1px solid #C9C6BD; scrollbar-width:thin; }
+  .tabs .group { display:flex; align-items:stretch; border-left:1px solid #D4D1C8; padding-left:2px; flex:none; }
+  .tabs .group:first-child { border-left:0; }
+  .tabs .code { align-self:center; font-size:11px; font-weight:700; padding:0 6px; }
+  .tabs button { flex:none; min-height:40px; padding:0 13px; font:inherit; font-size:13px; font-weight:500; cursor:pointer;
+                 border:1px solid transparent; border-top:3px solid transparent; border-bottom:0; border-radius:0 0 8px 8px;
+                 background:transparent; color:var(--muted); margin-top:-1px; white-space:nowrap; }
+  .tabs button b { font-weight:700; margin-right:4px; }
+  .tabs button:hover, .tabs button:focus-visible { background:#F5F4F0; color:var(--ink); }
+  .tabs button[aria-selected="true"] { background:#fff; color:var(--ink); font-weight:600; border-color:#C9C6BD; }
+  @media (max-width: 860px) {
+    html, body { height:auto; }
+    body.pubfixed { height:auto !important; min-height:100%; padding-bottom:calc(var(--pubbar, 42px) + 4px); }
+    header.site, .head, main, nav.dock { padding-left:12px; padding-right:12px; }
+    nav.top a { padding:7px 8px; }
+    #intro { display:none; }
+    main { flex:none; flex-direction:column; }
+    #stage { flex:none; height:52vh; }
+    aside { width:auto; overflow:visible; }
+    nav.dock { position:sticky; bottom:var(--pubbar, 42px); z-index:5; }
+    .btn, .areas button, .tabs button { min-height:44px; }
+  }
+</style>
+<meta name="color-scheme" content="only light">
+<style>
+  /* Site round 3: a phone in dark mode must not darken the page's buttons, menus and boxes (the 3D page's
+     "Technical" button went white on white). The page is light only, and every control has its own colours;
+     :where() keeps these weaker than any rule of the page's own. */
+  :root { color-scheme: only light; --pubbar: 26px; }
+  :where(button, select, input, textarea) { color: #111; background-color: #fff; }
+  @media (max-width: 760px) { :root { --pubbar: 42px; } }
+  #pubbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 3000; box-sizing: border-box; height: var(--pubbar);
+            margin: 0; padding: 4px 10px; font: 12px/1.35 system-ui, "Segoe UI", Arial, sans-serif; color: #1d1d1d;
+            background: #fff7e0; border-top: 1px solid #d9b860; }
+  #pubbar a { color: #0b4f8a; font-weight: 600; white-space: nowrap; }
+  #fsbtn { margin-left: 8px; font: inherit; font-weight: 600; padding: 0 8px; border: 1px solid #b08a2c;
+           border-radius: 4px; background: #fff; color: #1d1d1d; }
+  #fsbtn[hidden] { display: none; }
+  body.pubfixed { position: relative; height: calc(100% - var(--pubbar)); }
+  body.pubflow #pubbar { position: sticky; flex: none; height: auto; }
+</style>
+</head>
+<body class="pubfixed">
+<header class="site">
+<a class="brand" href="../index.html"><b>Lamu refinery</b><span>An illustrative concept · home page</span></a>
+<nav class="top" aria-label="Site"><a href="../index.html">Home</a> <a href="../3d/index.html">3D model</a> <a href="../blocks/index.html">Block diagram</a> <a href="index.html" aria-current="page">Process flow sheets</a> <a href="../map/index.html">On the map</a> <a href="../about.html">About and credits</a></nav>
+</header>
+<div class="head">
+<div class="titles">
+<span id="where">Process flow sheets</span>
+<h1 id="sheettitle">Process flow sheets</h1>
+</div>
+<div class="tools">
+<button class="btn" id="zout" type="button" aria-label="Zoom out">&#8722;</button>
+<button class="btn" id="zin" type="button" aria-label="Zoom in">+</button>
+<button class="btn" id="fit" type="button">Whole sheet</button>
+<a class="btn primary" id="dlx" href="#" download>DEXPI 2.0.1 file</a>
+<a class="btn" id="dls" href="#" download>Drawing (SVG)</a>
+</div>
+</div>
+<main>
+<div class="sheetcol">
+<div id="stage" role="img" tabindex="0" aria-label="Process flow sheet. The items on it are listed beside it."><p id="msg" hidden></p></div>
+<div class="legend" aria-label="Line colours">
+<span><i></i>Process stream</span>
+<span><i class="u"></i>Utility stream (steam, water, air, fuel gas, hydrogen)</span>
+<span><i class="l"></i>Loss stream</span>
+<span id="intro">Select a stream, a piece of equipment or a control loop for its details. Drag to move; wheel or pinch to zoom.</span>
+</div>
+</div>
+<aside id="card" aria-live="polite"></aside>
+</main>
+<nav class="dock" aria-label="Plant areas and sheets">
+<div class="areas" id="areas"><span class="label">Plant areas</span></div>
+<div class="tabs" id="tabs" role="tablist" aria-label="Sheets"></div>
+</nav>
+<p class="disc" hidden>Independent; not affiliated with Dangote Group; illustrative, not a design for construction.</p>
+<script>
+window.LAMU_PFD_INDEX = [{"id":"10-1","title":"CDU","area":"10 Crude","items":58,"code":"10","areaShort":"Crude","color":"#2F5D8A","tab":"CDU"},{"id":"10-2","title":"VDU and saturated gas plant","area":"10 Crude","items":46,"code":"10","areaShort":"Crude","color":"#2F5D8A","tab":"VDU + sat gas"},{"id":"20-1","title":"RFCC reactor-regenerator and main column","area":"20 Conversion","items":37,"code":"20","areaShort":"Conversion","color":"#8A4B2F","tab":"RFCC"},{"id":"20-2","title":"RFCC gas plant and propylene recovery","area":"20 Conversion","items":27,"code":"20","areaShort":"Conversion","color":"#8A4B2F","tab":"RFCC gas plant"},{"id":"20-3","title":"Coker","area":"20 Conversion","items":41,"code":"20","areaShort":"Conversion","color":"#8A4B2F","tab":"Coker"},{"id":"20-4","title":"Solids handling","area":"20 Conversion","items":25,"code":"20","areaShort":"Conversion","color":"#8A4B2F","tab":"Solids"},{"id":"30-1","title":"Mild hydrocracker","area":"30 Hydroprocessing","items":34,"code":"30","areaShort":"Hydroprocessing","color":"#0F5F57","tab":"Mild hydrocracker"},{"id":"30-2","title":"DHDT","area":"30 Hydroprocessing","items":28,"code":"30","areaShort":"Hydroprocessing","color":"#0F5F57","tab":"DHDT"},{"id":"30-3","title":"NHT and KHT","area":"30 Hydroprocessing","items":50,"code":"30","areaShort":"Hydroprocessing","color":"#0F5F57","tab":"NHT + KHT"},{"id":"30-4","title":"RGDU","area":"30 Hydroprocessing","items":17,"code":"30","areaShort":"Hydroprocessing","color":"#0F5F57","tab":"RGDU"},{"id":"40-1","title":"CCR","area":"40 Petrol block","items":28,"code":"40","areaShort":"Petrol block","color":"#6B4C9A","tab":"CCR"},{"id":"40-2","title":"Isomerisation and Butamer","area":"40 Petrol block","items":26,"code":"40","areaShort":"Petrol block","color":"#6B4C9A","tab":"Isom + Butamer"},{"id":"40-3","title":"Alkylation","area":"40 Petrol block","items":21,"code":"40","areaShort":"Petrol block","color":"#6B4C9A","tab":"Alkylation"},{"id":"50-1","title":"Hydrogen","area":"50 Hydrogen, sulphur, treating","items":36,"code":"50","areaShort":"Hydrogen & sulphur","color":"#7A6A1F","tab":"Hydrogen"},{"id":"50-2","title":"Amine and sour water","area":"50 Hydrogen, sulphur, treating","items":56,"code":"50","areaShort":"Hydrogen & sulphur","color":"#7A6A1F","tab":"Amine + sour water"},{"id":"50-3","title":"SRU and TGTU","area":"50 Hydrogen, sulphur, treating","items":32,"code":"50","areaShort":"Hydrogen & sulphur","color":"#7A6A1F","tab":"SRU + TGTU"},{"id":"60-1","title":"PP","area":"60 Petrochemicals and lubes","items":27,"code":"60","areaShort":"Petrochemicals","color":"#9A3D63","tab":"Polypropylene"},{"id":"60-2","title":"Base oil","area":"60 Petrochemicals and lubes","items":29,"code":"60","areaShort":"Petrochemicals","color":"#9A3D63","tab":"Base oil"},{"id":"70-1","title":"Power Phase 1","area":"70 Power and utilities","items":34,"code":"70","areaShort":"Power & utilities","color":"#3D6B2F","tab":"Power"},{"id":"70-2","title":"Desalination and water","area":"70 Power and utilities","items":27,"code":"70","areaShort":"Power & utilities","color":"#3D6B2F","tab":"Water"},{"id":"70-3","title":"Steam, cooling, air, fuel gas, flare","area":"70 Power and utilities","items":59,"code":"70","areaShort":"Power & utilities","color":"#3D6B2F","tab":"Utilities"},{"id":"80-1","title":"Tank farm and blending","area":"80 Offsites","items":73,"code":"80","areaShort":"Offsites","color":"#55606E","tab":"Tank farm"},{"id":"80-2","title":"Marine","area":"80 Offsites","items":31,"code":"80","areaShort":"Offsites","color":"#55606E","tab":"Marine"}];
+</script>
+<script src="viewer.js"></script>
+<p id="pubbar">Independent; not affiliated with Dangote Group; illustrative, not a design for construction. <a href="../about.html">About and credits</a><button id="fsbtn" type="button" hidden>Full screen</button></p>
+<script>
+(function () {
+  var b = document.getElementById("fsbtn"), d = document.documentElement, side = false;
+  if (!b || !document.fullscreenEnabled || !window.matchMedia("(pointer: coarse)").matches) { return; }
+  b.hidden = false;
+  b.onclick = function () {
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    d.requestFullscreen().then(function () {
+      if (side && screen.orientation && screen.orientation.lock) { screen.orientation.lock("landscape").catch(function () {}); }
+    }).catch(function () {});
+  };
+  document.addEventListener("fullscreenchange", function () {
+    b.textContent = document.fullscreenElement ? "Exit full screen" : "Full screen";
+  });
+})();
+</script>
+</body>
+</html>
