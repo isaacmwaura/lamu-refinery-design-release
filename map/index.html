@@ -23,7 +23,7 @@
   .disc { background: var(--warn); border: 1px solid var(--warnline); padding: 6px 8px; font-size: 12.5px; margin: 8px 0; }
   .stamp { font-size: 11.5px; color: var(--muted); }
   .stamp code { font-size: 11px; }
-  #banner { position: absolute; z-index: 1000; top: 10px; left: 50%; transform: translateX(-50%); max-width: calc(100% - 140px);
+  #banner { position: absolute; z-index: 1000; top: 10px; left: calc(50% - 180px); transform: translateX(-50%); max-width: calc(100% - 500px);
             background: rgba(255,244,214,0.96); border: 1px solid var(--warnline); border-radius: 4px; padding: 4px 10px;
             font-weight: 700; font-size: 13px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,.25); pointer-events: none; }
   .key { font-size: 12.5px; line-height: 1.7; }
@@ -82,15 +82,29 @@
   body.pubfixed { position: relative; height: calc(100% - var(--pubbar)); }
   body.pubflow #pubbar { position: sticky; flex: none; height: auto; }
 </style>
+<style>
+  :root { --sitebar: 44px; }
+  #sitebar { box-sizing: border-box; display: flex; align-items: center; gap: 2px; height: var(--sitebar); margin: 0;
+             padding: 0 14px; flex: none; background: #fff; border-bottom: 1px solid #e3e1da; overflow-x: auto;
+             white-space: nowrap; scrollbar-width: none; font: 14px/1.2 system-ui, "Segoe UI", Arial, sans-serif; }
+  #sitebar a { flex: none; text-decoration: none; color: #15171c; padding: 7px 10px; border-radius: 8px; font-weight: 500; }
+  #sitebar a:hover, #sitebar a:focus-visible { background: #f1efe9; }
+  #sitebar a.sb-brand { font-weight: 700; margin-right: 8px; }
+  #sitebar a[aria-current] { color: #0f5f57; background: #e3f1ee; font-weight: 600; }
+  body.pubfixed #sitebar { position: fixed; top: 0; left: 0; right: 0; z-index: 3000; }
+  body.pubfixed { margin-top: var(--sitebar); height: calc(100% - var(--pubbar) - var(--sitebar)); }
+</style>
 </head>
 <body class="pubfixed">
+<nav id="sitebar" aria-label="Site"><a class="sb-brand" href="../index.html">Lamu refinery</a><a href="../index.html">Home</a><a href="../3d/index.html">3D model</a><a href="../blocks/index.html">Block diagram</a><a href="../pfds/index.html">Process flow sheets</a><a href="../map/index.html" aria-current="page">On the map</a><a href="../about.html">About and credits</a></nav>
+
 <div id="map" role="region" aria-label="Map of the indicative site"></div>
 <div id="banner">Illustrative location: no site has been selected or surveyed by this study</div>
-<a id="homem" class="home" href="../index.html">Home</a>
+
 <button id="aboutbtn" type="button">About this map</button>
 <div id="side">
   <button id="closeside" type="button" aria-label="Close">Close</button>
-  <a class="home" href="../index.html" title="Back to the Lamu site home page">Home</a>
+  
   <h1>Lamu refinery: site map</h1>
   <div class="disc"><b>Independent; not affiliated with Dangote Group; illustrative, not a design for construction.</b>
     <b>Illustrative location: no site has been selected or surveyed by this study.</b> The plant outline is our own block plan, placed north of Hindi to show its size and a possible link to the port. Land conditions, ownership and the route have not been established. It is not the plot boundary of any land

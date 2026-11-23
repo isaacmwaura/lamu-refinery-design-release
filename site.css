@@ -5,10 +5,6 @@ html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; font: 16px/1.55 system-ui, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--bg); }
 a { color: var(--accent); }
 .wrap { max-width: 780px; margin: 0 auto; padding: 0 16px 40px; }
-nav.top { display: flex; flex-wrap: wrap; gap: 4px 14px; padding: 10px 16px; border-bottom: 1px solid var(--line);
-          background: #fff; font-size: 14.5px; }
-nav.top a { text-decoration: none; font-weight: 600; }
-nav.top a[aria-current] { color: var(--ink); }
 .disc { background: var(--warn); border: 1px solid var(--warnline); border-radius: 4px; padding: 8px 12px;
         margin: 14px 0; font-weight: 600; font-size: 15px; }
 h1 { font-size: 26px; line-height: 1.25; margin: 18px 0 8px; }
@@ -87,3 +83,13 @@ footer .sep { margin: 0 6px; color: var(--line); }
   .home #flow h2 { margin-top: 18px; font-size: 24px; }
   .home .flowwrap { grid-template-columns: minmax(0, 1fr) 340px; }
 }
+  :root { --sitebar: 44px; }
+  #sitebar { box-sizing: border-box; display: flex; align-items: center; gap: 2px; height: var(--sitebar); margin: 0;
+             padding: 0 14px; flex: none; background: #fff; border-bottom: 1px solid #e3e1da; overflow-x: auto;
+             white-space: nowrap; scrollbar-width: none; font: 14px/1.2 system-ui, "Segoe UI", Arial, sans-serif; }
+  #sitebar a { flex: none; text-decoration: none; color: #15171c; padding: 7px 10px; border-radius: 8px; font-weight: 500; }
+  #sitebar a:hover, #sitebar a:focus-visible { background: #f1efe9; }
+  #sitebar a.sb-brand { font-weight: 700; margin-right: 8px; }
+  #sitebar a[aria-current] { color: #0f5f57; background: #e3f1ee; font-weight: 600; }
+  body.pubfixed #sitebar { position: fixed; top: 0; left: 0; right: 0; z-index: 3000; }
+  body.pubfixed { margin-top: var(--sitebar); height: calc(100% - var(--pubbar) - var(--sitebar)); }

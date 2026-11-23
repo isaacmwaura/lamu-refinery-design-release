@@ -11,17 +11,6 @@
   body { display:flex; flex-direction:column; }
   a { color:var(--accent); }
   .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
-  header.site { display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; padding:10px 24px; background:#fff; border-bottom:1px solid var(--line); }
-  .brand { display:flex; flex-direction:column; flex:1 1 220px; line-height:1.2; }
-  .brand b { font-size:17px; }
-  .brand span { font-size:12px; color:var(--muted); }
-  a.brand { text-decoration:none; color:var(--ink); border-radius:8px; }
-  a.brand:focus-visible { outline:3px solid #2563eb; outline-offset:2px; }
-  a.brand b { text-decoration:underline; text-decoration-color:transparent; }
-  a.brand:hover b { text-decoration-color:currentColor; }
-  nav.top { display:flex; flex-wrap:wrap; gap:2px; }
-  nav.top a { text-decoration:none; padding:7px 11px; border-radius:8px; font-size:14px; font-weight:500; color:var(--ink); }
-  nav.top a[aria-current] { color:var(--accent); background:#E3F1EE; font-weight:600; }
   .head { display:flex; flex-wrap:wrap; align-items:flex-end; gap:10px 16px; padding:12px 24px 10px; }
   .titles { flex:1 1 380px; display:flex; flex-direction:column; gap:2px; }
   #where { font-size:13px; color:var(--muted); }
@@ -86,8 +75,7 @@
   @media (max-width: 860px) {
     html, body { height:auto; }
     body.pubfixed { height:auto !important; min-height:100%; padding-bottom:calc(var(--pubbar, 42px) + 4px); }
-    header.site, .head, main, nav.dock { padding-left:12px; padding-right:12px; }
-    nav.top a { padding:7px 8px; }
+    .head, main, nav.dock { padding-left:12px; padding-right:12px; }
     #intro { display:none; }
     main { flex:none; flex-direction:column; }
     #stage { flex:none; height:52vh; }
@@ -114,12 +102,22 @@
   body.pubfixed { position: relative; height: calc(100% - var(--pubbar)); }
   body.pubflow #pubbar { position: sticky; flex: none; height: auto; }
 </style>
+<style>
+  :root { --sitebar: 44px; }
+  #sitebar { box-sizing: border-box; display: flex; align-items: center; gap: 2px; height: var(--sitebar); margin: 0;
+             padding: 0 14px; flex: none; background: #fff; border-bottom: 1px solid #e3e1da; overflow-x: auto;
+             white-space: nowrap; scrollbar-width: none; font: 14px/1.2 system-ui, "Segoe UI", Arial, sans-serif; }
+  #sitebar a { flex: none; text-decoration: none; color: #15171c; padding: 7px 10px; border-radius: 8px; font-weight: 500; }
+  #sitebar a:hover, #sitebar a:focus-visible { background: #f1efe9; }
+  #sitebar a.sb-brand { font-weight: 700; margin-right: 8px; }
+  #sitebar a[aria-current] { color: #0f5f57; background: #e3f1ee; font-weight: 600; }
+  body.pubfixed #sitebar { position: fixed; top: 0; left: 0; right: 0; z-index: 3000; }
+  body.pubfixed { margin-top: var(--sitebar); height: calc(100% - var(--pubbar) - var(--sitebar)); }
+</style>
 </head>
 <body class="pubfixed">
-<header class="site">
-<a class="brand" href="../index.html"><b>Lamu refinery</b><span>An illustrative concept · home page</span></a>
-<nav class="top" aria-label="Site"><a href="../index.html">Home</a> <a href="../3d/index.html">3D model</a> <a href="../blocks/index.html">Block diagram</a> <a href="index.html" aria-current="page">Process flow sheets</a> <a href="../map/index.html">On the map</a> <a href="../about.html">About and credits</a></nav>
-</header>
+<nav id="sitebar" aria-label="Site"><a class="sb-brand" href="../index.html">Lamu refinery</a><a href="../index.html">Home</a><a href="../3d/index.html">3D model</a><a href="../blocks/index.html">Block diagram</a><a href="../pfds/index.html" aria-current="page">Process flow sheets</a><a href="../map/index.html">On the map</a><a href="../about.html">About and credits</a></nav>
+
 <div class="head">
 <div class="titles">
 <span id="where">Process flow sheets</span>
@@ -129,8 +127,7 @@
 <button class="btn" id="zout" type="button" aria-label="Zoom out">&#8722;</button>
 <button class="btn" id="zin" type="button" aria-label="Zoom in">+</button>
 <button class="btn" id="fit" type="button">Whole sheet</button>
-<a class="btn primary" id="dlx" href="#" download>DEXPI 2.0.1 file</a>
-<a class="btn" id="dls" href="#" download>Drawing (SVG)</a>
+<a class="btn primary" id="dls" href="#" download>Download drawing (SVG)</a>
 </div>
 </div>
 <main>

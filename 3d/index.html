@@ -172,11 +172,25 @@
     body.key-open #scale { display: none; }
   }
 </style>
+<style>
+  :root { --sitebar: 44px; }
+  #sitebar { box-sizing: border-box; display: flex; align-items: center; gap: 2px; height: var(--sitebar); margin: 0;
+             padding: 0 14px; flex: none; background: #fff; border-bottom: 1px solid #e3e1da; overflow-x: auto;
+             white-space: nowrap; scrollbar-width: none; font: 14px/1.2 system-ui, "Segoe UI", Arial, sans-serif; }
+  #sitebar a { flex: none; text-decoration: none; color: #15171c; padding: 7px 10px; border-radius: 8px; font-weight: 500; }
+  #sitebar a:hover, #sitebar a:focus-visible { background: #f1efe9; }
+  #sitebar a.sb-brand { font-weight: 700; margin-right: 8px; }
+  #sitebar a[aria-current] { color: #0f5f57; background: #e3f1ee; font-weight: 600; }
+  body.pubfixed #sitebar { position: fixed; top: 0; left: 0; right: 0; z-index: 3000; }
+  body.pubfixed { margin-top: var(--sitebar); height: calc(100% - var(--pubbar) - var(--sitebar)); }
+</style>
 </head>
 <body class="pubfixed">
+<nav id="sitebar" aria-label="Site"><a class="sb-brand" href="../index.html">Lamu refinery</a><a href="../index.html">Home</a><a href="../3d/index.html" aria-current="page">3D model</a><a href="../blocks/index.html">Block diagram</a><a href="../pfds/index.html">Process flow sheets</a><a href="../map/index.html">On the map</a><a href="../about.html">About and credits</a></nav>
+
 <div id="view"></div>
 <div id="labels" class="ui"></div>
-<a id="home" class="panel ui" href="../index.html" title="Back to the Lamu site home page">Home</a>
+
 <div id="head" class="panel ui">
   <h1>Lamu refinery: 3D model</h1>
   <div class="stamp">Version as of 23 Nov 2026. Independent; not affiliated with Dangote Group; illustrative, not a design for construction. Illustrative location: no site has been selected or surveyed by this study. Ground © OpenStreetMap contributors (ODbL).</div>

@@ -106,7 +106,6 @@
       setView(base.slice());
       addTargets();
       markTabs(id);
-      document.getElementById('dlx').href = 'dexpi/' + id + '.xml';
       document.getElementById('dls').href = 'svg/' + id + '.svg';
       document.title = 'Sheet ' + d.title + ' · Process flow sheets · Lamu refinery concept';
       say('');
@@ -283,7 +282,7 @@
       card.appendChild(t);
     }
     var n = document.createElement('p'); n.className = 'note';
-    n.textContent = 'From this sheet’s DEXPI 2.0.1 file. Early estimates for one illustrative operating case. ' +
+    n.textContent = 'Early estimates for one illustrative operating case. ' +
       'Materials of construction are not worked out at this stage.';
     card.appendChild(n);
     var back = document.createElement('button'); back.type = 'button'; back.className = 'btn'; back.textContent = 'All items on this sheet';
@@ -320,7 +319,7 @@
     det.appendChild(ul); card.appendChild(det);
     var n = document.createElement('p'); n.className = 'note';
     n.textContent = 'The stream table at the foot of the sheet lists every stream’s flow and conditions. ' +
-      'The DEXPI 2.0.1 file holds the same sheet as data that engineering software can read.';
+      'The drawing can be downloaded as an SVG file.';
     card.appendChild(n);
   }
 
