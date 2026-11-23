@@ -177,9 +177,9 @@
 <path class="stream" data-id="ST-LAMU-20B-127" d="M446.2,420.0 L593.8,420.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
 <polygon class="stream-number" points="496.0,420.0 520.0,410.0 544.0,420.0 520.0,430.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="520.0" y="423.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">20709</text>
-<path class="stream" data-id="ST-LAMU-20B-107" d="M702.2,420.0 L1312.0,420.0 L1312.0,404.0 L1544.0,404.0 L1544.0,420.0 L1554.0,420.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="983.1,420.0 1007.1,410.0 1031.1,420.0 1007.1,430.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="1007.1" y="423.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">20710</text>
+<path class="stream" data-id="ST-LAMU-20B-107" d="M702.2,420.0 L1554.0,420.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1104.1,420.0 1128.1,410.0 1152.1,420.0 1128.1,430.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1128.1" y="423.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">20710</text>
 <path class="stream" data-id="ST-LAMU-20B-103" d="M126.0,484.0 L336.0,484.0 L336.0,500.0 L896.0,500.0 L896.0,484.0 L913.8,484.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
 <polygon class="stream-number" points="508.0,500.0 532.0,490.0 556.0,500.0 532.0,510.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="532.0" y="503.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">20711</text>
@@ -193,25 +193,25 @@
 <polygon class="stream-number" points="1392.1,484.0 1416.1,474.0 1440.1,484.0 1416.1,494.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="1416.1" y="487.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">20714</text>
 <g class="loop" id="LP-LAMU-SOLIDS-HANDLING-007">
-<line x1="1058.9" y1="48.3" x2="1022.2" y2="60.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="1072.2" cy="44.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="1058.2" y1="44.0" x2="1086.2" y2="44.0" stroke="#1f2933" stroke-width="0.8"/>
-<text x="1072.2" y="40.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">WIC</text>
-<text x="1072.2" y="54.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">2071</text>
+<line x1="903.8" y1="79.9" x2="913.8" y2="79.9" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="889.8" cy="79.9" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="875.8" y1="79.9" x2="903.8" y2="79.9" stroke="#1f2933" stroke-width="0.8"/>
+<text x="889.8" y="76.4" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">WIC</text>
+<text x="889.8" y="89.9" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">2071</text>
 </g>
 <g class="loop" id="LP-LAMU-SOLIDS-HANDLING-008">
-<line x1="738.9" y1="368.3" x2="702.2" y2="380.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="752.2" cy="364.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="738.2" y1="364.0" x2="766.2" y2="364.0" stroke="#1f2933" stroke-width="0.8"/>
-<text x="752.2" y="360.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">LIC</text>
-<text x="752.2" y="374.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">2072</text>
+<line x1="712.2" y1="399.9" x2="702.2" y2="399.9" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="726.2" cy="399.9" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="712.2" y1="399.9" x2="740.2" y2="399.9" stroke="#1f2933" stroke-width="0.8"/>
+<text x="726.2" y="396.4" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">LIC</text>
+<text x="726.2" y="409.9" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">2072</text>
 </g>
 <g class="loop" id="LP-LAMU-SOLIDS-HANDLING-009">
-<line x1="1314.9" y1="432.3" x2="1278.2" y2="444.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="1328.2" cy="428.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="1314.2" y1="428.0" x2="1342.2" y2="428.0" stroke="#1f2933" stroke-width="0.8"/>
-<text x="1328.2" y="424.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FFIC</text>
-<text x="1328.2" y="438.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">2073</text>
+<line x1="1288.2" y1="463.9" x2="1278.2" y2="463.9" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="1302.2" cy="463.9" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="1288.2" y1="463.9" x2="1316.2" y2="463.9" stroke="#1f2933" stroke-width="0.8"/>
+<text x="1302.2" y="460.4" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FFIC</text>
+<text x="1302.2" y="473.9" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">2073</text>
 </g>
 <text x="18.0" y="646.0" font-size="9" text-anchor="start" font-weight="bold" fill="#374151">Stream table (blank cell = not given in the record; grey italic number = stream ID, no stream number yet)</text>
 <rect x="18" y="652" width="688" height="212" fill="none" stroke="#9ca3af" stroke-width="0.8"/>

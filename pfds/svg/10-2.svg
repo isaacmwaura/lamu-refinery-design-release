@@ -201,14 +201,14 @@
 <polygon class="stream-number" points="327.0,76.0 351.0,66.0 375.0,76.0 351.0,86.0" fill="#ffffff" stroke="#1d4ed8" stroke-width="0.9"/>
 <text x="351.0" y="79.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10102</text>
 <path class="stream" data-id="ST-LAMU-10-105" d="M365.3,420.0 L432.0,420.0 L432.0,260.0 L464.0,260.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="374.6,420.0 398.6,410.0 422.6,420.0 398.6,430.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="398.6" y="423.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10103</text>
+<polygon class="stream-number" points="408.0,340.0 432.0,330.0 456.0,340.0 432.0,350.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="432.0" y="343.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10103</text>
 <path class="stream" data-id="ST-LAMU-10-106" d="M488.0,126.4 L488.0,84.0 L584.0,84.0 L584.0,76.0 L589.0,76.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
 <polygon class="stream-number" points="512.0,84.0 536.0,74.0 560.0,84.0 536.0,94.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="536.0" y="87.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10104</text>
 <path class="stream" data-id="ST-LAMU-10-107" d="M643.0,76.0 L720.0,76.0 L720.0,68.0 L736.6,68.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="657.5,76.0 681.5,66.0 705.5,76.0 681.5,86.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="681.5" y="79.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10105</text>
+<polygon class="stream-number" points="684.5,76.0 708.5,66.0 732.5,76.0 708.5,86.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="708.5" y="79.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10105</text>
 <path class="stream" data-id="ST-LAMU-10-126" d="M815.4,76.0 L1554.0,76.0" fill="none" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-stream_utility)"></path>
 <polygon class="stream-number" points="1160.7,76.0 1184.7,66.0 1208.7,76.0 1184.7,86.0" fill="#ffffff" stroke="#1d4ed8" stroke-width="0.9"/>
 <text x="1184.7" y="79.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10106</text>
@@ -216,12 +216,12 @@
 <polygon class="stream-number" points="632.0,172.0 656.0,162.0 680.0,172.0 656.0,182.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="656.0" y="175.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10107</text>
 <path class="stream" data-id="ST-LAMU-10-109" d="M512.0,196.0 L584.0,196.0 L584.0,268.0 L600.2,268.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="560.0,232.0 584.0,222.0 608.0,232.0 584.0,242.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="584.0" y="235.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10108</text>
+<polygon class="stream-number" points="524.0,196.0 548.0,186.0 572.0,196.0 548.0,206.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="548.0" y="199.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10108</text>
 <path class="stream" data-id="ST-LAMU-10-110" d="M631.8,268.0 L728.2,268.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
 <polygon class="stream-number" points="656.0,268.0 680.0,258.0 704.0,268.0 680.0,278.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="680.0" y="271.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10109</text>
-<path class="stream" data-id="ST-LAMU-10-111" d="M728.2,260.0 L664.0,260.0 L664.0,244.0 L520.0,244.0 L520.0,260.0 L512.0,260.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<path class="stream" data-id="ST-LAMU-10-111" d="M728.2,260.0 L664.0,260.0 L664.0,244.0 L560.0,244.0 L560.0,260.0 L512.0,260.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
 <polygon class="stream-number" points="640.0,244.0 664.0,234.0 688.0,244.0 664.0,254.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="664.0" y="247.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10110</text>
 <path class="stream" data-id="ST-LAMU-10-120" d="M631.8,276.0 L704.0,276.0 L704.0,500.0 L1544.0,500.0 L1544.0,292.0 L1554.0,292.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
@@ -236,21 +236,21 @@
 <path class="stream" data-id="ST-LAMU-10-151" d="M631.8,524.0 L1536.0,524.0 L1536.0,556.0 L1554.0,556.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
 <polygon class="stream-number" points="924.2,524.0 948.2,514.0 972.2,524.0 948.2,534.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="948.2" y="527.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10114</text>
-<path class="stream" data-id="ST-LAMU-10-139" d="M126.0,260.0 L424.0,260.0 L424.0,108.0 L544.0,108.0 L544.0,156.0 L960.0,156.0 L960.0,180.0 L976.0,180.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="728.0,156.0 752.0,146.0 776.0,156.0 752.0,166.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="752.0" y="159.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10151</text>
-<path class="stream" data-id="ST-LAMU-10-140" d="M126.0,292.0 L392.0,292.0 L392.0,436.0 L944.0,436.0 L944.0,236.0 L976.0,236.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="644.0,436.0 668.0,426.0 692.0,436.0 668.0,446.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="668.0" y="439.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10152</text>
-<path class="stream" data-id="ST-LAMU-10-138" d="M126.0,324.0 L384.0,324.0 L384.0,444.0 L936.0,444.0 L936.0,284.0 L976.0,284.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="553.2,444.0 577.2,434.0 601.2,444.0 577.2,454.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="577.2" y="447.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10153</text>
-<path class="stream" data-id="ST-LAMU-10-128" d="M1000.0,126.4 L1000.0,92.0 L1544.0,92.0 L1544.0,260.0 L1554.0,260.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="1248.0,92.0 1272.0,82.0 1296.0,92.0 1272.0,102.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="1272.0" y="95.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10154</text>
-<path class="stream" data-id="ST-LAMU-10-146" d="M1024.0,260.0 L1088.0,260.0 L1088.0,324.0 L1104.0,324.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="1032.0,260.0 1056.0,250.0 1080.0,260.0 1056.0,270.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="1056.0" y="263.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10155</text>
+<path class="stream" data-id="ST-LAMU-10-139" d="M126.0,260.0 L416.0,260.0 L416.0,108.0 L576.0,108.0 L576.0,180.0 L976.0,180.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="752.0,180.0 776.0,170.0 800.0,180.0 776.0,190.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="776.0" y="183.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10151</text>
+<path class="stream" data-id="ST-LAMU-10-140" d="M126.0,292.0 L424.0,292.0 L424.0,436.0 L944.0,436.0 L944.0,236.0 L976.0,236.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="660.0,436.0 684.0,426.0 708.0,436.0 684.0,446.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="684.0" y="439.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10152</text>
+<path class="stream" data-id="ST-LAMU-10-138" d="M126.0,324.0 L416.0,324.0 L416.0,444.0 L936.0,444.0 L936.0,284.0 L976.0,284.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="574.0,444.0 598.0,434.0 622.0,444.0 598.0,454.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="598.0" y="447.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10153</text>
+<path class="stream" data-id="ST-LAMU-10-128" d="M1000.0,126.4 L1000.0,116.0 L1544.0,116.0 L1544.0,260.0 L1554.0,260.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1248.0,116.0 1272.0,106.0 1296.0,116.0 1272.0,126.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1272.0" y="119.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10154</text>
+<path class="stream" data-id="ST-LAMU-10-146" d="M1024.0,260.0 L1056.0,260.0 L1056.0,324.0 L1104.0,324.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="1032.0,292.0 1056.0,282.0 1080.0,292.0 1056.0,302.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="1056.0" y="295.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10155</text>
 <path class="stream" data-id="ST-LAMU-10-147" d="M1152.0,372.0 L1208.0,372.0 L1208.0,508.0 L1344.0,508.0 L1344.0,388.0 L1368.2,388.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
 <polygon class="stream-number" points="1252.0,508.0 1276.0,498.0 1300.0,508.0 1276.0,518.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="1276.0" y="511.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10156</text>
@@ -269,67 +269,67 @@
 <path class="stream" data-id="ST-LAMU-10-143" d="M1399.8,396.0 L1554.0,396.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
 <polygon class="stream-number" points="1452.9,396.0 1476.9,386.0 1500.9,396.0 1476.9,406.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="1476.9" y="399.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10161</text>
-<path class="stream" data-id="ST-LAMU-10-080" d="M126.0,356.0 L264.0,356.0 L264.0,500.0 L696.0,500.0 L696.0,340.0 L976.0,340.0" data-sheet="10-1" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
-<polygon class="stream-number" points="456.0,500.0 480.0,490.0 504.0,500.0 480.0,510.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
-<text x="480.0" y="503.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10007</text>
+<path class="stream" data-id="ST-LAMU-10-080" d="M126.0,356.0 L408.0,356.0 L408.0,452.0 L928.0,452.0 L928.0,340.0 L976.0,340.0" data-sheet="10-1" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
+<polygon class="stream-number" points="722.0,452.0 746.0,442.0 770.0,452.0 746.0,462.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
+<text x="746.0" y="455.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10007</text>
 <path class="stream" data-id="ST-LAMU-10-081" d="M126.0,452.0 L272.0,452.0 L272.0,436.0 L290.7,436.0" data-sheet="10-1" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
 <polygon class="stream-number" points="175.0,452.0 199.0,442.0 223.0,452.0 199.0,462.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="199.0" y="455.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">10011</text>
 <g class="loop" id="LP-LAMU-SAT-GAS-PLANT-005">
-<line x1="1060.7" y1="114.7" x2="1024.0" y2="126.4" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="1074.0" cy="110.4" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="1060.0" y1="110.4" x2="1088.0" y2="110.4" stroke="#1f2933" stroke-width="0.8"/>
-<text x="1074.0" y="106.9" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">PIC</text>
-<text x="1074.0" y="120.4" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1041</text>
+<line x1="1034.0" y1="193.1" x2="1024.0" y2="193.1" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="1048.0" cy="193.1" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="1034.0" y1="193.1" x2="1062.0" y2="193.1" stroke="#1f2933" stroke-width="0.8"/>
+<text x="1048.0" y="189.6" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">PIC</text>
+<text x="1048.0" y="203.1" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1041</text>
 </g>
 <g class="loop" id="LP-LAMU-SAT-GAS-PLANT-006">
-<line x1="1188.7" y1="178.7" x2="1152.0" y2="190.4" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="1202.0" cy="174.4" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="1188.0" y1="174.4" x2="1216.0" y2="174.4" stroke="#1f2933" stroke-width="0.8"/>
-<text x="1202.0" y="170.9" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">AIC</text>
-<text x="1202.0" y="184.4" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1042</text>
+<line x1="1094.0" y1="257.1" x2="1104.0" y2="257.1" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="1080.0" cy="257.1" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="1066.0" y1="257.1" x2="1094.0" y2="257.1" stroke="#1f2933" stroke-width="0.8"/>
+<text x="1080.0" y="253.6" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">AIC</text>
+<text x="1080.0" y="267.1" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1042</text>
 </g>
 <g class="loop" id="LP-LAMU-SAT-GAS-PLANT-007">
-<line x1="1316.7" y1="178.7" x2="1280.0" y2="190.4" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="1330.0" cy="174.4" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="1316.0" y1="174.4" x2="1344.0" y2="174.4" stroke="#1f2933" stroke-width="0.8"/>
-<text x="1330.0" y="170.9" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">AIC</text>
-<text x="1330.0" y="184.4" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1043</text>
+<line x1="1222.0" y1="257.1" x2="1232.0" y2="257.1" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="1208.0" cy="257.1" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="1194.0" y1="257.1" x2="1222.0" y2="257.1" stroke="#1f2933" stroke-width="0.8"/>
+<text x="1208.0" y="253.6" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">AIC</text>
+<text x="1208.0" y="267.1" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1043</text>
 </g>
 <g class="loop" id="LP-LAMU-SAT-GAS-PLANT-008">
-<line x1="1436.4" y1="365.3" x2="1399.8" y2="377.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="1449.8" cy="361.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="1435.8" y1="361.0" x2="1463.8" y2="361.0" stroke="#1f2933" stroke-width="0.8"/>
-<text x="1449.8" y="357.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FIC</text>
-<text x="1449.8" y="371.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1044</text>
+<line x1="1384.0" y1="367.0" x2="1384.0" y2="379.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="1384.0" cy="353.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="1370.0" y1="353.0" x2="1398.0" y2="353.0" stroke="#1f2933" stroke-width="0.8"/>
+<text x="1384.0" y="349.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FIC</text>
+<text x="1384.0" y="363.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1044</text>
 </g>
 <g class="loop" id="LP-LAMU-VDU-005">
-<line x1="401.9" y1="368.3" x2="365.3" y2="380.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="415.3" cy="364.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="401.3" y1="364.0" x2="429.3" y2="364.0" stroke="#1f2933" stroke-width="0.8"/>
-<text x="415.3" y="360.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">TIC</text>
-<text x="415.3" y="374.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1021</text>
+<line x1="375.9" y1="404.0" x2="365.3" y2="407.3" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="389.3" cy="399.9" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="375.3" y1="399.9" x2="403.3" y2="399.9" stroke="#1f2933" stroke-width="0.8"/>
+<text x="389.3" y="396.4" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">TIC</text>
+<text x="389.3" y="409.9" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1021</text>
 </g>
 <g class="loop" id="LP-LAMU-VDU-006">
-<line x1="679.7" y1="47.5" x2="643.0" y2="59.2" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="693.0" cy="43.2" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="679.0" y1="43.2" x2="707.0" y2="43.2" stroke="#1f2933" stroke-width="0.8"/>
-<text x="693.0" y="39.8" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">PIC</text>
-<text x="693.0" y="53.2" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1022</text>
+<line x1="653.5" y1="58.9" x2="643.0" y2="61.7" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="667.0" cy="55.2" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="653.0" y1="55.2" x2="681.0" y2="55.2" stroke="#1f2933" stroke-width="0.8"/>
+<text x="667.0" y="51.8" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">PIC</text>
+<text x="667.0" y="65.2" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1022</text>
 </g>
 <g class="loop" id="LP-LAMU-VDU-007">
-<line x1="548.7" y1="114.7" x2="512.0" y2="126.4" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="562.0" cy="110.4" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="548.0" y1="110.4" x2="576.0" y2="110.4" stroke="#1f2933" stroke-width="0.8"/>
-<text x="562.0" y="106.9" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FIC</text>
-<text x="562.0" y="120.4" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1023</text>
+<line x1="454.0" y1="193.1" x2="464.0" y2="193.1" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="440.0" cy="193.1" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="426.0" y1="193.1" x2="454.0" y2="193.1" stroke="#1f2933" stroke-width="0.8"/>
+<text x="440.0" y="189.6" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FIC</text>
+<text x="440.0" y="203.1" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1023</text>
 </g>
 <g class="loop" id="LP-LAMU-VDU-008">
-<line x1="526.0" y1="174.4" x2="512.0" y2="174.4" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="540.0" cy="174.4" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="526.0" y1="174.4" x2="554.0" y2="174.4" stroke="#1f2933" stroke-width="0.8"/>
-<text x="540.0" y="170.9" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">LIC</text>
-<text x="540.0" y="184.4" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1024</text>
+<line x1="522.0" y1="233.1" x2="512.0" y2="233.1" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="536.0" cy="233.1" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="522.0" y1="233.1" x2="550.0" y2="233.1" stroke="#1f2933" stroke-width="0.8"/>
+<text x="536.0" y="229.6" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">LIC</text>
+<text x="536.0" y="243.1" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">1024</text>
 </g>
 <text x="18.0" y="646.0" font-size="9" text-anchor="start" font-weight="bold" fill="#374151">Stream table (blank cell = not given in the record; grey italic number = stream ID, no stream number yet; italic row on grey = a stream drawn on the sheet named in brackets, listed because it joins an item here)</text>
 <rect x="18" y="652" width="688" height="380" fill="none" stroke="#9ca3af" stroke-width="0.8"/>

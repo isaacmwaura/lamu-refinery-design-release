@@ -159,7 +159,7 @@
 <text x="22.0" y="138.0" font-size="8.5" text-anchor="start" font-weight="bold" fill="#111827">from V-5001</text>
 <text x="22.0" y="149.0" font-size="7.5" text-anchor="start" font-weight="normal" fill="#6b7280">sheet 50-1</text>
 </g>
-<path class="stream" data-id="ST-LAMU-30-094" d="M126.0,228.0 L584.0,228.0 L584.0,188.0 L672.0,188.0 L672.0,212.0 L790.8,212.0" fill="none" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-stream_utility)"></path>
+<path class="stream" data-id="ST-LAMU-30-094" d="M126.0,228.0 L584.0,228.0 L584.0,188.0 L776.0,188.0 L776.0,212.0 L790.8,212.0" fill="none" stroke="#1d4ed8" stroke-width="1.2" marker-end="url(#arrow-stream_utility)"></path>
 <polygon class="stream-number" points="331.0,228.0 355.0,218.0 379.0,228.0 355.0,238.0" fill="#ffffff" stroke="#1d4ed8" stroke-width="0.9"/>
 <text x="355.0" y="231.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">30001</text>
 <path class="stream" data-id="ST-LAMU-30-096" d="M247.8,396.0 L336.0,396.0 L336.0,372.0 L354.7,372.0" fill="none" stroke="#1f2933" stroke-width="1.3" marker-end="url(#arrow-stream_process)"></path>
@@ -220,39 +220,39 @@
 <polygon class="stream-number" points="145.6,140.0 169.6,130.0 193.6,140.0 169.6,150.0" fill="#ffffff" stroke="#1f2933" stroke-width="0.9"/>
 <text x="169.6" y="143.0" font-size="8.5" text-anchor="middle" font-weight="bold" fill="#1f2933">50014</text>
 <g class="loop" id="LP-LAMU-MILD-HYDROCRACKER-001">
-<line x1="284.4" y1="365.3" x2="247.8" y2="377.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="297.8" cy="361.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="283.8" y1="361.0" x2="311.8" y2="361.0" stroke="#1f2933" stroke-width="0.8"/>
-<text x="297.8" y="357.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FIC</text>
-<text x="297.8" y="371.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3001</text>
+<line x1="232.0" y1="367.0" x2="232.0" y2="379.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="232.0" cy="353.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="218.0" y1="353.0" x2="246.0" y2="353.0" stroke="#1f2933" stroke-width="0.8"/>
+<text x="232.0" y="349.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">FIC</text>
+<text x="232.0" y="363.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3001</text>
 </g>
 <g class="loop" id="LP-LAMU-MILD-HYDROCRACKER-002">
-<line x1="465.9" y1="304.3" x2="429.3" y2="316.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="479.3" cy="300.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="465.3" y1="300.0" x2="493.3" y2="300.0" stroke="#1f2933" stroke-width="0.8"/>
-<text x="479.3" y="296.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">TIC</text>
-<text x="479.3" y="310.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3002</text>
+<line x1="439.9" y1="340.0" x2="429.3" y2="343.3" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="453.3" cy="335.9" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="439.3" y1="335.9" x2="467.3" y2="335.9" stroke="#1f2933" stroke-width="0.8"/>
+<text x="453.3" y="332.4" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">TIC</text>
+<text x="453.3" y="345.9" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3002</text>
 </g>
 <g class="loop" id="LP-LAMU-MILD-HYDROCRACKER-003">
-<line x1="676.7" y1="184.0" x2="640.0" y2="195.8" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="690.0" cy="179.8" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="676.0" y1="179.8" x2="704.0" y2="179.8" stroke="#1f2933" stroke-width="0.8"/>
-<text x="690.0" y="176.2" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">TIC</text>
-<text x="690.0" y="189.8" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3003</text>
+<line x1="650.0" y1="227.8" x2="640.0" y2="227.8" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="664.0" cy="227.8" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="650.0" y1="227.8" x2="678.0" y2="227.8" stroke="#1f2933" stroke-width="0.8"/>
+<text x="664.0" y="224.2" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">TIC</text>
+<text x="664.0" y="237.8" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3003</text>
 </g>
 <g class="loop" id="LP-LAMU-MILD-HYDROCRACKER-004">
-<line x1="287.6" y1="109.3" x2="250.9" y2="121.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="300.9" cy="105.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="286.9" y1="105.0" x2="314.9" y2="105.0" stroke="#1f2933" stroke-width="0.8"/>
-<text x="300.9" y="101.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">PIC</text>
-<text x="300.9" y="115.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3004</text>
+<line x1="229.0" y1="110.7" x2="226.0" y2="123.9" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="232.0" cy="97.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="218.0" y1="97.0" x2="246.0" y2="97.0" stroke="#1f2933" stroke-width="0.8"/>
+<text x="232.0" y="93.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">PIC</text>
+<text x="232.0" y="107.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3004</text>
 </g>
 <g class="loop" id="LP-LAMU-MILD-HYDROCRACKER-005">
-<line x1="861.9" y1="176.3" x2="825.2" y2="188.0" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
-<circle cx="875.2" cy="172.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
-<line x1="861.2" y1="172.0" x2="889.2" y2="172.0" stroke="#1f2933" stroke-width="0.8"/>
-<text x="875.2" y="168.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">AIC</text>
-<text x="875.2" y="182.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3005</text>
+<line x1="836.8" y1="190.5" x2="824.3" y2="196.9" stroke="#6b7280" stroke-width="0.9" stroke-dasharray="4 2.5"/>
+<circle cx="849.2" cy="184.0" r="14" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<line x1="835.2" y1="184.0" x2="863.2" y2="184.0" stroke="#1f2933" stroke-width="0.8"/>
+<text x="849.2" y="180.5" font-size="8" text-anchor="middle" font-weight="bold" fill="#111827">AIC</text>
+<text x="849.2" y="194.0" font-size="7.5" text-anchor="middle" font-weight="normal" fill="#111827">3005</text>
 </g>
 <text x="18.0" y="646.0" font-size="9" text-anchor="start" font-weight="bold" fill="#374151">Stream table (blank cell = not given in the record; grey italic number = stream ID, no stream number yet; italic row on grey = a stream drawn on the sheet named in brackets, listed because it joins an item here)</text>
 <rect x="18" y="652" width="688" height="296" fill="none" stroke="#9ca3af" stroke-width="0.8"/>
